@@ -1,0 +1,82 @@
+
+.peFlareLightbox .peFlareLightboxControls a {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	opacity:0.65;
+}
+
+.peFlareLightbox .peFlareLightboxControls a:hover{
+	opacity:1;
+}
+
+/*previous arrow icon*/
+.peFlareLightbox .peFlareLightboxControls a#peFlareLightboxControlPrev {
+	background:url(img/prev.png) no-repeat 0 0;
+}
+
+/*next arrow icon*/
+.peFlareLightbox .peFlareLightboxControls a#peFlareLightboxControlNext {
+	background:url(img/next.png) no-repeat 0 0;
+}
+
+/*close lightbox icon*/
+.peFlareLightbox .peFlareLightboxControls a#peFlareLightboxControlClose {
+	background:url(img/close.png) no-repeat 0 0;
+}
+
+/*toggle thumbs icon*/
+.peFlareLightbox .peFlareLightboxControls a#peFlareLightboxControlThumbs {
+	background:url(img/thumbs.png) no-repeat 0 0;
+}
+
+.peFlareLightbox .peFlareLightboxSpinner span {
+    background: url(img/spinner.gif) no-repeat center center;
+	background-color: black;
+    background-color: rgba(0,0,0,.8);
+}
+
+.peFlareLightbox .peFlareLightboxThumbs > div > span {
+	background: url(img/spinner.gif) no-repeat center center;
+	background-color: black;
+    background-color: rgba(0,0,0,.8);
+}
+
+.peFlareLightbox a.peFlareLightboxVideoIcon span {
+	background: url("img/start.png") no-repeat 0 0;
+}
+
+.peFlareLightbox a.peFlareLightboxVideoIcon:hover span {
+	background-position: 0 -84px;
+}
+
+
+/*thumbnail frames*/
+
+.peFlareLightbox .peFlareLightboxThumbs > div > div > span {
+	border: 2px solid white;
+	box-shadow: 2px 2px 2px #000;
+}
+
+/* fit image frame*/
+
+.peFlareLightbox .peFlareLightboxContent .peFlareLightboxRenderImage img.fit {
+	border: 4px solid white;
+	box-shadow: 4px 4px 4px #000;
+}
+
+
+/*mobile resolution*/
+
+@media (min-width: 480px) and (max-width: 767px) {
+	
+	/*smaller video play icon*/
+	.peFlareLightbox a.peFlareLightboxVideoIcon span {
+		background: url("img/start_mob.png") no-repeat 0 0;
+	}
+	
+	.peFlareLightbox a.peFlareLightboxVideoIcon:hover span {
+		background-position: 0 -42px;
+	}
+}

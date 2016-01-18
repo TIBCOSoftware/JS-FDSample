@@ -1,0 +1,175 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Acme Fresh Delivery Foods</title>
+    <meta name="description" content="Welcome to Acme Fresh Foods">
+    <meta name="author" content="Jaspersoft">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- Google Font Arvo -->
+    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/acme.css" rel="stylesheet">
+    
+    <!-- JavaScript files
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/require.js"></script>
+    <script src="http://localhost:8080/jasperserver-pro/client/visualize.js"></script>
+    <script src="js/visualizeHelper.js"></script>
+    <script src="js/go-green.js"></script>
+    <script src="js/init-login.js"></script>
+    <script src="js/maps.js"></script>
+
+  </head>
+  <body>
+  
+  <!-- Login Authentication Help Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h3 class="modal-title" id="myModalLabel" style="color:#355B33">Administrator / Manager Login</h3>
+      			</div>
+      			<div class="modal-body">
+      			
+      			 <!-- Authentication login/logout interface -->
+      			 		<div>
+                			<form name = "myform" class="navbar-form navbar-right">
+                    			<div class="form-group">
+                        			<input type="text" name="username" class="form-control" placeholder="Username">&nbsp;&nbsp;
+                    			</div>
+                    			<div class="form-group">
+                        			<input type="password" name="pword" class="form-control" placeholder="Password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    			</div>
+                    		<button type="button" name="Submit" class="btn btn-success btn-large" onclick="validate()">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                			</form>
+  						</div>
+                      	<br><br><br><br>
+                      	<div>
+						<h4>Manager Login: (California):</h4>
+                     		<h6>Username: "CaliforniaUser"</h6>
+							<h6>Password: "CaliforniaUser"</h6>
+							<br>
+						<h4>Admin Login:</h4>
+							<h6>Username: "jasperadmin"</h6>
+							<h6>Password: "jasperadmin"</h6>
+						</div>
+      			</div>
+      			<div class="modal-footer">
+      			</div>
+    		</div>
+  		</div>
+	</div>
+  
+  
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="acme-container">
+          <!-- header -->
+          <header>
+            <div class="masthead clearfix">
+              <div class="inner">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Our Products <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="top-sellers.html">Top Sellers</a></li>
+                                <li><a href="healthy-choices.html">Healthy Choices</a></li>
+                                <li><a href="go-green.html">Go Green</a></li>
+                            </ul>
+                        </li>
+                        <!--  
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Admin <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shipping-optimizer.html">Shipping Optimizer</a></li>
+                                <li><a href="internal.html">Internal</a></li>
+                                <li><a href="admin.html">Admin Dashboards</a></li>
+                            </ul>
+                        </li>
+                        --> 
+                      </ul>
+                      <!-- Link to login interface -->
+                		<form class="navbar-form navbar-right" role="search">
+                    	<a href="#" data-toggle="modal" data-target="#myModal">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                		</form>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                  </div>
+                  <!-- /.container-fluid -->
+                </nav>
+              </div>
+            </div>
+          </header>
+          <!-- go green article -->
+          <a name="go-green" ></a>
+          <article class="go-green interior-article">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 col-lg-5 col-xl-5 aux-col-green">
+                  <img src="img/go-green-trees.jpg" width="100%" height="220" alt="Go Green!" class="img-responsive" />
+                  	<div class="col-text">
+                  		<h2>Go Green!</h2>
+                  		<p class="lead green-lead">Environmentally friendly products in  - <b>&nbsp;<span style="font-size:22px" id="CityName1"></span></b></p>
+                         <br>
+                         <p style="font-size:16px">(Select map to update location)</p>
+                  	</div>
+                  <div id="GreenMap"></div>
+				  </div>
+				  <div style="background-color:#F0E6CC" class="col-md-7 main-col main-col-interior">
+                  <div class="green-panel-heading">
+                      <h3 style="font-size: 20px; font-family: sans-serif; color: #3b5930; font-weight: bold;"><span id="CityName2"></span> Departments</h3>
+                    </div>
+                  <div class="chart-container">
+                  	<div id="goGreenChart" align="center"></div>                  
+                  </div>
+                    <div class="green-panel-heading">
+                      <h3 style="font-size: 24px; font-family: sans-serif; color: #3b5930; font-weight: bold;"><span id="DepartmentName"></span></h3>
+                    </div>
+                  <div id="placeholder" class="green-inline-dropdown"></div>&nbsp;&nbsp;
+                  <button id="ExportButton" style="float:center" class="btn btn-success btn-large green-btn-custom green-inline-dropdown">Export</button>
+                  
+                  <div style="background-color:#f0e6cd" sclass="chart-container">
+                  <br>
+                  <div style="background-color:#f0e6cd" id="goGreenTable" align="center"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <footer>
+            <div class="mastfoot">
+              <div class="inner">
+                <p>&copy; Acme Fresh Delivery Foods is not a real company, this is a demo website for <a href="http://jaspersoft.com" target="_blank">Jaspersoft</a>.</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>

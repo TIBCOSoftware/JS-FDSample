@@ -1,0 +1,172 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Acme Fresh Delivery Foods</title>
+    <meta name="description" content="Welcome to Acme Fresh Foods">
+    <meta name="author" content="Jaspersoft">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- Google Font Arvo -->
+    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/acme.css" rel="stylesheet">
+
+	<!-- Core JavaScript
+	================================================== -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/require.js"></script>
+	<script src="http://localhost:8080/jasperserver-pro/client/visualize.js"></script>
+	<script src="js/visualizeHelper.js"></script>
+	<script src="js/admin.js"></script>
+	<!-- <script type='text/javascript' src="js/internal.js"></script> -->
+	
+	//Invisible form used to convert url into text for authentication
+	<FORM NAME="convert">
+	<INPUT TYPE="hidden" NAME="myurl">
+	</FORM>
+	
+	
+	//Get username passed from last url
+	<script>
+	var locate = window.location
+	document.convert.myurl.value = locate
+
+	var text = document.convert.myurl.value
+	
+	function delineate(str){
+		theleft = str.indexOf("=") + 1;
+		theright = str.lastIndexOf("&");
+		return(str.substring(theleft, theright));
+	}
+	var username = delineate(text)
+	
+	//Get password passed from last url
+	function delineate2(str)
+	{
+		point = str.lastIndexOf("=");
+		return(str.substring(point+1,str.length));
+	}
+	
+	var password = delineate2(text)
+	
+	//Menu variables
+	var homeurl = 'index-admin.html?u='+username+'&p='+password;
+	var topurl = 'top-sellers-admin.html?u='+username+'&p='+password;
+	var healthyurl = 'healthy-choices-admin.html?u='+username+'&p='+password;
+	var greenurl = 'go-green-admin.html?u='+username+'&p='+password;
+	var internalurl = 'internal.html?u='+username+'&p='+password;
+	var shippingurl = 'shipping-optimizer.html?u='+username+'&p='+password;
+	var adminurl = 'admin.html?u='+username+'&p='+password;
+    var admin2url = 'admin2.html?u='+username+'&p='+password;
+    var blankurl = 'blank-dashboard.html?u='+username+'&p='+password; 
+	</script>
+	
+  	</head>
+  	<body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="acme-container-admin">
+          <!-- header -->
+          <header>
+            <div class="masthead clearfix">
+              <div class="inner">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li><a onclick="document.location= homeurl;" style="cursor: pointer;">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Our Products <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="document.location= topurl;" style="cursor: pointer;">Top Sellers</a></li>
+                                <li><a onclick="document.location= healthyurl;" style="cursor: pointer;">Healthy Choices</a></li>
+                                <li><a onclick="document.location= greenurl;" style="cursor: pointer;">Go Green</a></li>
+                            </ul>
+                        </li>
+                         
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Admin <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="document.location= admin2url;" style="cursor: pointer;">Employee Payroll</a></li>
+                            	<li><a onclick="document.location= internalurl;" style="cursor: pointer;">Manager Metrics</a></li>
+                                <li><a onclick="document.location= adminurl;" style="cursor: pointer;">Inventory Dashboard</a></li>
+                                <li><a onclick="document.location= shippingurl;" style="cursor: pointer;">Create/View</a></li>
+                                <li><a onclick="document.location= blankurl;" style="cursor: pointer;">New Dashboard (blank)</a></li>
+                            </ul>
+                        </li>
+                         
+                      </ul>
+                      
+                       <!-- Admin Logout link -->
+                		<form class="navbar-form navbar-right">
+                         <a href="index.html">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                		 </form>
+                		 
+                    </div>
+                    <!-- /.navbar-collapse -->
+                  </div>
+                  <!-- /.container-fluid -->
+                </nav>
+              </div>
+            </div>
+          </header>
+          <!-- heathy choices content -->
+          <a name="healthy-choices"  ></a>
+          <article class="healthy-choices interior-article">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-lg-2 col-xl-2 aux-col admin-sidebar">
+                  <img src="img/admin-logo.jpg" width="100%" height="250" alt="Healthy Choices" class="img-responsive" />
+
+                  	 <div class="col-text">
+                  		<h1>Inventory View</h1>          		
+                          <br>
+                  		<p class="lead">Internal metrics for units ordered, tonnage shipped & supply time</p>
+                      </div>
+                  <br> 
+                     
+                    <br/>
+                    
+                    <!--
+                    <div class="input"></div> 
+                    <br/>
+					<button class="btn btn-success btn-large green-btn-custom admin-btn" disabled>Update</button>
+                    -->
+                    
+					<br/><br/>
+
+                </div>
+                <div style="background-color:#FFF" class="col-md-10 main-col main-col-interior">
+                  
+					<!-- Visualize.js embedded dashboard -->
+					<div id="container" class="dashboard-container"></div>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
