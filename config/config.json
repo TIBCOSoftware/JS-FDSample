@@ -1,0 +1,36 @@
+{
+    "visualizeJS": "http://54.163.230.95/jasperserver-pro/client/visualize.js",
+    "jrsHostname": "http://54.163.230.95/jasperserver-pro/flow.html",
+    "users": {
+        "CaliforniaUser": {
+            "password": "CaliforniaUser", 
+            "role": "admin",
+            "jrsConfig": {
+		        "auth": {
+		            "name": "joeuser",
+		            "password": "joeuser",
+		            "organization": "organization_1"
+		        }
+		    }
+        },
+        "jasperadmin": {
+            "password": "jasperadmin",
+            "role": "admin", 
+            "jrsConfig": {
+		        "auth": {
+		            "name": "jasperadmin",
+		            "password": "jasperadmin",
+		            "organization": "organization_1"
+		        }
+		    }
+		}
+        
+    },
+    "jrsConfig": {
+        "auth": {
+            "name": "joeuser",
+            "password": "joeuser",
+            "organization": "organization_1"
+        }
+    }
+}

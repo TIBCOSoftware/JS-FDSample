@@ -1,0 +1,69 @@
+ <!-- header -->
+
+  <div class="masthead clearfix">
+    <div class="inner">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="./index.html" style="cursor: pointer;">Home</a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Our Products <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="./top-sellers.html" style="cursor: pointer;">Top Sellers</a></li>
+                      <li><a href="./healthy-choices.html" style="cursor: pointer;">Healthy Choices</a></li>
+                      <li><a href="./go-green.html" style="cursor: pointer;">Go Green</a></li>
+                  </ul>
+              </li>
+              {{#if admin}} 
+                <li class="dropdown">
+                    <a id="adminlinks" class="dropdown-toggle" data-toggle="dropdown" href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                      Admin <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./admin.html?payroll" style="cursor: pointer;">Employee Payroll</a></li>
+                    	  <li><a href="./admin-internal-manager.html" style="cursor: pointer;">Manager Metrics</a></li>
+                        <li><a href="./admin.html?inventory" style="cursor: pointer;">Inventory Dashboard</a></li>
+                        <li><a href="./admin-shipping.html" style="cursor: pointer;">Create/View</a></li>
+                        <li><a href="./admin-blank.html" style="cursor: pointer;" >New Dashboard (blank)</a></li>
+                    </ul>
+                </li>
+              {{/if}}
+               
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <!-- Admin Logout link -->
+             
+            <li class="">
+            {{#if loggedIn}}
+              <a>Welcome, {{userName}} </a>
+            {{/if}}
+            </li> 
+      		  <li class="">
+              {{#if loggedIn}}
+               <a href="#" id="logout">Logout</a>
+               {{else}}
+               <a href="#" id="login">Login</a>
+              {{/if}}
+      		 </li>
+           </ul>
+      		 
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+    </div>
+  </div>
