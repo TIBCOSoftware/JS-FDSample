@@ -5,7 +5,7 @@ This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
 
-Author(s): Daniel Petzold, Mariano Luna
+Author(s): Daniel Petzold, Mariano Luna, Peter Mcrae
 
 Version: 3.0
 
