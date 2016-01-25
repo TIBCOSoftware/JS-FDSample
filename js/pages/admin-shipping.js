@@ -24,16 +24,16 @@
 var pageConfig = {
 	"pages": [{
 			"label": "Create Adhoc",
-			"url": "?_flowId=adhocFlow&resource=/public/Samples/FreshDelivery_Demo/New_Admin_Ad_Hoc_View&theme=embedded_scdp"
+			"url": "?_flowId=adhocFlow&resource=/public/Samples/FreshDelivery_Demo/New_Admin_Ad_Hoc_View&theme=AcmeTheme&decorate=no"
 		}, {
 			"label": "Library",
-			"url": "?_flowId=searchFlow&mode=library&theme=embedded_scdp"
+			"url": "?_flowId=searchFlow&mode=library&theme=AcmeTheme&decorate=no"
 		}, {
 			"label": "Report List",
-			"url": "?_flowId=searchFlow&mode=search&filterId=resourceTypeFilter&filterOption=resourceTypeFilter-reports&theme=embedded_scdp"
+			"url": "?_flowId=searchFlow&mode=search&filterId=resourceTypeFilter&filterOption=resourceTypeFilter-reports&theme=AcmeTheme&decorate=no"
 		}, {
 			"label": "Home",
-			"url": "?_flowId=homeFlow&theme=embedded_scdp"
+			"url": "?_flowId=homeFlow&theme=AcmeTheme&decorate=no"
 		}
 
 	]

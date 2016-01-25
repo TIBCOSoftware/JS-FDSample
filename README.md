@@ -36,8 +36,8 @@ $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/go-green
 $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/top-sellers.html
 $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/healthy-choices.html
 ```
-1. The script is hardcoded to login using jasperadmin/jasperadmin if you need to change this, do so in `/js/visualizeHelper.js`
-1. Go to http://<your-server>/FreshDeliveryDemo/ 
+1. The script is hardcoded to login using joeuser/joeuser if you need to change this, do so in `/config/config.json`
+1. Go to http://<your-server>/JS-FDSample/ 
 1. Enjoy!!!
 
 ####How to turn off the chart selector icon for specific charts in JRS
