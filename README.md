@@ -1,7 +1,7 @@
 FreshDeliveryDemo
 =================
 
-This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com/meet-new-jaspersoft) using the [Visualize.js](http://community.jaspersoft.com/project/visualizejs) framework
+This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com) using the [Visualize.js](http://community.jaspersoft.com/project/visualizejs) framework
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
 
@@ -9,6 +9,10 @@ Author(s): Daniel Petzold, Mariano Luna, Peter Mcrae
 
 Version: 3.0
 
+##Fresh Delivery Demo Video
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=GOlhTmxZE9s
+" target="_blank"><img src="http://img.youtube.com/vi/GOlhTmxZE9s/0.jpg" 
+alt="Fresh Delivery Demo" width="240" height="180" border="10" /></a>
 
 ##Description
 The sample is designed to showcase the features of TIBCO Jaspersoft's embedded analytics framework and highlights Visualize.js.
