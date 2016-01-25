@@ -13,19 +13,6 @@
 		        }
 		    }
         },
-        "CaliforniaAdmin": {
-            "password": "CaliforniaAdmin",
-            "role": "admin", 
-            "jrsConfig": {
-		        "auth": {
-		            "name": "joeuser",
-		            "password": "joeuser",
-		            "organization": "organization_1"
-		        }
-		    }
-		}
-        
-    },
     "jrsConfig": {
         "auth": {
             "name": "joeuser",
