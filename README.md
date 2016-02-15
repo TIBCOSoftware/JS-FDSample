@@ -33,7 +33,7 @@ Essentially this is a demo site (Fresh Delivery) with a set of reports integrate
 	1. Add this line at the end of the file:  `com.jaspersoft.jasperreports.highcharts.function.properties.allowed=true`
 1. This sample needs to add Lat/Long coordinates to the store table on the foodmart database
 	1. the sql file with this changes is located in the repo FRESHDELIVERY_PATH/JasperServerResources/foodmart-store-update.sql
-	1. use that sql script to update your DB, at the command prompt: `psql -U postgres -d foodmart -a -f FRESHDELIVERY_PATH/JasperServerResources/foodmart-store-update.sql` 
+	1. use that sql script to update your DB, at the command prompt (using default username and port, this may change for you): `psql -p 5432 -U postgres -d foodmart -a -f FRESHDELIVERY_PATH/JasperServerResources/foodmart-store-update.sql` 
 1. The pages expect JasperServer to be accessible in `http://localhost:8080/jasperserver.pro` since that is normally not the case you will need to change this. For example if your jasperserver is located in `http://my.jasperserver.com:8080/jasperserver.pro` just open a terminal and enter:
 ```
 $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/go-green.html
