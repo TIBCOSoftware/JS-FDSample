@@ -18,7 +18,7 @@ alt="Fresh Delivery Demo" width="240" height="180" border="10" /></a>
 The sample is designed to showcase the features of TIBCO Jaspersoft's embedded analytics framework and highlights Visualize.js.
 I've used a set of reports that are included in this sample that depend on the Foodmart Sample dataset that is provided in the standard trial installation of JasperServer Professional 6.0.
 
-Essentially this is a demo site (Fresh Delivery) with a set of reports integrated within. It runs form a WebServer since it only uses HTML and Javascript so there is no specific requirements for the webserver.
+Essentially this is a demo app (Fresh Delivery) with a set of reports integrated within. It runs form a WebServer since it only uses HTML and Javascript so there is no specific requirements for the webserver. If you would like to use a hosted version of this application, please visit: <a href="http://www.jaspersoft.com/embedded-bi-in-action">http://www.jaspersoft.com/embedded-bi-in-action</a>
 
 ##Install the Sample
 ###Requirements / Dependencies
