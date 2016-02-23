@@ -4,6 +4,7 @@ FreshDeliveryDemo
 This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com) using the [Visualize.js](http://community.jaspersoft.com/project/visualizejs) framework
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
+
 Live Demo: <a href="http://www.jaspersoft.com/embedded-bi-in-action">http://www.jaspersoft.com/embedded-bi-in-action</a>
 
 Author(s): Daniel Petzold, Mariano Luna, Peter Mcrae
