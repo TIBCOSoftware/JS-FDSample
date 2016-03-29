@@ -10,6 +10,9 @@ var pageConfig = {
 	params: {}
 };
 
+//load default Brand Name
+$('#BrandName1').html("Hermanos");
+
 //load the config and get the script for the configured server instance
 $.getJSON('./config/config.json', function(data) {
 	$.getScript(data.visualizeJS, function() {
