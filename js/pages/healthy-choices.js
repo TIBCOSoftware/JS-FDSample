@@ -12,6 +12,11 @@ var pageConfig = {
 		'4': 'High'
 	}
 };
+var defProductName = 'Red Pepper';
+var defGroup = 'Fresh Vegetables';
+var defAvailability = 'Limited';
+var defPricePerUnit = '$ 2.88';
+var defUnitsPerCase = '14';
 
 //load the config and get the script for the configured server instance
 $.getJSON('./config/config.json', function(data) {
@@ -31,6 +36,12 @@ function initPage(jrsConfig) {
 
 //load the dashboard
 function loadDashboard(v) {
+	$('#ImageLink').html('<img src="img/products/Ebony ' + defProductName+ '.jpg" height="200px">');
+	$('#ProductNameSimple').html(defProductName);
+	$('#Group').html(defGroup);
+	$('#AvailSupply').html(defAvailability);
+	$('#Price').html(defPricePerUnit);
+	$('#UnitsCase').html(defUnitsPerCase);
 	window.masterReport = v.report({
 		resource: pageConfig.masterReport.uri,
 		container: pageConfig.masterReport.container,
