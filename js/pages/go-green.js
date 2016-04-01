@@ -14,6 +14,12 @@ var pageConfig = {
 	params: {}
 };
 
+//var mapReport;
+//var masterReport;
+//var slaveReport;
+var defCity = 'San Diego';
+var defDepartment = 'Produce';
+
 //load the config and get the script for the configured server instance
 $.getJSON('./config/config.json', function(data) {
 	$.getScript(data.visualizeJS, function() {
@@ -33,6 +39,9 @@ function initPage(jrsConfig) {
 }
 
 function loadDashboard(v) {
+	$('#DepartmentName').html(defDepartment);
+	$('#CityName1').html(defCity);
+	$('#CityName2').html(defCity);
 	window.masterReport = v.report({
 		resource: pageConfig.masterReport.uri,
 		container: pageConfig.masterReport.container,
@@ -41,7 +50,8 @@ function loadDashboard(v) {
 				"click": function(evt, link) {
 					pageConfig.params.department = [link.parameters.department_name];
 					//todo: should be able to bind the pageconfig.params object to the text
-					$('#BrandName1').html(link.parameters.brand_name);
+					$('#DepartmentName').html(link.parameters.department_name);
+
 					refreshSlave();
 
 				}
@@ -92,6 +102,9 @@ function changeChartCity(city) {
 	pageConfig.params.city_name = [city];
 	refreshMaster();
 	refreshSlave();
+	$('#CityName1').html(city);
+	$('#CityName2').html(city);
+
 }
 
 function resetFilters() {
