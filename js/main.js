@@ -103,7 +103,7 @@ $(function() {
 	});
 
 	//handle additional login clicks
-	$('a[href="#login"').on('click', function(e){
+	$('a[href="#login"]').on('click', function(e){
 		e.preventDefault();
 		window.destURL = $(this).attr('data-target');
 		//fire the modal 
