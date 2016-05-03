@@ -24,12 +24,12 @@ Essentially this is a demo app (Fresh Delivery) with a set of reports integrated
 
 ##Install the Sample
 ###Requirements / Dependencies
-- A [JasperReports Server v6.0](http://www.jaspersoft.com/three-ways-test-drive-jaspersoft-bi-software) installed
+- A [JasperReports Server v6+](http://www.jaspersoft.com/three-ways-test-drive-jaspersoft-bi-software) installed
 - A web server to host this sample. I use Apache HTTPD but you can use any that you like.
 
 ### Installation Steps
 1. Unzip the release (or clone the repo) into your web server's web root. The instructions assume that this location is called 'FRESHDELIVERY_PATH'
-1. Import /JapserServerResources/freshDelivery-RepositoryExport.zip to your JasperServer 6.0 Pro instance. [Check this link if you do not know how.](http://community.jaspersoft.com/documentation/jasperreports-server-administration-guide-beta/import-and-export-through-web-ui#import-export_2353750880_1044705) and if you like the command line go to your JRS buildomatic folder and just `./js-import.sh --input-zip FRESHDELIVERY_PATH/JasperServerResources/freshDelivery-RepositoryExport.zip`
+1. Import /JapserServerResources/repoExport.zip to your JasperReportsServer 6+ Pro instance. [Check this link if you do not know how.](http://community.jaspersoft.com/documentation/jasperreports-server-administration-guide-beta/import-and-export-through-web-ui#import-export_2353750880_1044705) and if you like the command line go to your JRS buildomatic folder and just `./js-import.sh --input-zip FRESHDELIVERY_PATH/JasperServerResources/repoExport.zip`
 1. Modify your jasperreports.properties to allow JavaScript functions in the HTML5 Charting Library
 	1. Locate your jasperreports.properties in JasperReportsServer  `<tomcat-home>/webapps/jasperserver-pro/WEB-INF/classes/jasperreports.properties`
 	1. Add this line at the end of the file:  `com.jaspersoft.jasperreports.highcharts.function.properties.allowed=true`
