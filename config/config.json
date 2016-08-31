@@ -1,6 +1,6 @@
 {
-    "visualizeJS": "http://visualizejsdemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
-    "jrsHostname": "http://visualizejsdemo.jaspersoft.com/jasperserver-pro/flow.html",
+    "visualizeJS": "//visualizejsdemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
+    "jrsHostname": "//visualizejsdemo.jaspersoft.com/jasperserver-pro/flow.html",
     "users": {
         "CaliforniaAdmin": {
             "password": "CaliforniaAdmin", 
