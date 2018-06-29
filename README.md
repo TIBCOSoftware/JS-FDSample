@@ -5,7 +5,7 @@ This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
 
-Live Demo: <a https://www.jaspersoft.com/fresh-delivery">https://www.jaspersoft.com/fresh-delivery</a>
+Live Demo: <a "https://www.jaspersoft.com/fresh-delivery">https://www.jaspersoft.com/fresh-delivery</a>
 
 Author(s): Daniel Petzold, Sherman Wood, Mariano Luna, Peter Mcrae
 
@@ -43,7 +43,7 @@ $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/healthy-
 1. Go to http://<your-server>/JS-FDSample/ 
 1. Enjoy!!!
 
-####How to turn off the chart selector icon for specific charts in JRS
+###How to turn off the chart selector icon for specific charts in JRS
 - In JSS go to the main properties panel and on the Property Expressions select the "…” button.
 - Select Add and for the Property Name use: com.jaspersoft.jasperreports.highcharts.interactive
 - Set the value to `true`. Do not select “use an Expression” unless you are going to use one for setting this property.
