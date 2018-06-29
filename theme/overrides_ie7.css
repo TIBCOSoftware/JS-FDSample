@@ -1,0 +1,29 @@
+/*
+overrides_ie7.css - contains overrides for Internet Explorer version 7
+ 
+All IE7 styles have been moved to individual core stylesheets. 
+IE7-specific styles are denoted with the following comment after each individual attribute and value: 
+*/
+
+/* IE7 */
+
+/* This file is still fully functional. You may add your IE7 styles here as you have in previous versions */
+
+
+/* The next two rules are the fix to the IE7-8 bug when you define a transparent
+background and a opacity via filter rule -- IE just removed this element away from the page.
+The solution to keep the background and play with opacity */
+
+#designer #mainTableContainer .overlay {
+    background-color: #C0C0C0;
+    border:1px solid #333333;
+    margin:-1px 0 0 -1px;
+    filter: alpha(opacity=0);
+}
+
+#designer #mainTableContainer .overlay.over,
+#designer #mainTableContainer .overlay.pressed,
+#designer #mainTableContainer .overlay.selected {
+    filter: alpha(opacity=30);
+}
+

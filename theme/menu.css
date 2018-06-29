@@ -1,0 +1,4 @@
+.menu.vertical .leaf.active > p.wrap.button {
+    background-image: url(images/lists_sprite.png);
+    background-position: 7px -301px;
+}

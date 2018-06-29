@@ -19,15 +19,27 @@
               <li><a href="./index.html" style="cursor: pointer;">Home</a></li>
               <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Our Products <span class="caret"></span>
+                    Sales and Inventory Views<span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
                       <li><a href="./top-sellers.html" style="cursor: pointer;">Top Sellers</a></li>
                       <li><a href="./healthy-choices.html" style="cursor: pointer;">Healthy Choices</a></li>
                       <li><a href="./go-green.html" style="cursor: pointer;">Go Green</a></li>
+                      <li><a href="./viewDashboard.html?inventory" style="cursor: pointer;">Inventory Dashboard</a></li>
                   </ul>
               </li>
-	      <li><a href="https://github.com/TIBCOSoftware/JS-FDSample/raw/master/doc/FreshDeliveryDemoGuide.pdf" style="cursor: pointer;">Demo Guide</a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Create <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="./newAdhocView.html" style="cursor: pointer;">Create Visualization/Report</a></li>
+                      <li><a href="./newDashboard.html" style="cursor: pointer;">Create Dashboard</a></li>
+                      <li><a href="./browseCreated.html" style="cursor: pointer;">View Community Created Content!</a></li>
+                        <!-- li><a href="./admin-blank.html" style="cursor: pointer;" >New Dashboard (blank)</a></li -->
+                  </ul>
+              </li>
+			  <li><a href="https://github.com/TIBCOSoftware/JS-FDSample/raw/master/doc/FreshDeliveryDemoGuide.pdf" style="cursor: pointer;">Demo Guide</a></li>
               {{#if admin}} 
                 <li class="dropdown">
                     <a id="adminlinks" class="dropdown-toggle" data-toggle="dropdown" href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
@@ -35,10 +47,6 @@
                     </a>
                     <ul class="dropdown-menu">
                     	<li><a href="./admin-internal-manager.html" style="cursor: pointer;">Manager Metrics</a></li>
-                        <li><a href="./admin.html?payroll" style="cursor: pointer;">Employee Payroll</a></li>
-                        <li><a href="./admin.html?inventory" style="cursor: pointer;">Inventory Dashboard</a></li>
-                        <li><a href="./admin-shipping.html" style="cursor: pointer;">Create/View</a></li>
-                        <li><a href="./admin-blank.html" style="cursor: pointer;" >New Dashboard (blank)</a></li>
                     </ul>
                 </li>
               {{/if}}

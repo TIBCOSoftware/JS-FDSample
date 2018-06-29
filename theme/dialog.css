@@ -1,0 +1,127 @@
+.dialog > .content > .body {
+    overflow: auto;
+    padding: 18px;
+    position: relative;
+}
+
+.panel.dialog {
+    position: absolute;
+}
+
+.panel.dialog > .content > .header > .title {
+    white-space: nowrap;
+    overflow:hidden;
+    float:none;
+    height: 28px;
+}
+
+.dialog.overlay {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    -moz-box-shadow: 0 0 4px 4px rgba(51,51,51,0.5);
+    -webkit-box-shadow: 0 0 4px 4px rgba(51,51,51,0.5);
+    box-shadow: 0 0 4px 4px rgba(51,51,51,0.5);
+    float: left;
+    /* border:1px solid #d3d5d6; */ /* DELETE */
+}
+
+.dialog.overlay > .content {
+    margin-bottom:0;
+    z-index:1;
+}
+
+.dialog.overlay > .content > .header {
+    position: relative;
+    border-bottom:1px solid #c5c5c5;
+    z-index:1;
+    *margin-right:0; /* IE7 */
+}
+
+.dialog.overlay > .content > .header > .title {
+    line-height: 28px;
+    margin-left: 12px;
+}
+
+.dialog.overlay .header .icon {
+    height:35px;
+}
+
+.dialog.overlay > .sizer {
+    display: none;
+}
+
+.dialog > .content > .footer {
+    background-repeat: no-repeat;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 37px;
+    padding: 0px 20px;
+	border-top: none;
+}
+
+/* Only resizable dialogs may have horizontal top border on footer. See ticket #37435 */
+.dialog.ui-resizable > .content > .footer {
+	border-top: 1px solid #e3e3e3;
+}
+
+.dialog.overlay > .content > .footer {
+    /* border-width: 0; */ /* all footers can have a top border */
+    /* height: 34px; */ /* DELETE if no problems, reg foots is 37px tall which seems ok */
+    /* padding: 3px 20px; */
+
+    /* padding: 3px; */ /* DELETE IF NO PROBLEMS. LOTS OF CONFLICTING STYLES! */
+
+    position: relative;
+}
+
+.dialog.overlay > .content > .header {
+    background-color: #e3e3e3; /* OLD THEME - background color needs to be white so there are no problems with subheaders */
+    border-bottom: 1px solid #fff;
+}
+
+.dialog > .content > .subcontainer {
+    padding: 10px;
+}
+
+.dialog.overlay.sizeable>.content {
+    position: static;
+}
+
+.dialog.overlay>.content>.footer {
+    border-width: 1px;
+}
+
+.dialog.alertDialog {
+    width: 350px;
+    max-height: 600px;
+}
+
+.dialog.alertDialog > .content > .subcontainer {
+    overflow: auto;
+}
+
+/* this is temporary style, need to remove when have embeddable styles for buttons */
+.dialog.alertDialog > .content > .footer > button {
+    margin-top: 4px;
+    height: 28px;
+}
+
+.dialog.confirmationDialog {
+    width: 350px;
+}
+
+.panel.dialog.overlay.ui-resizable .subcontainer .treeBox > .content > .body {
+	height: 100%;
+	box-sizing: border-box;
+}
+.panel.dialog.overlay.ui-resizable .subcontainer .treeBox > .content {
+	height: 100%;
+}
+
+.reportChooserDialog .control.searchLockup .wrap input[type=text] {
+    padding-right: 50px;
+    width: 100%;
+    margin-right: 0;
+}

@@ -1,0 +1,54 @@
+.webPageView {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.webPageView.loading {
+    background-image: url("images/wait_animation_large.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.webPageView > .externalUrlIframe {
+    border: none;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+.webPageView > .externalUrlLoadError {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.webPageView.hideLoadingAnimation {
+    background-image: none !important;
+}
+
+.webPageView.invisible {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.webPageView.touchScroll {
+    display: inline-block;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+.webPageView.touchScroll iframe {
+    display: block;
+}

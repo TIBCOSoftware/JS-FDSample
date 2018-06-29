@@ -1,0 +1,35 @@
+/*
+forPrint
+*/
+
+@page {
+	margin:0;
+}
+
+.hidden,#footer,#metaLinks,.footer	{
+	display:none;
+}
+
+.column .header {
+	display:none;
+}
+
+.body, #sizeGuide, #dashboardFrameParent,.column.primary,.content {
+	position: static;
+}
+/*
+.componentContainer.iframe[style] {
+	height:100% !important;
+	width:100% !important;
+}
+*/
+.column.decorated > .content > .body {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	top: 0;
+}
+
+.column.simple > .content > .body, .column.decorated > .content > .body {
+	overflow: visible;
+}

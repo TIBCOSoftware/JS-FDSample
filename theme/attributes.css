@@ -1,0 +1,484 @@
+#properties .control.tabSet.attributesAnchor {
+    height: 30px;
+}
+
+.baseTableContainer{
+    border-bottom: 1px solid #e8e8e8;
+    /* min-width: 720px; */
+}
+
+.attributesViewer .baseTableContainer.tenant,
+.attributesViewer .baseTableContainer.user {
+    border: 1px solid #e8e8e8;
+    margin: -8px 14px 20px 14px;
+}
+
+.attributesDesigner .baseTableContainer.tenant,
+.attributesDesigner .baseTableContainer.user {
+    margin-top: 23px;
+}
+
+.baseTable {
+    background: #fff;
+    /*     min-width: 700px; */
+}
+
+.baseTable .table-row {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.baseTable .error > .message.warning {
+    max-width: 310px;
+}
+
+.baseTable > .thead {
+    background-color: #edf2f8;
+    border-bottom: none;
+}
+
+.baseTable > .thead div.table-column,
+.baseTable > .tbody div.table-column {
+    height: 28px;
+    font-weight: normal;
+    box-sizing: border-box;
+    /* border-bottom: 1px solid #e8e8e8; */
+    text-align: left;
+    vertical-align: middle;
+    min-width: 50px;
+}
+
+.baseTable > .thead div.table-column {
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #e3e9ef;
+}
+
+.baseTable .table-row:last-of-type {
+    border-bottom: 1px solid #fff;
+}
+
+.baseTable div.table-column.actions {
+    min-width: 70px;
+}
+
+#properties .baseTable div.table-column.actions,
+#settings .baseTable div.table-column.actions {
+    min-width: 60px;
+    position: absolute; /* prevents buttons from wrapping on narrow browser widths */
+    right: 3px;
+}
+
+.baseTable div.table-column p,
+.baseTable div.table-column input,
+.baseTable div.table-column select {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.baseTable div.table-column.actions button {
+    margin: 6px 0 0 8px;
+}
+
+.baseTable .button.simple.action.over,
+.baseTable .button.simple.action.pressed {
+    background-color: #ffffff;
+}
+
+.addNewItem,
+a.addNewItem {
+    border: 1px solid #2881bb;
+    color: #2881bb;
+    margin: 6px 6px 0 0;
+    padding: 6px 10px;
+    position: absolute;
+    right: 0;
+}
+
+.readOnly .addNewItem,
+.readOnly .actions,
+.readOnly .filtersContainer {
+    display: none;
+}
+
+.filtersContainer {
+    margin: 0 5px -25px;
+    position: absolute;
+    top: -4px;
+    z-index: 1;
+}
+
+.filtersContainer .filterItems {
+    display: inline-block;
+    width: 105px;
+}
+
+.descriptionArea textarea {
+    margin-top: 5px;
+}
+
+/* editMode css */
+.baseTable div.editMode {
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.baseTable div.editMode div.actions {
+    margin-top: 12px;
+    float: right;
+}
+
+.baseTable div.editMode span.permission,
+.baseTable div.editMode span.name,
+.baseTable div.editMode span.value {
+    float: left;
+}
+
+.baseTable div.editMode span.name,
+.baseTable div.editMode span.value,
+.baseTable div.editMode span.firstInputGroup {
+    display: inline-block;
+    min-height: 65px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.baseTable div.editMode span.permission {
+    display: block;
+    position:static;
+    height:100%; background-color:#fff;
+}
+
+.baseTable div.editMode span.name,
+.baseTable div.editMode span.value {
+    float: left;
+    width: 50%;
+}
+
+.baseTable div.editMode span.name {
+    padding-right: 24px;
+}
+
+.baseTable div.editMode span.value {
+    padding-right: 0;
+}
+
+.baseTable div.editMode span.name input,
+.baseTable div.editMode span.value input,
+.baseTable div.editMode label.descriptionArea input {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.baseTable div.editMode span.name input,
+.baseTable div.editMode span.value input {
+    width: 100%;
+}
+
+.baseTable div.editMode label.descriptionArea,
+.baseTable div.editMode label.descriptionArea input {
+    width: 100%;
+}
+
+.baseTable div.editMode span.permission select {
+    width: auto;
+    min-width: 110px;
+    margin-right: 32px;
+}
+
+.baseTable div.editMode div.secure {
+    width: auto;
+    margin-top: 4px;
+    float: left;
+}
+
+.baseTable .secure.editMode.control {
+    padding: 6px 0 0 0;
+}
+
+#manage_orgs .baseTable .secure.editMode.control {
+    padding-top: 15px;
+    padding-top: 13px \9;
+}
+
+.baseTable div.secure input {
+    display: block;
+    margin: 8px auto;
+    margin-top: 5px \9;
+}
+
+.baseTable div.editMode div.secure input {
+    float: left;
+    display: inline;
+    margin: 0 5px 0 0;
+    left: 0;
+    top: 0;
+    position: relative;
+}
+
+.baseTable div.editMode div.secure span {
+    display: block;
+    float: left;
+    margin-top: 3px \9;
+}
+
+/* CONFIRMATION DIALOG  AND TOOLTIP*/
+
+.confirmationDialog .welcome {
+    word-wrap: break-word;
+}
+
+.tooltip p.message {
+    max-width: 500px;
+    word-wrap: break-word;
+    white-space: pre;
+}
+
+.table-wrapper {
+    height: 100px; /*this will define the height of the box*/
+}
+
+
+.table-row {
+    height: 100%;
+    width: 100%;
+}
+
+.table-row:after {
+    /* clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.table-row .table-column {
+    float: left;
+    height: 100%;
+}
+
+
+
+    /** Server attributes **/
+#serverAttributes #settings {
+    min-width: 675px;
+}
+
+.server .table-row .table-column.name {
+    width: 30%;
+}
+
+.server .table-row .table-column.value {
+    width: 30%;
+}
+
+.server .table-row .table-column.permission {
+    width: 15%;
+}
+
+.server .table-row .table-column.secure {
+    text-align: center;
+    width: 15%;
+}
+
+.server .table-row .table-column.inherited,
+.server .table-row .table-column.actions {
+    width: 10%;
+}
+
+.server .table-row .secure.editMode.control {
+    padding-top: 16px;
+    padding-top: 13px \9;
+}
+
+/** End of server attributes **/
+
+/** User attributes **/
+
+.user .table-row .table-column.name {
+    width: 30%;
+}
+
+.user .table-row .table-column.name.viewer {
+    width: 30%;
+}
+
+.user .table-row .table-column.value {
+    width: 25%;
+}
+
+.user .table-row .table-column.secure {
+    text-align: center;
+    width: 15%;
+}
+
+.user .table-row .table-column.inherited {
+    width: 17%;
+}
+
+.user .table-row .table-column.inherited.viewer {
+    width: 20%;
+}
+
+.user .table-row .table-column.actions {
+    width: 13%;
+}
+
+.attributesViewer .user .table-row .table-column.name {
+    width: 30%;
+}
+
+.attributesViewer .user .table-row .table-column.value {
+    width: 30%;
+}
+
+.attributesViewer .user .table-row .table-column.secure {
+    width: 20%
+}
+
+/** End of user attributes **/
+
+
+/** Tenant attributes **/
+
+.tenant .table-row .table-column.name.viewer,
+.tenant .table-row .table-column.value.viewer {
+    width: 23%;
+}
+
+.tenant .table-row .table-column.secure.viewer {
+    text-align: left;
+    width: 15%;
+}
+
+.tenant .table-row .table-column.secure.viewer .item {
+    text-align: left;
+}
+
+.tenant .table-row .table-column.secure .item {
+    text-align: center;
+}
+
+.tenant .table-row .table-column.secure {
+    text-align: center;
+    width: 15%;
+}
+
+.tenant .table-row .table-column.actions {
+    width: 12%;
+}
+
+.tenant .table-row .table-column.permission.viewer {
+    width: 25%;
+}
+
+.tenant .table-row .table-column.permission {
+    width: 20%;
+}
+
+.tenant .table-row .table-column.name {
+    width: 20%;
+}
+
+.tenant .table-row .table-column.value {
+    width: 20%;
+}
+
+.tenant .table-row .table-column.inherited {
+    width: 13%;
+}
+
+/** End of tenant attributes **/
+
+.table-row .table-column .item {
+    /* height: 50%; */ /* I'm not sure what this does */
+}
+
+.table-row .table-column.name .item,
+.table-row .table-column.value .item,
+.thead.table-row .table-column.secure .item,
+.table-row .table-column.owner .item,
+.thead.table-row .table-column.inherited .item,
+.tbody .table-row .table-column.inherited .item,
+.table-row .table-column.permission .item {
+    vertical-align: middle;
+    line-height: 28px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.thead.table-row .table-column.secure.viewer .item {
+    text-align: left;
+}
+
+.tbody .table-row .table-column.secure .item {
+    text-align: center;
+    line-height: 28px;
+}
+
+
+.tbody .table-row .table-column.secure.viewer .item {
+    text-align: left;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.tbody .table-row .table-column.inherited .item {
+    text-align: left;
+    line-height: 28px;
+}
+
+.tbody .table-row .table-column.actions {
+    line-height: 0;
+}
+
+.table-row .table-column.permission {
+    padding: 0 5px;
+}
+
+.table-row .table-column.permission .item {
+    margin: 0;
+}
+
+.tbody .table-row  .table-column.permission .item {
+    margin-top: 6px;
+}
+
+.tbody .table-row .table-column.name .item p,
+.tbody .table-row .table-column.value .item p {
+    white-space: pre;
+}
+
+.buttonsContainer .action {
+    margin-top: 4px;
+}
+
+/* used in one place for dynamic styling. Because of higher priority of default class !important is required */
+/* (in case of overriding default without !important, class will be very long, which is inconvenient to use in code) */
+.actionButtons {
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.emptyTemplateMessage {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.confirmationDialog .subcontainer{
+    word-wrap: break-word;
+}
+
+/* Reset settings styles */
+.resetSettingsTable .table-row .table-column.name,
+.resetSettingsTable .table-row .table-column.value {
+    width: 45%;
+}
+
+.resetSettingsTable .table-row .table-column.actions {
+    width: 10%;
+}
+
+.resetSettingsTable .actionButtons {
+    width: 28px;
+}

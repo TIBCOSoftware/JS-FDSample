@@ -1,0 +1,860 @@
+/* tables */
+
+
+/*
+
+UNDERSTANDING THE CLASS ATTRIBUTES FOR DATA TABLES
+
+1). Type Selectors: identify the kind of information displayed in a cell or row.
+	- label
+	  - cell contains a string that identifies other cells
+	  - only can be used on TH cells
+	- group
+	  - cell contains string that identifies a group
+	  - always occurs with 'label'
+	  - can NEVER occur with 'member'
+	- member
+	  - cell contains string that identifies a group member
+	  - always occurs with 'label'
+	  - can NEVER occur with 'group'
+	- measure
+	  - cell contains string that identifies table values
+	  - always occurs with 'label'
+	- value
+	  - cell contains data
+	  - can NEVER occur with 'group' || 'label' || 'member'
+	- numeric
+	  - modifies 'value'
+	  - indicates a cell with numeric, as opposed to string, values
+	- detail
+	  - cell contains data for a single specific record instance
+	  - ALWAYS occurs with 'value'
+	  - currently, not used in crosstab implementation, only in table, here for completeness
+	- summary
+	  - cell contains data representing a statistic summarizing a set of detail values
+	  - ALWAYS occurs with 'value'
+	- rowSummary
+	  - can occur with both 'label' and 'value'
+	    - when appears with 'value' indicates that cell contains data that is an aggregation of the cells to its left within its group
+	    - when appears with 'label' indicates that cell indentifies the cells in the column below it
+	  - can occur with 'columnSummary' to indicate a third summary case
+	- columnSummary
+	  - can occur with both 'label' and 'value'
+	    - when appears with 'value' indicates that cell contains data that is an aggregation of the cells above it within its group
+	    - when appears with 'label' indicates that cell indentifies the cells in it row
+	  - can occur with 'rowSummary' to indicate a third summary case
+	- grand
+	  - cell contains a label or data that applies to the entire table
+	- columnSummaries
+	  - only used on tr elements
+	  - identifies a row that contains some columnSummary cells
+
+2). Hierarchical Selectors: identify a cell's coordinates within the table's row and column axis
+	- rowCondition_[1,2,3]
+	  - indicates that a cell's position within the crosstab's row hierarchy
+	  - said hierarchy created/defined by the groups assigned to the crosstab's row axis
+	  - iterator suffix repeats every fourth instance
+	- columnCondition_[1,2,3]
+	  - indicates that a cell's position within the crosstab's column hierarchy
+	  - said hierarchy created/defined by the groups assigned to the crosstab's column axis
+	  - iterator suffix repeats every fourth instance
+	- rowOrder_[first,last]
+	  - identifies cells associated with the first and last members, in terms of sort order, for a given row group
+	- columnOrder_[first,last]
+	  - identifies cells associated with the first and last members, in terms of sort order, for a given column group
+	- inner
+	  - identifies all label cells, regardless of sub-type, that occupy the visual boundary between labels and value cells
+	  - NEVER occurs with 'value'
+	- outer
+	  - identifies all label cells, regardless of sub-type, that occupy boundary between labels and the visual edge of the table
+	  - NEVER occurs with 'value'
+
+3). Interactive Selectors: identify the display state of a member and its children
+	- open
+	  - the member's children are visible
+	  - ALWAYS occurs with 'label' && 'member'
+	  - NEVER occurs with 'inner'
+	- closed
+	  - the member's children are NOT visible
+	  - ALWAYS occurs with 'label' && 'member'
+	  - NEVER occurs with 'inner'
+
+4). Notes and Rules of Thumb for table construction
+	- The first cell in the column containing .measure.label cells has the additional selector .first
+	- EVERY cell in the row defined in the tfoot section has the selector 'grand' assigned as well as its logical and hierarchical selector
+
+*/
+
+/* GENERAL TABLE METRICS */
+
+.data.table {
+	margin-bottom: 20px;
+	border: none;
+	border-collapse: collapse;
+	border-color: d4d4d4;
+}
+
+.data.table .column,
+.data.table .row {
+	position:static;
+}
+
+.data.table .wrap {
+    color: #555;
+	display: block;
+}
+
+.data.table a {
+	text-decoration: none;
+}
+
+.data.table a:active {
+	text-decoration: underline;
+}
+
+.data.table.crosstab td.value span.link {
+	cursor: pointer;
+}
+
+.data.table.crosstab td.value.blank span.link {
+	text-decoration: none;
+	cursor: default;
+}
+
+.data.table.crosstab td.value.odd,
+.data.table.crosstab .member.inner.odd,
+.data.table.crosstab .measure.inner.odd {
+	background-color: #f4f4f4;
+}
+
+.data.table .label,
+.value.rowSummary,
+.value.columnSummary,
+.member .label,
+.grand.columnSummaries .value,
+.memberSummaries .value,
+.group.member.label {
+	font-weight: bold;
+}
+
+.data.table .label.member.inner {
+	font-weight: normal;
+}
+
+.label.group.row,
+.label.grand.rowSummary {
+	vertical-align: bottom;
+}
+
+.data.table .label.member {
+	vertical-align: top;
+	/*added so that browser doesn't add selection border'*/
+	-moz-user-select:none;
+}
+
+.data.table td,
+#designer #mainTableContainer span.labelOverlay,
+.label.measure {
+	height:25px;
+	vertical-align: middle;
+}
+
+#designer #mainTableContainer span.labelOverlay {
+	line-height:25px; /*set to same value as object height */
+}
+
+#tableDetails tr:first-child.transparent>.label {
+	border-top:1px solid #fff;
+}
+
+#tableDetails tr:last-child.transparent>.value {
+	border-bottom:1px solid #fff;
+}
+
+.data.table .value,
+.data.table .label {
+	/* padding:0.5em 0; */
+	height: 22px;
+	border-width:1px;
+	border-style:solid;
+	border-top: none;
+	border-bottom: none;
+	padding-left: 5px;
+	padding-right:5px;
+	vertical-align: middle;
+}
+
+.data.table.crosstab .value,
+.data.table.crosstab .label,
+.data.table.crosstab .member {
+	padding:0.3em 1em;
+}
+
+.group .label,
+.value.column,
+.value.row,
+.label.column {
+	border: none;
+	height: auto;
+	right: auto;
+	overflow: auto;
+	left: auto;
+	top:auto;
+	bottom: auto;
+	position:relative;
+}
+
+.column.labels .label.spacer {
+	background-image: url(images/spacer.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.data.table.crosstab .value,
+.data.table .value.numeric,
+.data.table .label.numeric,
+.label.columnCondition_1,
+.label.columnCondition_2,
+.label.columnCondition_3,
+.label.member.columnCondition_1,
+.label.grand,
+.label.columnSummary,
+.label.rowSummary {
+	text-align: right;
+}
+
+.label,
+.label.member,
+.label.measure,
+.label.rowCondition_1,
+.label.rowCondition_2,
+.label.rowCondition_3 {
+	text-align:left;
+}
+
+
+.measure.table {
+	width:100%;
+}
+
+.overlay {
+	left:0px;
+}
+
+.overlay.header {
+	border:none;
+}
+
+.overlay .member.labels .label,
+.overlay .member.footers .label {
+	background-color: transparent;
+}
+
+/* SHARED COSMETIC ATTRIBUTES */
+
+.data.table .label.group .wrap,
+.data.table .label.measure .wrap,
+.data.table .label.group abbr,
+.data.table .label.measure abbr {
+	color:#217EB5;
+}
+
+.data.table .label.group,
+.data.table .label.measure,
+.data.table .stripe .label.group,
+.data.table .stripe .label.measure,
+.data.table .label.member,
+.data.table .stripe .label.member,
+.data.table .label.rowSummary,
+.data.table .stripe .label.rowSummary,
+tfoot .grand.columnSummary,
+tfoot .measure.label {
+	background-color: #fff;
+}
+
+
+.label.member,
+.label.group {
+	white-space: nowrap;
+}
+
+.label.member .wrap {
+	display: inline-block;
+	position: relative;
+	top:2px;
+}
+
+.label.member .wrap.inner {
+	top:0;
+}
+
+.wrapper.table .caption .placeholder {
+	text-align:center;
+	vertical-align: middle;
+}
+
+.data.table thead th {
+	vertical-align: bottom;
+}
+
+.data.table {
+	border-width: 0;
+	border-bottom-width: 1px;
+	border-style: solid;
+}
+
+.data.table .label {
+	color: #555555;
+}
+
+.data.table .labels .label,
+.data.table thead .rowCondition_1,
+.data.table thead .rowCondition_2,
+.data.table thead .rowCondition_3,
+.data.table thead .inner,
+.label.rowSummary.inner,
+.label.columnSummary,
+.label.grand.rowSummary,
+.label.member.rowCondition_2,
+.label.member.rowCondition_3 {
+	border-bottom-width:1px;
+	border-bottom-style: solid;
+}
+
+.data.table .placeholder td:first-child {
+	background-color:#d9e4f1;
+	border:1px solid #d4d4d4;
+	*border-top:1px solid #c0c0c0; /* IE7 */
+	/* different border color for IE7 because it doesn't support :first-child - this color looks less intrusive */
+}
+
+.record.first .value,
+.record.first .label,
+.memberSummaries .value,
+.columnSummary {
+	border-top-width:1px;
+	border-top-style:solid;
+}
+
+.label.member.outer.rowCondition_1,
+.total,
+.total.label.measure,
+.placeholder.member.labels .label,
+.rowOrder_last,
+.rowOrder_last.columnOrder_last,
+.grand.columnSummary.rowSummary {
+	border-bottom-width:1px;
+	border-bottom-style: solid;
+	border-top-width:1px;
+	border-top-style:solid;
+}
+
+.placeholder .label,
+.memberSummaries .value {
+	background-color: #fff;
+	border-color:transparent;
+}
+
+.memberSummaries .label,
+.record .label,
+.label.measure,
+.rowSummary,
+.columnSummaries .label,
+.label.rowCondition_1,
+.label.group.columnCondition_1,
+.label.group.columnCondition_2,
+.label.group.columnCondition_3,
+.label.member.columnCondition_2,
+.label.member.columnCondition_3,
+.grand.columnSummary.rowSummary.rowOrder_last.columnOrder_last.bottom,
+.inner.columnSummary,
+.label.grand {
+	border-right-width:1px;
+	border-right-style: solid;
+}
+
+
+
+.grand.columnSummary.bottom,
+.grand.columnSummary,
+.grand.columnSummary.rowSummary.bottom,
+.grand.columnSummary.label,
+.grand .measure.label,
+.grand.columnSummaries .value {
+	border-top-style: double;
+	border-top-width: 4px;
+}
+
+
+.data.table .labels .group,
+.data.table .labels .member,
+.data.table .labels .rowSummary,
+.data.table.crosstab .memberSummaries .value,
+.label.member.inner.rowOrder_last {
+	border-top:none;
+}
+
+.label.grand.columnSummary,
+.grand.columnSummary.bottom {
+	border-bottom:none;
+}
+
+
+.memberSummaries .label.outer,
+.label.column.member.inner,
+.columnSummaries .label.row.member,
+.grand.rowSummary.columnSummary,
+.grand.rowSummary,
+.columnSummaries .label.outer,
+.grand.columnSummary.rowSummary.rowOrder_last.columnOrder_last,
+.grand.columnSummary.columnOrder_last {
+	border-right: none;
+}
+
+
+.colOverflow,
+.rowOverflow {
+	border:1px dotted #ccc;
+	background-color: transparent !important;
+}
+
+.colOverflow {
+	border-top-width: 0;
+	border-bottom-width: 0;
+}
+
+.rowOverflow {
+	border-left-width: 0;
+	border-right-width: 0;
+}
+
+/* declarations that vary by selected style */
+
+/* default */
+
+.default>.color01 {
+	background-color: #666; 	/* text color */
+}
+
+.default>.color02 {
+	background-color: #d5dee8;	/* column titles background */
+}
+
+.default>.color03 {
+	background-color: #e7ecf2;	/* row groups background */
+}
+
+.default>.color04 {
+	background-color: #e3e9ef;	/* grid border color */
+}
+
+.default table td,
+.default table td .wrap,
+.default table th,
+.default .group.member.label {
+	border-color:#d4d4d4;
+}
+
+.default #canvasTable,
+.default .grand.columnSummary.rowSummary.bottom {
+	border-color:#d4d4d4;
+}
+
+.default .data.table .value {
+	cursor:default;
+
+}
+
+.default .data.table .transparent .label,
+.default .data.table .transparent .value {
+	border-color:#d4d4d4;
+	background-color:#f2f2f2;
+	border-top: 1px solid #d4d4d4;
+    color: #555555;
+}
+
+.default .data.table th.label,
+.default .data.table th.artificial {
+	/* button-like column labels to emulate crosstabs */
+	border-width: 1px;
+	border-style: solid;
+	border-color: #d4d4d4; /* custom color */
+	/* color 2 */
+	background-color: #d9e4f1; /* for non-css3 browsers */
+}
+
+.default .data.table .label.member.rowCondition_1 {
+	background-color: #fff; /* this is always white */
+}
+
+.default .column.labels .label,
+.default .grand.columnSummaries .value {
+	background-color: #d9e4f1;
+	border-color:#d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+    color: #555;
+}
+
+.default .data.table .odd .value {
+	background-color: #f4f4f4;
+}
+
+/* #analysisView */
+
+#analysisView #display>.primary>.content>.body>form {
+	margin:20px;
+}
+
+#analysisView table {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+#analysisView th,
+#analysisView td {
+	padding: 6px;
+	font-size: 13px;
+}
+
+#analysisView th p,
+#analysisView td p {
+	margin-top: 6px;
+	font-size: 11px;
+}
+
+#analysisView table .corner {
+	position: relative;
+}
+
+#analysisView th table {
+	border-spacing: 0;
+}
+
+#analysisView th table td,
+#analysisView th table th {
+	padding: 0;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+	#analysisView input.nav[type="image"],
+	#analysisView input.corner[type="image"] {
+		-webkit-border-radius:0;
+		-moz-border-radius:0;
+	}
+}
+
+th.column-heading-even,
+th.column-heading-odd,
+th.column-heading-span,
+th.corner-heading,
+th.corner-heading-right,
+th.row-heading-even,
+th.row-heading-span,
+th.column-heading-even-right,
+th.row-heading-even-right,
+th.column-heading-span-right,
+th.row-heading-span-right,
+th.property-heading {
+	background-color:#ccc;
+}
+
+th.corner-heading {
+	border-bottom:medium none;
+	border-right-style:none;
+	color:#033669;
+	padding-right:1px;
+	text-align:left;
+	vertical-align:middle;
+}
+
+.zoom {
+	padding-left:3px;
+	padding-right:2px;
+}
+
+th.heading-heading, td.property-name, th.column-heading-odd-right, th.row-heading-odd-right, th.row-heading-odd {
+	background-color:#eee;
+}
+
+td.cell-even {
+	background-color:#E9FFFD;
+}
+
+td.cell-even, td.cell-odd, td.cell-red, td.cell-yellow, td.cell-green, td.cell-rot, td.cell-gelb, td.cell-gruen, td.property-value, td.property-span {
+	color:#000000 !important;
+	font-size:11px !important;
+	text-align:right;
+}
+
+input.nav {
+	border:0 none;
+	height:14px;
+	width:14px;
+}
+
+input.corner {
+	border:0 none;
+	cursor:default;
+	height:14px;
+	width:14px;
+}
+
+th.heading-heading,
+th.column-heading-selected,
+th.column-heading-even,
+th.column-heading-odd,
+th.column-heading-span,
+th.column-heading-red,
+th.column-heading-green,
+th.column-heading-yellow,
+th.row-heading-red,
+th.row-heading-green,
+th.row-heading-yellow,
+th.column-heading-rot,
+th.column-heading-gruen,
+th.column-heading-gelb,
+th.row-heading-rot,
+th.row-heading-gruen,
+th.row-heading-gelb,
+th.row-heading-selected,
+th.row-heading-even,
+th.row-heading-odd,
+th.row-heading-span,
+th.row-heading-span {
+	color:#033669;
+	text-align:left;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+	#analysisView input.nav[type="image"],
+	#analysisView input.corner[type="image"] {
+		-webkit-border-radius:0;
+		-moz-border-radius:0;
+	}
+	/* fixes expand and contract icon border clipping on iPad */
+}
+
+#analysisView #displayFormTable,
+#analysisView #chartFormTable,
+#analysisView #printFormTable,
+#analysisView #saveasTable {
+	border:2px solid #666;
+	background-color: white;
+}
+
+#analysisView .xform-title,
+#analysisView .xform-close-button {
+	background-color: #ccc;
+}
+
+#analysisView .xform-input {
+	padding:4px 2px;
+	vertical-align:middle;
+}
+
+#analysisView .xform-both {
+	padding:4px 2px;
+}
+
+#analysisView .xform-both .xform-both {
+	padding:0;
+}
+
+#analysisView .xform-both select {
+	width:auto;
+	margin-right:3px;
+}
+
+#analysisView.drill table {
+	border-collapse: collapse;
+}
+
+
+#analysisView.drill .xtable-data,
+#analysisView.drill .xtable-heading {
+	border:1px solid #ccc;
+}
+
+/* OLAP Crosstab */
+
+#designer .OLAP #mainTableContainer {
+	left:0;
+	padding: 0;
+}
+
+#designer .OLAP #canvasTable {
+	top:0;
+}
+
+.OLAP .data.table td,
+.OLAP .data.table th {
+	height: 22px;
+	cursor:pointer;
+	padding: 3px 5px;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.olap th {
+	text-align: left;
+	font-weight: normal;
+}
+
+.olap th.level,
+.olap th.measure,
+.olap th.measure.level.column,
+.olap .total {
+	font-weight: bold;
+	color: #555555;
+}
+
+.olap th.measure.column {
+	font-weight: normal;
+}
+
+/* style for levels in columns */
+.OLAP .olap .column.level,
+.OLAP .olap .column.level.measure {
+	text-align: right;
+}
+
+.OLAP .olap .column.member,
+.OLAP .olap .measure.column {
+	text-align: center;
+}
+
+.OLAP .olap .member,
+.OLAP .olap .measure { /* style for members in columns */
+	color: #757575;
+}
+
+.OLAP .olap .level,
+.OLAP .olap .member.total {
+	color: #555555;
+}
+
+.OLAP .olap .member.column,
+.OLAP .olap .measure.column,
+.OLAP .olap .level.row {
+	background-color: #d9e4f1;
+}
+
+.OLAP .olap .member.all {
+	font-weight: bold;
+	color: #555555;
+}
+
+.OLAP .data.table .empty {
+	background-color: #f2f2f2;
+}
+
+.OLAP .olap .measure.column.level {
+	background-color: transparent;
+}
+
+.olap .icon {
+	background-image: url("images/sort_filter_icons_sprite.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+	height: 12px;
+	width: 14px;
+	*width:17px; /* IE7 */
+	top: 3px;
+	*top:1px; /* IE7 */
+}
+
+.olap .icon.filter.top,
+.olap .icon.filter.bottom {
+	width: 20px;
+}
+
+.olap .icon.natural {
+	background-position: 0 0;
+	visibility:hidden;
+	margin-left:-16px;
+}
+
+.olap .icon.ascending {
+	background-position: 0 0;
+}
+
+.olap .icon.descending {
+	background-position: 0 -20px;
+}
+
+.olap .icon.filter.top {
+	background-position: 0 -420px;
+}
+
+.olap .icon.filter.bottom {
+	background-position: 0 -440px;
+}
+
+#designer .OLAP td.selected,
+#designer .OLAP th.selected {
+	background-color: #E7E9D0 !important; /* for non-css3 browsers */
+	background:-webkit-gradient(linear, left top, left bottom, from(#EDEED7), to(#E3E4CB)); /* for webkit browsers */
+	background:-moz-linear-gradient(top, #EDEED7, #E3E4CB); /* for firefox 3.6+ */
+}
+
+.olap .level,
+.olap .level2,
+.olap .measure,
+.olap .member,
+.olap .total,
+.olap .empty,
+.olap td.value {
+	border-width: 1px;
+	border-style: solid;
+}
+
+.olap .level.column {
+	border: none;
+}
+
+.olap .level.dummy {
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+.olap .column-header-padding {
+	width: 30px;
+	min-width: 30px;
+}
+
+.OLAP .olap .level.column.inner {
+	padding-left:20px;
+}
+
+.data.table.olap td.value.total {
+	font-weight: bold;
+}
+
+.olap .icon.disclosure {
+	background-image: url("images/disclosure_indicators_sprite.png");
+	height: 16px;
+	width: 15px;
+	left:-3px;
+	top: 0px;
+}
+
+.olap .icon.disclosure.closed {
+	 background-position: 0 -678px;
+}
+
+.olap .icon.disclosure.open {
+	 background-position: 0 -702px;
+}
+
+.olap .icon.disclosure.placeholder {
+	background-image: none;
+}

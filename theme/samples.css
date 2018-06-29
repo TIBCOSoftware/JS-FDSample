@@ -1,0 +1,237 @@
+/*
+not for production, this file contains styles that are used 
+for the sample pages
+*/
+
+
+#sampleGrid {
+	margin:10px;
+}
+
+#sampleGrid td,
+#sampleGrid th {
+	padding:15px;
+	border:1px solid #e0e0e0;
+	width: 200px;
+}
+
+
+#menus #sampleGrid td.example {
+	width:400px;
+}
+
+
+#sampleGrid th * {
+	width:100%
+}
+
+#sampleGrid #calendarSample td,
+#sampleGrid #calendarSample td{
+	padding: 3px;
+	border: inherit;
+}
+
+.rowHeader {
+	width:100px;
+	text-align: right;
+	background: none;
+}
+
+tr#frame {
+	position: static;
+	background: none;
+}
+
+td.example {
+	vertical-align: top;
+	position: relative;
+}
+
+.positioningContext {
+	position: relative;
+}
+
+#sampleGrid td.noPadding {
+	padding: 0;
+}
+
+.toolbar td {
+	vertical-align: middle;
+	padding:0;
+}
+
+.footer.container td {
+	background-color: #E6E6E6;
+}
+
+@-moz-document url-prefix() {
+	.toolbar.container td {
+		height:38px;
+	}
+}
+
+#panels .panel {
+	position: relative;
+}
+
+#panels .column.primary .header > .title {
+    padding-left:14px;
+}
+
+#ShipCountryPodfilter_2_filterInputContainer select {
+	width:97%
+}
+
+#panels .pane.filter.sizeable .all {
+    bottom: -2px;
+    position: absolute;
+}
+
+#dialogs #sampleGrid .dialog {
+	position: relative;
+	left:0 !important;
+	top:0 !important;
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+}
+
+#dialogs #sampleGrid .dialog.login {
+	*width:240px; /* IE7 */
+}
+
+#dialogs #sampleGrid .login .header {
+	background:url(images/column_header_bkgd.png) repeat-x #fff;
+	border-bottom: 1px solid #C5C5C5;
+}
+
+#dialogs #sampleGrid #generatorSelect .body {
+	width:400px;-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	
+}
+
+#dialogs #sampleGrid #generatorSelect .list.locations .control.browser {
+	width:95%;
+	
+}
+
+
+/* iPads (portrait and landscape) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	
+	#dialogs #sampleGrid .dialog.overlay.addUser > .content > .footer>.action {
+		top:-34px;
+	}
+}
+
+#lists .list.tabular.resources {
+	margin-top:0;
+}
+
+#lists .list.resources .resourceName {
+	height:20px;
+}
+
+#lists .list.resources .modifiedDate {
+	border-left: none;
+}
+
+#chooseSource {
+	position: relative;
+	top:auto;
+}
+
+#addResource .dialog {
+	position: relative;
+}
+
+.toolbar.container.labelsAndIcons td{
+	height:50px;
+}
+
+#sample {
+	background-image: url(themes/pods/images/sampleIcon_20x20.png);
+}
+
+button #inputs {
+	background-image: url(images/icons/button_filter.png);
+}
+
+.toolbarContainer .toolbar {
+	*width:1600px; /* IE7 */
+}
+
+#sampleGrid .menu.vertical {
+	position:relative;
+}
+
+#sampleGrid .sub.menu {
+	position:absolute;
+}
+
+#sampleGrid .toolbar>button {
+	margin-top:2px;
+	margin-left:4px;
+}
+
+.horizontalNav .header {
+	position: relative;
+	height:26px;
+	line-height:26px;
+	background: url("images/banner_bkgd.png") repeat-x scroll 0 0 #2881BB;
+}
+
+.horizontalNav .header *{
+	height:26px;
+	line-height: 26px;	
+}
+
+.menu.horizontal {
+	top:0;
+	left:0;
+}
+
+#panels .pane {
+	margin:0;
+}
+
+.action.jumbo {
+	*width: 247px; /* IE7 */
+}
+
+#login .content>.footer {
+	height:auto;
+}
+
+.example .list.collapsible.folders>.folders>.wrap {
+	line-height:20px
+}
+
+.FPOonly {
+	background: #f6f9f9 url(images/grid_20x20_bkgd.png);
+}
+
+#panels .FPOonly {}
+
+.a {
+	height: 300px;
+	width:100%;
+}
+
+.b {
+	height:400px;
+	width:300px;
+}
+
+.c {
+	height:150px;
+	width:400px;
+}
+
+.d {
+	height:100px;
+	width:200px;
+}
+
+/*  testing again  */

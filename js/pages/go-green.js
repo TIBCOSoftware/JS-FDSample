@@ -20,20 +20,29 @@ var pageConfig = {
 var defCity = 'San Diego';
 var defDepartment = 'Produce';
 
-//load the config and get the script for the configured server instance
-$.getJSON('./config/config.json', function(data) {
-	$.getScript(data.visualizeJS, function() {
-		initPage(data.jrsConfig);
-	});
-});
+app.initializeVisualize(initPage);
 
-function initPage(jrsConfig) {
-	visualize({
-		auth: jrsConfig.auth
-	}, function(v) {
-		loadDashboard(v);
-		$(function() {
-			renderFilters(v.report.exportFormats);
+function initPage(jrsConfig, visualize) {
+	loadDashboard(visualize);
+
+	renderFilters(visualize.report.exportFormats);
+
+	$("#filterTen").on('click', function() {
+		limitResults(10);
+	});
+
+	$("#filterReset").on('click', function() {
+		resetFilters();
+	});
+
+	$("#ExportButton").on('click', function() {
+		slaveReport.export({
+			outputFormat: $("[data-paramId=exportFormat]").val()
+		}, function(link) {
+			var url = link.href ? link.href : link;
+			window.location.href = url;
+		}, function(error) {
+			console.log(error);
 		});
 	});
 }

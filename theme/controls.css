@@ -1,0 +1,2149 @@
+/*
+ * From: base.css
+ */
+.control {
+	display: block;
+	position: relative;
+}
+
+legend.title {
+	position: absolute;
+	left: 20px;
+}
+
+legend a {
+	cursor:pointer;
+}
+
+fieldset.item,
+fieldset.group, {
+	margin-top:12px;
+}
+
+fieldset.item.first,
+fieldset.group.first {
+	margin-top:0;
+}
+
+fieldset.item legend,
+fieldset.group legend {
+	margin-bottom:6px;
+}
+
+fieldset.inputs fieldset.group legend.label {
+    display: inline-block;
+    overflow: visible;
+    width: 100%;
+}
+
+fieldset .sectionHeader {
+	font-weight: bold;
+	margin-bottom:10px;
+}
+
+.group {
+	/* margin:10px 10px 0; */
+	margin:20px 10px 0 0;
+	padding-left: 10px;
+	position:relative;
+}
+.groupName {
+    color: #666;
+    margin-bottom: 7px;
+    margin-left: -6px;
+    font-weight: bold;
+}
+.group legend {
+	margin-bottom:6px;
+	margin-left: -10px;
+}
+
+.group legend.label {
+	margin-left:0;
+	*margin-left: -7px;  /* IE 7*/
+}
+
+.group.shortFields input,
+.group.shortFields textarea {
+	width:435px;
+}
+
+.shortFields .textArea textarea {
+    padding-left: 6px;
+}
+
+.group.mediumFields input {
+	width:588px;
+}
+
+.group.mediumFields select,
+.group.shortFields select.timeZone {
+	width:auto;
+	min-width:595px;
+	*width:595px; /* IE7 */
+}
+
+.disabled {
+    zoom: 1;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+
+.error>input[type=text],
+.error>input[type=password],
+.error>input[type=file],
+.error>textArea,
+.error>select,
+.error div.mSelect-svListPlaceholder,
+.error div.sSelect.collapsed > a.sSelect-input,
+.errorContainer.error input[type=text]{
+	margin-bottom: 0;
+	background: #E65C56;
+	color:white;
+}
+
+.message.warning {
+	display: none;
+}
+
+.error > .message.warning {
+	display: block;
+	padding-left: 20px;
+	background-image: url(images/message_icons_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 2px 1px;
+	clear: left;
+}
+
+.error > .message.success {
+	background-position: 2px -80px;
+}
+
+.group.error > .message {
+	display:inline-block;
+	padding-left: 20px;
+	background-image: url(images/message_icons_sprite.png);
+	background-repeat: no-repeat;
+	line-height:1.3em;
+	clear: left;
+}
+
+.error > .message a.details {
+	text-decoration: underline;
+}
+
+.error > .message.success a.details {
+	display:none;
+}
+
+.error.body > .message.warning {
+	margin:10px;
+}
+
+.panel.inlay.filter .error > .message.warning {
+	max-width:200px;
+	white-space:normal;
+}
+
+.control.inline {
+	width: auto;
+	display:inline-block;
+	white-space:nowrap;
+	margin-bottom: 0;
+}
+
+.control.inline>input,
+.control.inline>select {
+	width: auto;
+	margin-top:4px;
+	margin-left:6px;
+	/* margin-left: 5px; */
+	/* margin-top: 0; */
+}
+
+.control.inline .launcher,
+.launcher.inline {
+	display:inline;
+}
+
+
+.control.radio.complex,
+.control.checkBox.complex {
+	/* used to display a .groupBox within .control */
+	display: block;
+	height: 100%;
+}
+
+
+/* START two line controls, new for scheduler in Emerald 2 */
+.control.twoLine {
+	margin-top:0;
+}
+
+.control.twoLine > span.wrap {
+	display:block;
+	line-height:14px;
+}
+
+.control.twoLine > .select > select {
+	margin-top:0;
+}
+
+.control.twoLine.inline > select {
+	margin-left:0;
+}
+
+.control.twoLine > .control.inline {
+	display:block;
+	margin-left:14px;
+}
+
+.checkBox.twoLine label.wrap,
+.radio.twoLine label.wrap {
+	line-height:22px;
+}
+/* END two line controls */
+
+
+/* START multiple inputs on one row, new for data sources in Emerald 3 */
+.inlineControls {
+    margin-left: 4px;
+}
+.inlineControls .group {
+    margin: 10px 10px 0;
+}
+
+.group.inputRow {
+	display:block;
+	overflow:hidden;
+	padding-left:0;
+}
+
+.group.inputRow > .group {
+	float:left;
+}
+
+.group.inputRow .control {
+	margin-bottom:0px;
+}
+/* END multiple inputs on one row controls */
+
+.input,
+.select,
+.textArea,
+.picker input,
+.browser {
+	width:100%;/* NEW */
+	/* width: 97% \9;	IE8 */
+}
+
+ /* @media screen and (min-width:0\0) { IE9 and above
+	.input,
+	.select,
+	.textArea,
+	.picker input,
+	.browser {
+		width:97%;
+	}
+} */
+
+.saveLocation {
+	width:600px;
+}
+
+/*
+.group select.timeZone {
+	width:595px;
+}
+*/
+
+.control,
+.picker input {
+	margin-bottom: 16px;
+}
+
+.control.standAlone {
+	margin-bottom:0;
+}
+
+.control.select > .wrap,
+.control.input.text > .wrap {
+	display:block;
+}
+
+.control.select.multiple {
+    /*min-height: 100px;*/ /* do not need this with scalable input controls */
+}
+
+.leaf .sizer.vertical{
+    position: static;
+    width:100%;
+    height:10px;
+    margin-bottom: 10px;
+}
+
+.leaf .sizer.vertical span {
+    position: relative;
+    left: 45%;
+}
+
+.input input,
+.picker input,
+.input select,
+select,
+.textArea textarea,
+.input textarea,
+.control.browser input,
+.pickList,
+.pickList-hasIcons {
+	display: inherit;
+	margin-top:4px;
+	/* width:99%; */	/* DELETE */
+	width: 100%;		/* NEW */
+	/* width: 100% \9;		IE8 */
+}
+
+/* @media screen and (min-width:0\0) {  IE9 and above
+	.input input,
+	.picker input,
+	.input select,
+	select,
+	.textArea textarea,
+	.input textarea,
+	.control.browser input,
+	.pickList,
+	.pickList-hasIcons {
+		width: 100%;
+	}
+} */
+
+.description {
+	background-color:#EEEEEE;
+	border:1px solid #E0E0E0;
+	height:auto;
+	padding:8px;
+	margin-top:4px;
+}
+
+select,
+.pickList,
+.pickList-hasIcons {
+	width:100%;
+}
+
+.input input,
+.picker input,
+input[type=password],
+input[type=text] {
+	padding:2px 3px;
+}
+
+.textArea textarea {
+	padding-left:3px;
+}
+
+.list .control > .wrap {
+	border-width: 0;
+}
+
+.control.picker {
+	/* padding-right:16px; */
+	white-space:nowrap;
+}
+
+.picker .wrap {
+	display: block;
+}
+
+.picker input {
+	display: inline;
+	width: calc(100% - 24px)  !important;
+	width: 90% \9 !important; /* IE8 */
+}
+
+.panel .picker .wrap {
+	background-color: transparent;
+	border: none;
+}
+
+.textArea textarea {
+	min-height: 70px;
+	overflow-y:auto;
+	resize:none;
+}
+
+.textArea.shorter textarea {
+	min-height: 54px;
+}
+
+.textArea.taller textarea,
+.select.taller select {
+	height: 7.5em;
+}
+
+
+input[type="text"],
+input[type="password"],
+textarea,
+.mSelect-input, input.mSelect-input[type="text"],
+.sSelect-input,
+.control.combo>select.button {
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #848484;
+	border-left-color: #c1c1c1;
+	border-right-color: #c1c1c1;
+	border-bottom-color: #c1c1c1;
+	background-image: url(images/input_bkgd.png);
+	background-repeat: repeat-x;
+	background-position: top left;
+	-moz-box-sizing: border-box; 	/* NEW */
+	-webkit-box-sizing: border-box;	/* NEW */
+	box-sizing: border-box;			/* NEW */
+	height: 26px;					/* NEW */
+}
+
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+textarea:disabled {
+    background-image: none;
+    background-color: #e3e3e3;
+}
+
+.control.select.multiple > select {
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #848484;
+	border-left-color: #c1c1c1;
+	border-right-color: #c1c1c1;
+	border-bottom-color: #c1c1c1;
+	background-image: url(images/input_bkgd.png);
+	background-repeat: repeat-x;
+	background-position: top left;
+}
+
+.label {
+	margin-bottom: .5em;
+}
+
+input[readonly],
+textarea[readonly] {
+	border:none;
+	display: inline;
+	background-image: none;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+.hint {
+	margin:5px 0;
+	display: block;
+}
+
+
+input + label {
+	display:inline;
+}
+
+.checkBox,
+.radio {
+	margin-bottom: 4px;
+}
+
+.control.browser > .wrap {
+	display: block;
+}
+
+.control.browser .button.action {
+	display: inline;
+	float: right;
+	margin-top: 8px;
+    margin-right: 0;
+}
+
+.control.browser input {}
+
+.control.inline.browser input {
+	width: 100%;
+}
+
+.list.locations .control.browser {
+	margin: 0;
+	padding-left: 20px;
+	/* width: 97%; */
+}
+
+.list.locations #fileUpload {
+    padding-left: 20px;
+}
+
+.list.locations #fileUpload > input {
+    height: 26px \9;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { /* IE10 and IE11 only */
+    .list.locations #fileUpload > input {
+        height: 30px;
+    }
+
+    .list.locations #fileUpload {
+        padding-left: 18px;
+    }
+}
+
+.control.checkBox,
+.control.radio {
+	white-space: normal;
+}
+
+.control.checkBox.toggle {
+	margin-bottom:16px;
+}
+
+.checkBox .wrap,
+.radio .wrap {
+	/* margin-left:17px; */
+	/* margin-left:20px \9;IE8 and IE9 */
+	margin-left:20px;
+	line-height:16px;
+	display: inline;
+	position:relative;
+}
+
+.control input[type="checkbox"],
+.control input[type="radio"] {
+	top: 0;
+	left: 1px;
+	margin: 1px 0;
+	position: absolute;
+	margin-top:-2px \9; /* IE8 and IE9 */
+	left:-3px \9; /* IE8 and IE9 */
+}
+
+.checkBox input,
+.radio input {
+	width:auto !important;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+	.checkBox input {
+		width:18px !important;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+
+	.control.checkBox {
+		line-height:18px
+	}
+}
+
+.inputSet {
+	margin:0;
+}
+
+.inputSet .leaf {
+	overflow: hidden;
+	/* padding: 2px 0; */
+	padding:3px 0;
+}
+
+.inputSet input[type="file"] {
+	display: block;
+}
+
+
+/* START form section, groups, and other form container elements, new with scheduler in Emerald 2 */
+
+.section {
+	margin:24px 0 0 0;
+}
+
+.section.last {
+	margin-bottom:24px;
+}
+
+.section > .title {
+	margin-bottom:0px;
+	font-weight:bold;
+	color:#666666;
+}
+
+.section > .group {
+	margin-left:24px;
+	margin-top:18px;
+}
+
+.section > .group.first {
+	margin-top:12px;
+}
+
+.section .subgroup {
+	margin-left:20px;
+}
+
+.section .subgroup .title.wrap {
+    color: #121212;
+    display: inline-block;
+    font-weight: normal;
+    margin: 2px 0 4px 0;
+}
+
+.section.noTitle > .group {
+	margin-left:0;
+	margin-top:18px;
+}
+
+.section .inputRow {
+	display:inline-block;
+	overflow:hidden;
+}
+
+.section .inputRow > .node {
+	float:left;
+	clear:none;
+}
+
+/*
+.section > .group .group {
+	margin-top:0;
+} TEST SCHEDULE UI FOR USE OF THIS STYLE RULE
+*/
+
+.section > .group.noIndent {
+	margin-left:0;
+	padding-left:0;
+}
+
+.section.last {
+	margin-bottom:24px;
+}
+
+.section .list.inputSet .inputSet {
+	margin-top:4px;
+	margin-left:20px;
+}
+
+.section .inputSet {
+	padding-top:0;
+	padding-bottom:1px;
+}
+
+.section .list.inputSet.radio,
+.section .list.inputSet.checkBox {
+	margin-left:10px;
+}
+
+.section .group legend.radio,
+.section .group legend.checkBox {
+	margin-left:0;
+}
+
+.section > .group .control.input.last {
+	margin-bottom:0;
+}
+
+.section .inputSet .leaf.last {
+	padding-bottom:0;
+}
+
+.section .inputSet > .leaf > .control.browser,
+.section .inputSet > .leaf > .control.text {
+	margin-top:4px;
+	margin-bottom:10px;
+	margin-left:20px;
+	width:auto;
+}
+
+.section .inputSet > .leaf > .twoLine > .leaf {
+	padding-bottom:0;
+}
+
+.section .inputSet > .leaf .subItem {
+	margin-left:20px;
+}
+
+.section .twoLine > textarea {
+	width:95%;
+}
+
+/* END form section and elements */
+
+
+.list .launcher {
+	display: inline;
+	margin:0;
+}
+
+.pane .multi-select {
+	position:absolute;
+	bottom:30px;
+	top:0;
+}
+
+.launcher {
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.launcher[disabled],
+.launcher[disabled]:active {
+	cursor: default;
+	color:#999;
+	text-decoration: none;
+}
+
+.radio input[type="file"] {
+	margin:5px 20px 10px;
+}
+
+input[type="text"].date {
+    margin-bottom: 0;
+}
+
+.calTriggerWrapper.button {
+    display: inline-block !important;
+    position: relative;
+    top: 4px;
+    zoom: 1;
+}
+
+.calTriggerWrapper.button button {
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    height: 27px;
+	padding-inline-end: 0;
+	padding-inline-start: 0;
+    width: 17px;
+}
+
+.calTriggerWrapper.button button.superfocus {
+	border-style: dotted;
+	border-color: #999;
+	border-width: 1px;
+}
+
+/*
+ * From: calendar.css
+ */
+/*
+______________________________________________________________
+
+ THIRD PARTY CONTROLS
+______________________________________________________________
+/* dynarch calendar
+http://www.dynarch.com/projects/calendar/old/
+-------------------------------------------------------------- */
+
+/* The main calendar widget.  DIV containing a table. */
+
+.calendar {
+	position: relative;
+	display: none;
+	border-top: 2px solid #ccc;
+	border-right: 2px solid #333;
+	border-bottom: 2px solid #333;
+	border-left: 2px solid #ccc;
+	background-color: #ddd;
+	z-index: 9999;
+}
+
+.calendar table {
+	border-top: 1px solid #333;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #333;
+	font-size: 11px;
+	color: #666;
+	cursor: default;
+	background: #fff;
+	font-family: tahoma,verdana,sans-serif;
+	border-collapse: separate;
+}
+
+.calendar td,
+.calendar th {
+	border: 1px solid transparent;
+}
+
+/* Header part -- contains navigation buttons and day names. */
+
+.calendar .button { /* "<<", "<", ">", ">>" buttons have this class */
+	text-align: center;
+	padding: 1px;
+}
+
+.calendar thead .title { /* This holds the current "month, year" */
+	font-weight: bold;
+	padding: 1px;
+	text-align: center;
+}
+
+.calendar td {
+	padding: 3px;
+}
+
+.calendar .ttip,
+.calendar thead .title,
+.calendar thead .button {
+	background-color: #217EB5;
+	color:#fff;
+}
+
+.calendar thead .headrow td,
+.calendar tr.time td {
+	background-color: #4698BE;
+	color:#fff;
+}
+
+.calendar thead .daynames td,
+.calendar td.day.wn {
+	color:#333;
+	border-color: #ccc;
+	border-width: 0;
+	border-bottom-style: solid;
+}
+
+.calendar thead .daynames td {
+	border-bottom-width:1px;
+}
+
+.calendar td.day.wn,
+.calendar td.name.wn {
+	border-right-width: 1px;
+}
+
+
+.calendar thead .name { /* Cells <TD> containing the day names */
+	text-align: center;
+}
+
+.calendar thead .weekend { /* How a weekend day name shows in header */
+
+}
+
+.calendar thead .hilite,
+.calendar td.time span.hilite {
+	background-color: #999;
+	color: #fff;
+}
+
+
+.calendar thead .active,
+.calendar td.time span.active {
+	background-color: #0061A2;
+	color: #fff;
+}
+
+
+/* The body part -- contains all the days in month. */
+
+.calendar tbody .day { /* Cells <TD> containing month days dates */
+	width: 2em;
+	text-align: right;
+}
+
+.calendar tbody .day.othermonth {
+	font-size: 80%;
+	color: #aaa;
+}
+.calendar tbody .day.othermonth.oweekend {
+	color: #faa;
+}
+
+.calendar table .wn {
+}
+
+.calendar tbody .rowhilite td {
+	background: #e4e0d8;
+}
+
+.calendar tbody .rowhilite td.wn {
+	background: #d4d0c8;
+}
+
+.calendar tbody td.hilite,
+.calendar .combo .hilite { /* Hovered cells <TD> */
+	background-color: #efefef;
+}
+
+.calendar tbody td.active,
+.calendar .combo .active { /* Active (pressed) cells <TD> */
+	background-color: #999;
+	color:#fff;
+}
+
+.calendar tbody td.selected { /* Cell showing selected date */
+	font-weight: bold;
+	background: #217EB5;
+	color: #fff;
+}
+
+.calendar tbody td.weekend,
+.calendar .name.day.weekend { /* Cells showing weekend days */
+	font-style: italic;
+}
+
+.calendar tbody td.today { /* Cell showing today date */
+	font-weight: bold;
+	color: #333;
+}
+
+.calendar tbody .disabled { color: #999; }
+
+.calendar tbody .emptycell { /* Empty cells (the best is to hide them) */
+	visibility: hidden;
+}
+
+.calendar tbody .emptyrow { /* Empty row (some months need less than 6 rows) */
+	display: none;
+}
+
+/* The footer part -- status bar and "Close" button */
+
+.calendar tfoot .footrow { /* The <TR> in footer (only one right now) */
+}
+
+.calendar tfoot .ttip { /* Tooltip (status bar) cell <TD> */
+	text-align: center;
+}
+
+.calendar tfoot .hilite { /* Hover style for buttons in footer */
+	background: #e4e0d8;
+}
+
+.calendar tfoot .active { /* Active (pressed) style for buttons in footer */
+
+}
+
+/* Combo boxes (menus that display months/years for direct selection) */
+
+.calendar .combo {
+	background:none repeat scroll 0 0 #fff;
+	border-bottom: 2px solid #333;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-right: 2px solid #333;
+	cursor:default;
+	display:none;
+	font-size:90%;
+	left:0;
+	padding:1px;
+	position:absolute;
+	top:0;
+	width:4em;
+	z-index:100;
+}
+
+.calendar .combo .label, .calendar .combo .label-IEfix {
+	padding:1px;
+	text-align:center;
+}
+
+.calendar .combo .label-IEfix {
+	width:4em;
+}
+
+.calendar td.time {
+	text-align: center;
+}
+
+.calendar td.time .hour,
+.calendar td.time .minute,
+.calendar td.time .ampm {
+	padding: 2px;
+	font-weight: bold;
+}
+
+.calendar td.time .ampm {
+	text-align: center;
+}
+
+.calendar td.time .colon {
+	padding: 0px 2px 0px 3px;
+	font-weight: bold;
+}
+
+.calendar td.time span.hilite {
+	background-color: #999;
+	color: #fff;
+}
+
+.calendar td.time span.active {
+	background-color: #0061A2;
+	color: #fff;
+}
+
+/*
+ * From: combo.css
+ */
+.control.combo {
+	padding-right: 2px;
+}
+
+.control.combo > .wrap {
+	display:block;
+	margin-bottom: 5px;
+}
+
+.control.combo > .control.searchLockup,
+.control.combo > .control.booleanInput,
+.control.combo > select {
+	width:100%;
+}
+
+/*
+ * From: groupBox.css
+ */
+.groupBox.scrollable {
+	bottom:15px;
+	left:15px;
+	position:absolute;
+	right:16px;
+	top:18px;
+}
+
+.groupBox.scrollable > .content {
+	bottom:0;
+	left:0;
+	position:absolute;
+	right:0;
+	top:-13px;
+}
+
+.groupBox.scrollable > .content > .body {
+	border-bottom:1px solid #F0F0F0;
+	border-top:1px solid #F0F0F0;
+	bottom:10px;
+	padding:0;
+	position:absolute;
+	top:25px;
+}
+
+.groupBox {
+	float: left;
+	margin:2px 8px 8px 2px; /* moves visual top and left to actual */
+	position: relative;
+	border:1px solid #d4d5d5;
+}
+
+.groupBox .groupBox {
+	background-image: url(images/panel_inset_inset_bkgd.png);
+	width: 100%;
+	margin-bottom:15px;
+}
+
+.groupBox > .corner,
+.groupBox > .edge.rl,
+.groupBox > .edge.tb,
+.groupBox > .corner.top,
+.groupBox > .corner.bottom,
+.groupBox > .corner.left,
+.groupBox > .corner.right,
+.groupBox > .edge.rl.left,
+.groupBox > .edge.rl.right,
+.groupBox > .edge.tb.top,
+.groupBox > .edge.tb.bottom {
+	display:none;
+}
+
+.groupBox > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+  as this object used as reference for positioning
+  child objects */
+	left:-1px;
+	margin-right:0px;
+	position:relative;
+	top:0px;
+}
+
+.groupBox .body {
+	position: relative;
+	overflow:auto;
+	padding:10px 10px;
+}
+
+.groupBox > .content > .header,
+.groupBox > .content > .footer {
+	display: none;
+}
+
+.groupBox.fillParent {
+	float:none;
+}
+
+/*
+ * pagination and zoom controls
+ */
+.control.paging {
+	float: left;
+}
+
+.control.paging .input,
+.control.zoom .input,
+.control.search .input {
+	top: -10px;
+	margin: 0 4px;
+}
+
+.control.zoom input {
+	height: 22px;
+	width: 46px;
+	/* height:15px; */ /* DELETE IF NO PROBLEMS */
+}
+
+.control.paging input {
+	height: 22px;
+	width: 50px;
+}
+
+.control.search input {
+	height: 22px;
+	width: 105px;
+	/* width: 85px */ /* DELETE IF NO PROBLEMS */
+	/* height:15px; */ /* DELETE IF NO PROBLEMS */
+}
+
+.control.paging .button,
+.control.zoom .button,
+.control.search .button {
+	background: none;
+	margin-bottom: 0;
+}
+
+.control.zoom > .button.action.square,
+.control.search > .button.action.square {
+	height: 24px;
+	margin: 0;
+	width: 22px;
+    /* height: 28px; */
+    /* width: 20px; */
+}
+
+.control.paging > .button.action > .wrap,
+.control.zoom > .button.action > .wrap,
+.control.search > .button.action > .wrap  {
+    height: 28px;
+}
+
+.control.zoom .button.action > .wrap > .icon,
+.control.search .button.action > .wrap > .icon {
+    height: 28px;
+    width: 20px;
+}
+
+.control.zoom .button.action.zoomIn .icon,
+.control.zoom .button.action.zoomIn.over .icon {
+    background-position: 3px -822px;
+}
+
+.control.zoom .button.action.zoomOut .icon,
+.control.zoom .button.action.zoomOut.over .icon {
+    background-position: 3px -862px;
+}
+
+.control.zoom .button.action.zoomIn.pressed .icon {
+    background-position: -38px -822px;
+}
+
+.control.zoom .button.action.zoomOut.pressed .icon {
+    background-position: -38px -862px;
+}
+
+.control.search .button.action.searchPrevious.over .icon,
+.control.search .button.action.searchPrevious .icon {
+    background-position: 4px -45px;
+}
+
+.control.search .button.action.searchNext.over .icon,
+.control.search .button.action.searchNext .icon {
+    background-position: 0 8px;
+}
+
+.control.search .button.action.searchPrevious.pressed .icon {
+    background-position: -50px -45px;
+}
+
+.control.search .button.action.searchNext.pressed .icon {
+    background-position: -54px 8px;
+}
+
+.control.zoom .button.capsule,
+.control.search .button.capsule {
+	background-image: url("images/button_capsule_sprite.png");
+	height: 21px;
+	margin-left: -5px;
+	margin-top: 4px;
+	vertical-align: top;
+	width: 22px;
+}
+
+/* text input with drop-down menu, new in Emerald 3 */
+.textPlus > input[type=text] {
+	margin-left:0;
+	padding:2px 3px;
+}
+
+.textPlus > .button {
+	background-color: none;
+	border: 1px solid #c0c0c0;
+	border-top: 1px solid #848484;
+	border-left: none;
+	display:inline-block;
+	height: 22px;
+	margin-left: -5px;
+	vertical-align: bottom;
+}
+
+.textPlus > .button.search {
+	width:23px;
+}
+
+.textPlus > .button.disclosure {
+	width:20px;
+}
+
+.textPlus .button.search > .icon {
+	background-color: #fff;
+	background-image: url("images/search_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0 -59px;
+	height: 20px;
+	width: 21px;
+}
+
+.textPlus .button.disclosure > .icon {
+	background-image: url("images/disclosure_indicators_sprite.png");
+	background-position: 4px -52px;
+	height: 20px;
+	width: 18px;
+}
+
+/*
+ * From: path.css
+ */
+.control.path .step,
+.control.path .label {
+	margin: 0 0.4em 0 0;
+	float: left;
+}
+
+.control.path .step {
+	background: url(images/lists_sprite.png) -14px -347px no-repeat;
+	cursor: pointer;
+	padding-left:10px;
+}
+
+.control.path .step .wrap {
+	padding:0 5px;
+	line-height:normal;
+}
+
+.control.path .step .wrap.over,
+.control.path .step .wrap.pressed {
+	text-decoration:underline;
+	background-color: transparent;
+}
+
+
+.control.path .step.first {
+	background: none;
+	padding-left: none;
+}
+
+.control.path .label,
+.control.path .step.last,
+.control.path .step.last .wrap.over,
+.control.path .step.last .wrap.pressed {
+	text-decoration: none;
+	cursor: default;
+}
+/*
+ * From: pickWells.css
+ */
+.control.pickWells {
+	height: 120px;
+	min-width: 400px !important;
+}
+
+.control.select.error>select,
+.control.pickWells > .control.select.error>select {
+	top:30px;
+}
+
+.control.pickWells > .control.select,
+.control.pickWells > .control.combo {
+	position: absolute;
+	top:0;
+	bottom: 0;
+	width: auto;
+	margin: 0;
+}
+
+.control.pickWells > .control.select>select {
+	position: absolute;
+	top:15px;
+	bottom: 0;
+}
+
+.control.pickWells > .availableValues,
+.control.pickWells > .selectedRoles {
+	left:0;
+	right: 50%;
+}
+
+.control.pickWells > .availableValues>select,
+.control.pickWells > .selectedRoles>select,
+.control.pickWells > .control.select .selectedUsers {
+	bottom:0;
+	position:absolute;
+	top:40px;
+}
+
+.control.pickWells > .control.select.selectedValues,
+.control.pickWells > .control.select.selectedUsers {
+	left:51%;
+	right: 0;
+}
+
+/*
+ * From: pickList.css
+ */
+.pickList {
+	width: 185px;
+}
+
+.control.pickList > .availableValues > .pickList {
+	height:193px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	border-width:1px;
+	border-style:solid;
+	border-color:#8e8e8e #bebebe #bebebe #bebebe;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.pickList > .node {
+	color:#000000;
+	line-height:17px;
+	padding:2px 0 2px 4px;
+	white-space:nowrap;
+}
+
+.pickList > .node > .wrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pickList > .node.selected {
+	color:#FFFFFF;
+	background-color:#2577D8;
+}
+
+.pickList > .node.selected > .wrap {
+	background-color:inherit;
+}
+
+
+/*
+ * From: searchLockup.css
+ */
+.searchLockup, .booleanInput {
+	position:relative;
+	height: auto;
+	white-space: nowrap;
+	min-width: 130px;
+	margin-bottom: 0;
+	height:auto;
+}
+
+.booleanInput {
+    min-width: 220px;
+}
+
+input.booleanComboInput{
+    width: 97%;
+    margin-right: 0;
+    background: none;
+    border: none;
+}
+
+#secondarySearchBox.searchLockup {
+	float:left;
+	margin-top:4px;
+	width:167px;
+}
+
+#globalSearch.searchLockup {
+	width:170px;
+	margin-top:3px;
+}
+
+.searchLockup > label {
+	display:block;
+	margin-bottom:5px;
+}
+
+.control.searchLockup > .wrap,
+.control.booleanInput > .wrap {
+	background: #ffffff;
+	border: 1px solid #999;
+	height: 22px;
+	position: relative; /* KEEP IF NO PROBLEMS - ADDED AFTER ISSUE WITH PERMISSIONS DIALOG */
+}
+
+.control.searchLockup > .wrap>input[type=text] {
+	background: none;
+	border: none;
+    margin-right: 46px;
+}
+
+.control.searchLockup > .right {
+	position: absolute;
+	right: 20px;
+	display: inline-block;
+	width: 22px;
+}
+
+.control.searchLockup > .button.search {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.button.searchClear {
+	height:18px;
+	width:15px;
+	top:-20px;
+	background-image: url(images/search_sprite.png);
+	background-repeat: no-repeat;
+	background-position: -84px -58px;
+	display: none;
+	position: absolute;
+	margin:0;
+	text-indent: -9999px;
+}
+
+.button.searchClear.up,
+.button.searchClear.over,
+.button.searchClear.pressed {
+	background-position: -84px -58px;
+	display: block;
+}
+
+.header > .searchLockup {
+	position:relative;
+	margin-left:12px;
+}
+
+#secondarySearchBox.searchLockup {
+	float: left;
+	margin-top: 3px;
+	width: 167px;
+}
+
+#secondarySearchBox.control.searchLockup > .wrap {
+	border: 1px solid #e2e2e2;
+}
+
+#globalSearch.searchLockup {
+	width: 200px;
+	margin-top: 5px;
+}
+
+#globalSearch.searchLockup > .wrap {
+	padding-left: 0;
+	padding-right: 22px;
+	border: none;
+}
+
+#globalSearch.control.searchLockup > .wrap>input[type=text] {
+	height: 100%;
+	margin: 0;
+	margin-top: 4px \9; /* IE8 and IE9 */
+	padding-bottom: 0;
+	padding-top: 0;
+	width: 175px;
+}
+
+#secondarySearchBox.control.searchLockup > .wrap>input[type=text] {
+	height: 19px;
+	margin-left: 1px;
+	margin-top: 3px \9; /* IE8 and IE9 */
+	*margin-top: 2px; /* IE7 */
+	padding-bottom: 0;
+	padding-top: 0;
+	width: 120px;
+}
+
+:root #secondarySearchBox.control.searchLockup > .wrap>input[type=text],
+:root #globalSearch.control.searchLockup > .wrap>input[type=text] {
+	margin-top: 0 \ ;
+}
+
+#secondarySearchBox.control.searchLockup > .button.search {
+	top: 0;
+	display:block;
+}
+
+#secondarySearchBox .button.searchClear,
+#secondarySearchBox .button.searchClear.up,
+#secondarySearchBox .button.searchClear.over,
+#secondarySearchBox .button.searchClear.pressed {
+	background-position: -84px -28px;
+}
+
+#globalSearch .button.searchClear,
+#globalSearch .button.searchClear.up,
+#globalSearch .button.searchClear.over,
+#globalSearch .button.searchClear.pressed {
+	background-position: -84px 2px;
+}
+
+/* END search lockup */
+
+/*
+ * From: tabSet.css
+ */
+.control.tabSet .label {
+	border: none;
+}
+
+.tabSet .button {
+	float: left;
+	margin-bottom: 0;
+}
+
+.tabSet.buttons .button {
+	text-decoration: none;
+}
+
+.tabSet.horizontal .label {
+	float: left;
+	top:0;
+	margin-right: 0;
+	padding-right: 0;
+	border-right:none;
+}
+
+.tabSet.horizontal.text {
+	margin-bottom: 20px;
+}
+
+.tabSet.horizontal.text > .tab {
+	border-right: 1px solid #999;
+}
+
+.tabSet.horizontal.text > .tab.last {
+	border-right: none;
+}
+
+.tabSet.horizontal.text > .tab > .wrap {
+	background: none;
+	cursor: pointer; /* NEW */
+	margin-bottom: 0;
+}
+
+.tabSet.horizontal.text > .tab > .wrap.over,
+.tabSet.horizontal.text > .tab > .wrap.pressed {
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+.tabSet.horizontal.text > .tab.selected > .wrap.over,
+.tabSet.horizontal.text > .tab.selected > .wrap.pressed {
+	text-decoration: none;
+}
+
+.tabSet.text > .label > .wrap {
+	padding:0 5px 0 0;
+}
+
+.toolbar .tab.mode,
+.toolbar .tabSet.text {
+	margin: 6px 1em 0 1em;
+}
+
+.tabSet .selected .button.wrap {
+	cursor: default;
+}
+
+
+/* .tabSet.vertical.buttons */
+
+.tabSet.vertical.buttons {
+	float:left;
+	/* min-width: 125px;
+	margin-right: 20px; */ /* DELETE IF NO PROBLEMS */
+	min-width: 150px;
+}
+
+.tabSet.vertical.buttons .button {
+	display: block;
+	float:none;
+}
+
+.tabSet.vertical.buttons .tab {
+	margin: 0;
+}
+
+.tabSet.vertical.buttons .button {
+	/* border-bottom: 1px solid #fff; */ /* changed to border top because border-bottom broke in Chrome */
+	border-top: 1px solid #fff;
+	padding: 0 15px 0 0;
+	text-align: center;
+	width: 100%;
+}
+
+.tabSet.vertical.buttons .button .wrap {
+	padding: 0 0 0 15px;
+	line-height: 28px;
+	height: 28px;
+}
+
+.tabSet.vertical.buttons .button {
+	display: block;
+	float:none;
+}
+
+/* sprite positions */
+
+.tabSet.vertical.buttons .button {
+	background-color: #1388d8;
+}
+
+.tabSet.vertical.buttons .selected .button,
+.tabSet.vertical.buttons .selected .button.over,
+.tabSet.vertical.buttons .selected .button.pressed,
+.tabSet.vertical.buttons .button.pressed,
+.tabSet.vertical.buttons .button.over {
+	background-color: #195b8a;
+}
+
+/* .tabSet.horizontal.buttons */
+
+/*
+.tabSet.horizontal.buttons {
+	float:left;
+	z-index: 10;
+	position: relative;
+	background-color:#eee;
+	background-image: url("images/tabs_horizontal_buttons_bkgd.png");
+	background-repeat: repeat-x;
+	background-position: left top;
+	height:25px;
+	padding:5px 20px 2px 20px;
+	margin-bottom: 0;
+}
+*/
+
+.tabSet.horizontal.buttons li {
+	border-right: none;
+}
+
+.tabSet.horizontal.buttons {
+	background-color: #fff;
+    float: left;
+    /* height: 25px; */
+    height: 27px;
+    margin-bottom: 0;
+    overflow: visible;
+    padding-right: 20px;
+    position: relative;
+    z-index: 10;
+
+    /* padding: 5px 20px 2px; */ /* DELETE IF NO PROBLEMS */
+
+    /* background-color: #EEEEEE;
+    background-image: url("images/tabs_horizontal_buttons_bkgd.png");
+    background-repeat: repeat-x;
+    background-position: left top; */ /* DELETE */
+}
+
+/*
+.tabs > .tabSet.horizontal.buttons {
+	float:none;
+}
+*/
+
+.tabs > .tabSet.horizontal.buttons {
+    float: right;
+}
+
+.tabSet.horizontal.buttons li {
+	border: none;
+	height: 25px;
+	margin: 2px 2px 0 2px;
+	padding: 0;
+}
+
+.tabSet.horizontal.buttons .button {
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid transparent;
+	padding: 0 15px 0 0;
+	text-align: center;
+}
+
+.tabSet.horizontal.buttons .selected .button {
+	margin-top: 0;
+}
+
+.tabSet.horizontal.buttons .selected .button > .wrap {
+	height: 26px;
+	line-height: 25px;
+}
+
+.tabSet.horizontal.buttons .button .wrap {
+	height: 25px;
+	line-height: 25px;
+	padding: 0 0 0 15px;
+}
+
+/*
+.tabSet.anchor {
+	height:4px;
+	background-color:#DEDEDC;
+	border-top:1px solid #b5b5b5;
+	border-bottom:1px solid #b5b5b5
+}
+*/
+
+.tabSet.anchor {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    height: 8px;
+    top: 28px;
+}
+
+/* .tabSet.horizontal.buttons. .selected */
+
+.tabSet.horizontal.buttons > .tab.selected > .button,
+.tabSet.horizontal.buttons > .tab.selected > .button.over,
+.tabSet.horizontal.buttons > .tab.selected > .button.pressed {
+	background-color: #f4f4f4;
+	border-top: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	border-bottom: none;
+	border-left: 1px solid #e3e3e3;
+	cursor: default;
+	/* background-color: #DEDEDC; */
+}
+
+/* Reverse Style Tabs, active tabs are white */
+.tabSet.reverse.horizontal.buttons > .tab.selected > .button,
+.tabSet.reverse.horizontal.buttons > .tab.selected > .button.over,
+.tabSet.reverse.horizontal.buttons > .tab.selected > .button.pressed {
+    background-color: #FFFFFF;
+}
+
+.tabSet.reverse.horizontal.buttons > .tab > .button.over {
+	background-color: #f1f1f1;
+}
+
+.tabSet.reverse.horizontal.buttons > li {
+	margin: 0 0.4em 0 0;
+}
+
+/* .tabSet.horizontal.buttons .over */
+
+.tabSet.horizontal.buttons .button.over {
+	border-bottom:none;
+	/* border-left:1px solid #b5b5b5;
+	border-top:1px solid #b5b5b5;
+	border-right:1px solid #b5b5b5; */
+	/* gradient end values are #fba82a and #fb7c24 */
+	/* background: url("images/tabs_horizontal_sprite.png") repeat-x scroll 0 0 #fb7c24 */;
+}
+
+/* .tabSet.horizontal.buttons .pressed */
+
+.tabSet.horizontal.buttons .button.pressed {
+	border-bottom:none;
+	/* border-top:1px solid #b5b5b5;
+	border-right:1px solid #b5b5b5;
+	border-left:1px solid #b5b5b5; */
+	/* background: url("images/tabs_horizontal_sprite.png") repeat-x scroll 0 -56px #f6a429; */
+	/* gradient end values are #fb7c24 and #f6a429 */
+}
+
+
+/* content.tabbed tabsets */
+
+.content.tabbed .tabSet.horizontal.buttons {
+	background-image:none;
+	background-color:transparent;
+	height:22px;
+	float:none;
+	padding-left:0;
+}
+
+.content.tabbed .tabSet.horizontal.buttons li {
+    margin-left:0;
+    margin-right:6px;
+    height:;
+}
+.content.tabbed .tabSet.horizontal.buttons .selected li {
+
+}
+
+.content.tabbed .tabSet.horizontal.buttons .button {
+	background-color: #e5e5e5;
+	border:1px solid #b5b5b5;
+	margin-top:3px;
+}
+
+.content.tabbed .tabSet.horizontal.buttons .selected .button {
+	border-bottom:none;
+	margin-top:0;
+}
+
+.content.tabbed .tabSet.horizontal.buttons .button .wrap {
+	height:18px;
+	line-height:17px;
+	font-weight:normal;
+}
+
+.content.tabbed .tabSet.horizontal.buttons .selected .button .wrap {
+	height:22px;
+	line-height:22px;
+	font-weight:bolder;
+	color:#666666;
+}
+
+#chartContainer {
+    position:absolute;
+    top:40px;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:0;
+    overflow: hidden;
+}
+
+#dataLevelSelector {
+    min-width:320px;
+    width: 400px;
+    height: auto;
+    *width:400px; /* IE7 */
+}
+
+.data-level-selector div.body {
+	padding:10px 14px !important;
+    overflow:visible !important;
+    z-index:99;
+}
+
+table.levelSelector {
+	width:100%;
+	margin-bottom:12px;
+	display:none;
+}
+
+table.levelSelector td {
+	padding-bottom:13px;
+}
+
+table.levelSelector .select-header {
+    font-weight:bold;
+}
+
+.jr .jrs-slider.ui-slider-horizontal {
+    position:relative;
+    height: 5px;
+    margin-left:6px;
+    margin-right:6px;
+    border:solid 1px #eee;
+    background: url(images/slider_bkgd.png);
+    z-index:1;
+}
+
+.sliderTick {
+    position:absolute;
+    background:url(images/slider_tickMark.png);
+    width:3px;
+    height:23px;
+    top: -4px;
+    z-index:0;
+    margin-left:-1px;
+}
+
+.tickOverlay {
+    position:absolute;
+    height:23px;
+    width:20px;
+    left:-10px;
+}
+
+.jr .jrs-slider.ui-slider-horizontal .ui-slider-handle {
+    background:url(images/slider_handle.png);
+    width:13px;
+    height:22px;
+    border:none;
+    margin-top:-6px;
+    margin-left:-6px;
+    cursor:pointer;
+}
+
+.jr .jrs-slider .ui-slider-range {
+    background:url(images/slider_fill.png);
+}
+
+td.olap_level_name {
+    width:40%;
+}
+
+td.olap_level_name > div {
+    position:relative;
+    height:13px;
+}
+
+div.olap_level_label {
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    overflow:hidden;
+}
+
+#tableOptions, #chartOptions {
+    position:absolute;
+    background:url(images/chart_options_button_sprite.png);
+    width:32px;
+    height:23px;
+    left:10px;
+    top:10px !important;
+    cursor:pointer;
+    z-index:3;
+    display:none;
+}
+
+#tableOptions {
+    left:0;
+    display:block;
+}
+
+#tableOptions.over , #chartOptions.over {background-position: -62px 0;}
+
+/*
+.selector.mutton {
+    position:absolute;
+    background:url("images/adhoc_icons_sprite.png") no-repeat 3px 2px;
+    width:32px;
+    height:23px;
+    left:10px;
+    top:10px;
+    cursor:pointer;
+    z-index:3;
+}
+*/
+
+#chartMenu {
+    padding:5px 0;
+    list-style: none;
+    z-index:2;
+    -moz-box-shadow: 2px 2px 1px #eee;
+    -webkit-box-shadow: 2px 2px 1px #eee;
+    box-shadow: 2px 2px 1px #eee;
+}
+
+#chartMenu li {
+	cursor: pointer;
+    padding: 0;
+    background: #fff;
+    color: #000;
+}
+
+#chartMenu li.hovered {
+    background: #ff8000;
+    color: #fff;
+}
+
+#chartMenu li.disabled > p.wrap.over {
+    background: none;
+    color: #000000;
+}
+
+#dataLevelTooltip {
+    position:absolute;
+    padding:4px;
+    text-align: center;
+    background:#eee;
+    border:solid 1px #ccc;
+    z-index:1000;
+    display:none;
+    white-space: nowrap;
+}
+
+#chart-options-container .pod-header,
+#level-container .pod-header {
+    background: #f0f0f0;
+    border-bottom: solid 1px #e0e0e0;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    padding-left:8px;
+}
+
+#level-container .pod-body {
+    padding:8px;
+    position: relative;
+}
+
+#titleCaption.highChartsTitle {
+    margin:0 48px;
+    text-align: center;
+}
+
+
+/* toolbar drop-downs */
+
+.toolbar .dropList {
+	width:auto;
+	margin-top: 4px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+
+
+/* --------------------------------------- */
+
+.calendar2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    display: none;
+}
+.calendar2 > .content > .header {
+    border-bottom: 1px solid #C5C5C5;
+    height: 28px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+}
+.calendar2 > .content > .footer > .closeButton {
+    margin-right: 0;
+    float: right;
+}
+.calendar2.dialog > .content > .body {
+    padding: 10px 10px 5px 10px;
+}
+.calendar2 .tabsControl {
+    z-index: 1000;
+    height: 15px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+.calendar2 .tabsControl > .tabSelect {
+    float: left;
+    cursor: pointer;
+}
+.calendar2 .tabsControl > .separator {
+    margin-left: 6px;
+    margin-right: 6px;
+    float: left;
+}
+.calendar2 .tabsControl > .tabSelect.opened {
+    color: #0872A4;
+    font-weight: bold;
+}
+.calendar2 .tabs {
+    width: 259px;
+    clear: both;
+}
+.calendar2 .tabs > .tab {
+    display: none;
+    border: none;
+    position: static !important;
+    height: auto !important;
+}
+.calendar2 .tabs > .tab.opened {
+    display: block;
+}
+.calendar2 .tabs > .tab.calendar > .ui-datepicker {
+    padding: 3px;
+    border: 1px solid #C5C5C5;
+    width: 251px;
+}
+.calendar2 .tabs > .tab.calendar > .ui-datepicker > .ui-datepicker-calendar,
+.calendar2 .tabs > .tab.calendar > .ui-datepicker > .ui-timepicker-div {
+    width: 205px;
+    margin-left: 23px;
+}
+.calendar2 .tabs > .tab.calendar > .ui-datepicker > .ui-timepicker-div {
+    margin-top: 10px;
+}
+.calendar2 .tabs > .tab.calendar > .ui-datepicker > .ui-timepicker-div > .ui-widget-header {
+    display: none;
+}
+.calendar2 .tabs > .tab.calendar > .ui-datepicker > .ui-datepicker-calendar {
+    border: none;
+}
+.calendar2 .relativeDates > .dates {
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+.calendar2.disabled .relativeDates {
+    opacity: .35;
+}
+.calendar2 .relativeDates > .dates > .label {
+    margin-top: 10px;
+}
+.calendar2 .relativeDates > .dates input,
+.calendar2 .relativeDates > .dates select {
+    height: 18px;
+}
+.calendar2 .relativeDates > .dates > .measure {
+    width: 100px;
+}
+.calendar2 .relativeDates > .dates > .sign {
+    width: 80px;
+}
+.calendar2 .relativeDates > .dates > .amount > input {
+    width: 60px;
+}
+
+input.hasCalendar2[readonly] {
+    background-image: url("images/input_bkgd.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border-color: #848484 #C1C1C1 #E1E1E1;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+/* START New Select Data Dialog Box */
+.sourceDialogNew .itemDescription {
+    background-color: #EEEEEE;
+    /* border: 1px solid #E0E0E0; */
+    height: 50px;
+    margin: 6px 0 0;
+    padding: 8px;
+}
+
+.sourceDialogNew.overlay .control.searchLockup > .wrap>input[type=text]{
+    box-sizing: border-box;
+    height: 100%;
+    margin-right: 0;
+    padding-right: 23px;
+    width: 100%;
+}
+/* END New Select Data Dialog Box */

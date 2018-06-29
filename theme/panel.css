@@ -1,0 +1,81 @@
+.panel {
+    background-color: transparent;
+    border: 0;
+    position: static;
+}
+
+.panel > .header {
+    background-color: #e0e0e0;
+    border: 0;
+    border-bottom: 1px solid #B7B7B7;
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+    width: 100%;
+}
+
+.panel > .header > .title {
+    display: inline;
+    float: left;
+    /* font-weight: bold; */ /* DELETE IF NO PROBLEMS */
+    line-height: inherit;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: static;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.panel > .header > .button.mutton {
+    float: right;
+    position: relative;
+}
+
+.panel > .header > .button.mutton.over {
+    background-position: 0 -179px;
+    float: right;
+    position: relative;
+}
+
+
+.collapsiblePanel.open > .header > .buttonIconToggle {
+    background-position: -2px -697px;
+    float: left;
+    margin-right: 4px;
+}
+
+.collapsiblePanel.closed > .header > .buttonIconToggle {
+    background-position: -2px -673px;
+    float: left;
+    margin-right: 4px;
+}
+
+.tabbedPanel > .subcontainer > .tabContainer {
+    display: none;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer {
+    clear: none;
+    float: right;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer > button {
+    border: thin solid rgb(16, 13, 58);
+    width: 22px;
+    height: 16px;
+    margin: 3px;
+    background-color: #f5f5f5;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer > button.active {
+    border: thin solid red;
+}
+
+div.subcontainer div.j-view-port-chunk > ul {
+    padding: 0px;
+}
+
+

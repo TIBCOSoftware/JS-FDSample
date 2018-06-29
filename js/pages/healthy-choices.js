@@ -18,19 +18,17 @@ var defAvailability = 'Limited';
 var defPricePerUnit = '$ 2.88';
 var defUnitsPerCase = '14';
 
-//load the config and get the script for the configured server instance
-$.getJSON('./config/config.json', function(data) {
-	$.getScript(data.visualizeJS, function() {
-		initPage(data.jrsConfig);
-	});
-});
+app.initializeVisualize(initPage);
 
-//init page and authenticate with JRS
-function initPage(jrsConfig) {
-	visualize({
-		auth: jrsConfig.auth
-	}, function(v) {
-		loadDashboard(v);
+function initPage(jrsConfig, visualize) {
+	loadDashboard(visualize);
+
+	$("#filterTen").on('click', function() {
+		limitResults(10);
+	});
+
+	$("#filterReset").on('click', function() {
+		resetFilters();
 	});
 }
 
@@ -78,13 +76,3 @@ function resetFilters() {
 function refreshMaster() {
 	window.masterReport.params(pageConfig.params).run();
 }
-
-$(function() {
-	$("#filterTen").on('click', function() {
-		limitResults(10);
-	});
-
-	$("#filterReset").on('click', function() {
-		resetFilters();
-	});
-});

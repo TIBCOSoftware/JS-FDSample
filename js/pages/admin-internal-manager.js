@@ -38,20 +38,11 @@ var pageConfig = {
 };
 
 
-//load the config and get the script for the configured server instance
-$.getJSON('./config/config.json', function(data) {
-	$.getScript(data.visualizeJS, function() {
-		initPage(data.jrsConfig);
-	});
-});
+app.initializeVisualize(initPage, JSON.parse(sessionStorage.jrsConfig || '{}'));
 
-//connect to Jaspersoft BI server and load the dashboard
-function initPage(jrsConfig) {
-	visualize({
-		auth: JSON.parse(sessionStorage.jrsConfig || '{}').auth //use the credentials of the logged in user
-	}, function(v) {
-		loadReport(v);
-	});
+function initPage(jrsConfig, visualize) {
+	//auth: JSON.parse(sessionStorage.jrsConfig || '{}').auth //use the credentials of the logged in user
+	loadReport(visualize);
 }
 
 

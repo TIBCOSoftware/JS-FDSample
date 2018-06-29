@@ -1,0 +1,22 @@
+.notificationAlert {
+    position: absolute;
+    z-index: 1000000;
+    height: 28px;
+    top: 1px;
+    left: 0;
+    right: 0;
+    border: solid 1px #d3d2d2;
+    background-color: #feef97;
+}
+
+.notificationAlert > .notificationMessage {
+    padding: 6px 6px 0 6px;
+    text-align: center;
+    color: #217eb5;
+    font-weight: bold;
+}
+
+.notificationAlert .close {
+    color: #000;
+    font-weight: normal;
+}

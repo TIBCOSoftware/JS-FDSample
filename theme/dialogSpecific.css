@@ -1,0 +1,1708 @@
+/*
+dialogSpecific.css
+
+pods skin
+tim sheiner & christie rixford
+*/
+
+/*
+______________________________________________________________
+
+ DIALOGS
+______________________________________________________________
+
+The rules in this file provide detailed and custom layout instructions
+for particular dialogs used by the application.
+
+The general appearance of dialogs is set in the relevant section of containers.css.
+
+Dialog markup is created via templates, /jsp/templates/#[name of dialog]
+
+*/
+
+/*
+
+FLOATING DIALOGS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*/
+
+/* .properties.resource */
+
+.properties.resource .control {
+	width:450px;
+}
+
+.properties.resource .textArea textarea {
+	height: 58px;
+    min-height: 58px;
+}
+
+.properties.resource .ok,
+.properties.resource.showMode .submit,
+.properties.resource.showMode .cancel {
+	display: none;
+}
+
+.properties.resource.showMode .ok {
+	display: inline;
+}
+
+/* .aboutBox */
+
+#aboutBox {
+    width: 380px;
+}
+
+
+/* .permissions */
+
+.dialog.permissions {
+	width:600px;
+	height: 300px;
+	min-width: 450px;
+}
+
+.dialog.permissions .sub.header>.tabSet {
+	margin-left:20px;
+}
+
+.dialog.permissions .tabSet{
+	top:-10px;
+}
+
+.dialog.permissions .searchLockup {
+	left: 5px;
+	top: 0px;
+	width: 250px;
+}
+
+.dialog.permissions .searchLockup input {
+	position: absolute;
+		left: 0;
+		top: 0;
+	height: 100%;
+	width: 200px;
+}
+
+.dialog.permissions .groupBox {
+	top:70px;
+	bottom:25px;
+	padding: 0;
+}
+
+.dialog.permissions .groupBox > .content > .body {
+	padding: 0;
+}
+
+.dialog.permissions .message {
+	position: absolute;
+	top:40px;
+	right: 25px;
+}
+
+.dialog.permissions .message.warning {
+	top:auto;
+	bottom:5px;
+	left: 25px;
+	margin: 0;
+}
+
+.dialog.permissions #permissionsViewBy > .label {
+	padding-right: 6px; /* NEW */
+}
+
+/* Add Organizations, Users, Roles */
+
+#addOrganization.dialog.overlay,
+#addUser.dialog.overlay,
+#addRole.dialog.overlay {
+	min-width: 350px;
+	width: auto;
+}
+
+#addOrganization.dialog.overlay .group,
+#addUser.dialog.overlay .group,
+#addRole.dialog.overlay .group {
+	padding-left: 0;
+}
+
+
+/* #loading */
+
+.dialog.loading {
+	z-index: 5000;
+}
+
+.dialog.loading .message {
+	background-image:url("images/wait_animation_large.gif");
+	background-repeat:no-repeat;
+	display:inline-block;
+	height:45px;
+	margin-right:20px;
+	padding-left:60px;
+	padding-top:15px;
+	*float:left;
+}
+
+.dialog.loading .body {
+	padding-bottom: 0;
+	*overflow:hidden; /* IE7 */
+}
+
+.dialog.loading #cancel,
+.dialog.loading .footer {
+	display: none;
+}
+
+.dialog.loading.cancellable #cancel {
+	display: inline;
+	*float:left;
+}
+
+.dialog.loading.statically_centered {
+	margin-left: -85px; /* half of the loading dialog width */
+	left: 50%;
+	margin-top: -52.5px; /* half of the loading dialog height */
+	top: 50%;
+}
+
+/* #exportDialog */
+
+#exportDialog {
+	*width:300px; /* IE7 */
+}
+
+#exportDialog #exportDataFile legend {
+	*margin-left:-10px; /* IE7 */
+}
+
+#exportDialog #exportOptions legend {
+	*margin-left:-20px; /* IE7 */
+}
+
+#exportDialog #exportDataFile input {
+	width:100%;
+}
+
+#exportDialog .inputSet .leaf {
+	padding:3px 0 0 0;
+}
+
+/* confirmationDialog */
+
+.confirmationDialog .confirmationText {
+    word-wrap: break-word;
+}
+
+
+/* #standardConfirm/#standardAlert */
+
+.standardConfirm .message,
+.standardAlert .message {
+	margin:auto 5px 20px;
+}
+
+.standardConfirm > .content>.body,
+.standardAlert > .content>.body {
+	padding: 20px;
+	white-space:normal;
+	word-wrap:break-word;
+}
+
+
+.standardConfirm {
+	max-width: 550px \9; IE8 and IE9
+	min-width: 300px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.standardConfirm {
+		max-width: 550px;
+	}
+}
+
+.standardConfirm.noMaxWidth {
+    max-width: none;
+}
+
+.standardConfirm.noMaxWidth > .content {
+    max-width: none;
+}
+
+.standardAlert .column.noHeader > .content > .body {
+	top: 30px;
+}
+
+.standardAlert .row.inputs.oneColumn .footer {
+	border-top: 0px;
+}
+
+.standardAlert.stacktrace>.content {
+	max-width:100%;
+}
+
+#standardAlert.standardAlert.stacktrace>.content>.body {
+	margin:14px 22px 22px 22px;
+	border:1px solid #d5d5d5;
+	padding: 8px 6px 8px 4px;
+}
+
+/* Select Data dialog, .sourceDialogNew */
+
+.jr-mDialog.jr.sourceDialogNew .control.searchLockup input {
+    height: 24px;
+    width: 90%;
+}
+
+/* Max height on jr-mDialog-body must be removed. Until then this style was added to fix JRS-11315 */
+.jr-mDialog.jr.sourceDialogNew .jr-mDialog-body {
+    max-height: 1200px;
+}
+
+    /* #helpLoggingIn */
+
+#helpLoggingIn .message {
+	font-size: 12px;
+}
+
+#helpLoggingIn ul.decorated {
+	margin-bottom: 22px;
+}
+
+#helpLoggingIn .button.action:hover { /* this is temporary until we can dynamically add the .over class to this element */
+	background-color: #195b8a;
+}
+
+
+/* #heartbeatOptin */
+
+.heartbeatOptin .message {
+	margin:auto 5px 20px;
+}
+
+.heartbeatOptin>.content>.body {
+	margin-bottom:10px;
+	padding:20px 20px 10px;
+}
+
+.heartbeatOptin>.content {
+	max-width:550px;
+}
+
+/* #detail */
+
+.detail.sizeable {
+	min-height: 350px;
+	min-width: 450px
+}
+
+.detail.sizeable #groupBox {
+	bottom:15px;
+}
+
+
+/* #editlabel */
+
+.editLabel {
+	width:350px;
+}
+
+/* #saveAs */
+
+.saveAs {
+	height:500px;
+	width: 440px;
+}
+
+.saveAs #saveAsInputDescription,
+.saveAs textarea.resourceDescription{
+	min-height: 40px;
+	min-height:44px \9; /* IE8 and IE9 */
+}
+
+.saveAs label {
+	width:100%;
+}
+
+.saveAs .input input,
+.saveAs .textArea textarea {
+	padding-left:2px;
+	padding-right:0;
+	overflow:auto;
+	overflow:hidden \9; /* IE8 and IE9 */
+	*overflow:hidden;   /* IE7 */
+}
+
+.saveAs .groupBox {
+    height: 280px;
+	margin:0;
+	float: none;
+}
+
+.saveAs>.content>.body .groupBox {
+	top:100px \9; /* IE8 and IE9 */
+	top:150px;
+}
+
+/* #saveDataViewAndReport */
+
+/*.saveAs.forDataView.forReport>.content>.body .groupBox {*/
+	/*top:230px \9; *//* IE8 and IE9 */
+	/*top:280px;*/
+/*}*/
+
+#saveDataViewAndReport.saveAs.forReport{
+    height: 650px;
+    min-height: 435px;
+	min-width: 600px;
+}
+
+.dualColumnContainer {
+	overflow:visible;
+	display:block;
+}
+
+.forReport .dataViewColumnContainer {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	float:left;
+	width:49%;
+	*width:48%;
+	padding-right:9px;
+}
+
+.forDataView .reportColumnContainer {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	float:left;
+	width:50%;
+	*width:48%;
+	padding-left:9px;
+}
+
+.saveAs.forDataView .dataViewColumn,
+.saveAs.forReport .reportColumn {
+	width:100%;
+}
+
+.saveAs > .content > .body .dataViewColumnContainer .groupBox,
+.saveAs > .content > .body .reportColumnContainer .groupBox {
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	position:relative;
+}
+
+/* .saveAs.forDataView .forDataView.dataViewColumn .groupBox {
+    height: 280px;
+    width: 100%;
+} REDUNDANT STYLES, DELETE IF THERE ARE NO ISSUES */
+
+.saveAs.forDataView.forReport .forDataView.dataViewColumn .groupBox,
+.saveAs .forReport.reportColumn .groupBox {
+    height: 170px;
+    width: 100%;
+}
+
+.saveAs #saveAsInputDescription,  .saveAs textarea.resourceDescriptionInput{
+    min-height: 60px;
+    min-height: 44px \9; /* IE9 */
+}
+
+.saveAs,
+.saveAs.noGenerators {
+    height: 550px;
+}
+
+.saveAs.forReport #adHocGeneratorSelect {
+    margin-left: 6px;
+    margin-right: 6px;
+    top: 22px;
+}
+
+.saveAs.forDataView #adHocGeneratorSelect {
+    top: 340px;
+}
+
+
+/* .saveAs.forDataView.forReport .forReport .groupBox, */
+.saveAs.forDataView .reportColumn .groupBox {
+    top:130px;
+    left:0;
+}
+
+#adHocGeneratorSelect .saveAs {
+    top: 340px;
+}
+
+#saveDataViewAndReport #adHocGeneratorSelectReportTemplate {
+	*width:90%;
+}
+
+#adHocGeneratorSelect fieldset.group {
+	margin-top:0;
+}
+
+#adHocGeneratorSelect .group.locationSelector {
+	height:auto;
+}
+
+#adHocGeneratorSelect .group.locationSelector legend {
+	margin-bottom:10px;
+}
+
+
+
+input[readonly]#viewQueryInput ,
+textarea[readonly]#viewQueryInput   {
+	border-top:1px solid #848484;
+	border-right:1px solid #C1C1C1;
+	border-bottom:1px solid #E1E1E1;
+	border-left:1px solid #C1C1C1;
+	padding-top:3px;
+	height:190px;
+	overflow:auto;
+	overflow-y: scroll \9; /* IE8 and IE9 */
+	overflow-x: hidden \9; /* IE8 and IE9 */
+}
+
+/* #dependencies */
+
+.dependencies {
+	min-height:420px !important;
+	min-width: 560px !important;
+}
+
+.dependencies>.content>.body .groupBox {
+    height: auto;
+    left: 0;
+    min-height: 200px;
+    top: 0;
+    position: relative;
+
+}
+
+#dependenciesList {position:absolute;}
+
+.dependencies #dependenciesList .wrap.button {
+	padding-left:10px;
+}
+
+.dependencies > .content > .body .saveMessage {
+	margin-top: 12px;
+}
+
+#dependencies .groupBox>.content>.body {
+	padding:0px;
+}
+
+/* create report */
+
+#generateResource .textArea textarea {
+	min-height:40px;
+	min-height:44px \9; /* IE8 and IE9 */
+}
+
+#repositorySelectionDialog {
+    min-height: 500px;
+    min-width: 450px;
+}
+
+#repositorySelectionDialog.dialog.sizeable .groupBox {
+	top:38px;
+}
+
+.generatorSelect .body {
+	overflow:visible;
+}
+
+#locationSelector .input,
+#commonGeneratorSelectReportTemplate {
+	width: 100%;
+}
+
+#browseTemplate .control.browser .button.action {
+	margin-bottom:-8px;
+}
+
+#reportGeneratorProperties {
+    height: 310px;
+    min-height: 300px;
+    min-width: 400px;
+    width: 400px;
+}
+
+#reportGeneratorProperties.noGenerators {
+    height: 245px;
+    min-height: 245px;
+    min-width: 400px;
+    width: 400px;
+}
+
+#reportGeneratorProperties.withTree {
+    height: 538px;
+    min-height: 400px;
+    min-width: 400px;
+    width: 400px;
+}
+
+#reportGeneratorProperties.dialog > .content > .body {
+	padding-top:16px;
+}
+
+#reportGeneratorProperties.withTree.noGenerators {
+    height: 520px;
+}
+
+#reportGeneratorProperties #advTreePanel .control {
+	height: 163px;
+	top: 48px;
+}
+
+#reportGeneratorProperties #commonGeneratorSelect {
+    top:0;
+}
+
+#reportGeneratorProperties.withTree #commonGeneratorSelect {
+   top: 204px;
+}
+
+#reportGeneratorProperties.withTree #commonGeneratorSelect.control {
+    margin-bottom: 0;
+}
+
+#commonGeneratorSelect .group.locationSelector {
+	margin: 0;
+}
+
+#commonGeneratorSelect .group.locationSelector legend {
+	margin-bottom:10px;
+}
+
+#commonGeneratorSelect.groupBox  {
+    border: none;
+}
+
+
+/* #manageDataSource */
+
+.manageDataSource {
+	height:500px;
+	width: 400px;
+}
+
+.manageDataSource>.content>.body .groupBox {
+	top:75px;
+	bottom: 40px;
+}
+
+.manageDataSource #selectSchemas {
+	position:absolute;
+	bottom: 15px;
+}
+
+
+/* #addFolder */
+
+.addFolder {
+	width:400px;
+}
+
+/* #saveValues */
+
+.saveValues {
+	width:400px;
+}
+
+/* #selectFile */
+
+.selectFile {
+	height:500px;
+	min-height:400px;
+	min-width:400px;
+	width:400px;
+}
+
+.selectFile #fromRepo {
+	top:65px;
+}
+
+.selectFile #fromRepo {
+	bottom:0;
+	left:0;
+	position:absolute;
+	right:0;
+	overflow:visible;
+}
+
+.selectFile #fromRepo.error .groupBox {
+	top:40px;
+}
+
+.selectFile #fromRepo .message.warning {
+	bottom:-10px;
+	left:20px;
+	position:absolute;
+}
+
+
+/* selectFolder */
+
+/* fix for IE8 */
+.selectFolder.newResizeableDialog .jr-mDialog-body .subcontainer {
+	height: 320px;
+}
+
+.newResizeableDialog.jr .jr-mDialog-body .subcontainer {
+	padding-bottom: 5px;
+	min-width: 0;
+	min-height: 0;
+	height: calc(100% - 76px);
+}
+.newResizeableDialog.jr .jr-mDialog-footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	padding: 0.845em 1.40em;
+}
+.newResizeableDialog.jr .jr-mDialog-footer .button.action {
+	margin-right: 10px;
+}
+
+
+.selectFolder.newResizeableDialog.jr .jr-mDialog-body .subcontainer .control.groupBox.treeBox {
+	width: 100%;
+	height: 286px; /* for IE8 */
+	height: calc(100% - 14px);
+}
+.selectFolder.newResizeableDialog.jr .jr-mDialog-body .subcontainer .control.groupBox.treeBox > .content {
+	height: 100%;
+}
+.selectFolder.newResizeableDialog.jr .jr-mDialog-body .subcontainer .control.groupBox.treeBox > .content .body {
+	height: 100%;
+}
+
+/* #select */
+
+#select {
+    height:auto;
+    width:auto;
+    min-width:460px;
+}
+
+#select .groupBox {
+    margin-bottom: 0px;
+}
+
+#select #fileInputsList {
+    margin-bottom: 20px;
+}
+
+#select #fileInputsList li {
+    margin-bottom: 10px;
+}
+
+.dialog.select {
+	height:400px;
+	min-height:400px;
+	min-width:400px;
+	width:400px;
+}
+
+/* #selectPalette */
+
+.selectPalette {
+	height:300px;
+	min-height:100px;
+	min-width:100px;
+	width:400px;
+}
+
+/* #sortDialog */
+
+.sortDialog {
+	height:400px;
+	min-height:200px;
+	min-width:300px;
+	width:600px;
+}
+
+#sortDialog #availableFields {
+	top: 0;
+}
+
+.sortDialog .column.decorated {
+	border:1px solid #D4D5D5;
+}
+
+.sortDialog .secondary .minimize,
+.sortDialog .secondary .sizer {
+	display: none;
+}
+
+.sortDialog #sortOn .list.column.simple {
+	margin-right: 45px;
+}
+
+
+.sortDialog #sortOn>.content>.body {
+	overflow:hidden;
+}
+
+.sortDialog #sortOn>.content>.body>.moveButtons {
+	padding-top:5px;
+}
+
+.sortDialog .list.fields>li>.wrap,
+.sortDialog .list>li.fields>.wrap,
+.sortDialog .list.fields li>.wrap {
+	margin:0 2% -1px 2px;
+	border:none;
+	border-radius:0;
+}
+
+.sortDialog .collapsible>li {
+	line-height: 2em;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+	.sortDialog #sortOn .list.column.simple {
+		margin-right: 45px;
+		width:220px;
+		height:300px;
+	}
+
+	.sortDialog .collapsible>li {
+		line-height: 2.5em;
+	}
+}
+
+/* #selectFields */
+
+#selectFields.dialog .twoColumn_equal.pickWells > .primary.column,
+#selectFields.dialog .moveButtons > .primary.column,
+#selectFields.dialog .twoColumn_equal.pickWells  >.secondary.column,
+#selectFields.dialog .moveButtons > .secondary.column {
+    border: 1px solid #c5c5c5;
+}
+
+.selectFields {
+	height: 400px;
+	min-height: 200px;
+	min-width: 300px;
+	width: 600px;
+}
+
+.selectFields .secondary .minimize,
+.selectFields .secondary .sizer {
+	display: none;
+}
+
+.selectFields .list.column.simple {
+    margin-right: 0;
+    border-right: none;
+}
+
+/* select chart type */
+
+#chartTypeSelector {
+    height: 495px;
+    min-width: 526px;
+    *width: 526px; /* IE7 */
+    z-index: 1000; /* Bug 34694 - FiltersData Levels are visible thru Chart Format/Chart Types dialogs */
+}
+
+#chartTypeSelector .wrap {
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#chartTypeSelector div.body > .row {
+	overflow: hidden;
+	margin-bottom: 12px;
+	margin-left: -5px;
+	min-width: 508px; /* prevents chart type icons from wrapping */
+}
+
+#chartTypeSelector div.body > .row > .cell {
+    background-image: url("images/chart_type_sprite.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 1px solid transparent;
+	cursor: pointer;
+	float: left;
+	height: 36px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 53px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="column"] {
+    background-position: 1px 1px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_column"] {
+    background-position: 1px -64px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="percent_column"] {
+    background-position: 1px -129px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="bar"] {
+    background-position: 1px -194px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_bar"] {
+    background-position: 1px -259px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="percent_bar"] {
+    background-position: 1px -324px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="line"] {
+    background-position: 1px -389px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_line"] {
+    background-position: 1px -1494px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_area"] {
+    background-position: 1px -1689px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_column"] {
+    background-position: 1px -1624px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline"] {
+    background-position: 1px -454px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="area"] {
+    background-position: 1px -519px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_area"] {
+    background-position: 1px -584px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="percent_area"] {
+    background-position: 1px -649px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline_area"] {
+    background-position: 1px -714px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="pie"] {
+    background-position: 1px -779px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="dual_level_pie"] {
+    background-position: 1px -1559px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="semi_pie"] {
+	background-position: 1px -2079px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="dual_measure_tree_map"] {
+	background-position: 1px -1949px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="tree_map"] {
+	background-position: 1px -1884px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="one_parent_tree_map"] {
+	background-position: 1px -2014px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="line_time_series"] {
+    background-position: 1px -389px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline_time_series"] {
+    background-position: 1px -454px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="area_time_series"] {
+    background-position: 1px -519px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline_area_time_series"] {
+    background-position: 1px -714px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="column_line"] {
+    background-position: 1px -844px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="column_spline"] {
+    background-position: 1px -974px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_column_line"] {
+    background-position: 1px -909px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_column_spline"] {
+    background-position: 1px -1039px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_line"] {
+    background-position: 1px -1104px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_spline"] {
+    background-position: 1px -1169px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_column"] {
+    background-position: 1px -1234px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="scatter"] {
+    background-position: 1px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="bubble"] {
+    background-position: 1px -1429px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="scatter_line"] {
+    background-position: 1px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="heat_map"] {
+    background-position: 1px -1754px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="heat_map_time_series"] {
+    background-position: 1px -1819px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="speedometer"] {
+    background-position: 1px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="arc_gauge"] {
+    background-position: 1px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_line"].disabled {
+    background-position: -89px -1494px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_area"].disabled {
+    background-position: -89px -1689px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spider_column"].disabled {
+    background-position: -89px -1624px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="line_time_series"].disabled {
+    background-position: -89px -389px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline_time_series"].disabled {
+    background-position: -89px -454px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="area_time_series"].disabled {
+    background-position: -89px -519px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="spline_area_time_series"].disabled {
+    background-position: -89px -714px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="column_line"].disabled {
+    background-position: -89px -844px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="column_spline"].disabled {
+    background-position: -89px -974px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_column_line"].disabled {
+    background-position: -89px -909px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="stacked_column_spline"].disabled {
+    background-position: -89px -1039px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_line"].disabled {
+    background-position: -89px -1104px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_spline"].disabled {
+    background-position: -89px -1169px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="multi_axis_column"].disabled {
+    background-position: -89px -1234px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="scatter"].disabled {
+    background-position: -89px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="bubble"].disabled {
+    background-position: -89px -1429px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="scatter_line"].disabled {
+    background-position: -89px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="heat_map"].disabled {
+    background-position: -89px -1754px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="heat_map_time_series"].disabled {
+    background-position: -89px -1819px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="dual_measure_tree_map"].disabled {
+	background-position: -89px -1949px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="tree_map"].disabled {
+	background-position: -89px -1884px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="one_parent_tree_map"].disabled {
+	background-position: -89px -2014px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="speedometer"].disabled {
+    background-position: -89px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell[name="arc_gauge"].disabled {
+    background-position: -89px -1299px;
+}
+
+#chartTypeSelector div.body > .row > .cell.selected {
+    background-color: #1388d8;
+    border: solid 1px #1388d8;
+}
+
+#chartTypeSelector div.body > .selectBox {
+    border: solid 1px #0872A4;
+    height: 28px;
+    padding: 4px;
+    position: absolute;
+    width: 45px
+    z-index: 0;;
+}
+
+/* Chart format dialog. */
+
+#chartFormatDialog {
+    min-width: 420px;
+    min-height: 250px;
+    width: auto;
+    *width:auto; /* IE7 */
+    z-index: 1000; /* Bug 34694 - FiltersData Levels are visible thru Chart Format/Chart Types dialogs */
+}
+
+#chartFormatDialog.dialog.overlay > .content {
+	*display: block; /* IE7 */
+	*width: auto !important; /* IE7 */
+}
+
+#chartFormatDialog .formattingSection {
+    margin: 10px 0 10px 0;
+}
+
+#chartFormatDialog .control.checkBox label {
+    margin-left:20px;
+}
+
+#chartFormatDialog .section .control {
+    margin-left:15px;
+    margin-bottom:12px;
+}
+#chartFormatDialog .section .control.child {
+    margin-left:34px;
+}
+
+#chartFormatDialog input {
+    width:40px;
+    padding-left:2px;
+}
+#chartFormatDialog .body.section.noTitle {
+    min-height: 130px;
+    min-width: 300px;
+    padding-bottom: 8px;
+    height: auto;
+    width: auto;
+}
+
+
+/* #selectFromRepository */
+
+.selectFromRepository {
+	height:400px;
+	width:400px;
+	min-height:400px;
+	min-width:400px;
+}
+
+
+/* #inputControls */
+
+.dialog.inputControls {
+	height:550px;
+	min-height:500px;
+	min-width:490px; /* width needed to fit all buttons in other languages */
+	width:510px;
+}
+
+.dialog.inputControls .groupBox .body {
+    overflow-x: hidden;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.pane.inputControls {
+	margin-bottom: 10px;
+}
+
+.pane.inputControls .header {
+	background: transparent;
+}
+
+.pane.inputControls .header>.title {
+	display:none;
+}
+
+.pane.inputControls .header>#savedValuesSelector {
+	width:auto;
+	line-height: 28px;
+}
+
+.pane.inputControls .header>#savedValuesSelector>select {
+	display:inline;
+	margin:0;
+}
+
+.pane.inputControls .footer {
+	height:38px;
+	padding-left:20px;
+	padding-top: 5px;
+	position: relative;
+	clear:left;
+}
+
+.pane.inputControls .body {
+	bottom:43px;
+	padding-left: 15px;
+}
+
+.pane.inputControls .body>.list.inputControls>.leaf {
+	float:left;
+	clear: none;
+	margin:6px 5px;
+}
+
+.pane.inputControls .body>.list.inputControls>.leaf .control input {
+	margin-bottom: 0 !important;
+}
+
+.pane.inputControls select {
+	*width:auto; /* IE7 */
+}
+
+/* Add Local Bundle dialog */
+
+#selectFile_bundle {
+    width: 450px;
+}
+
+#selectFile_bundle .control.groupBox.fillParent {
+	*height:263px; /* IE7 */
+	bottom: 0;
+	right: 0;
+}
+
+/* .sourceDialog */
+
+.sourceDialog #cancel {
+	position: absolute;
+	right:25px;
+	top:5px;
+	left:auto;
+}
+
+
+/* #customURL */
+
+.customURL {
+	width:600px;
+	height: 300px;
+	min-width: 450px;
+}
+
+.customURL.noParams {
+	height: 170px;
+}
+
+.customURL.noParams>.content>.body>.groupBox {
+	display: none;
+}
+
+.dialog.customURL .groupBox {
+	top:70px;
+	padding: 0;
+}
+
+.dialog.customURL .groupBox>.content>.body {
+	padding: 0;
+}
+
+
+.customURL .list.tabular input {
+	width:auto;
+}
+
+.customURL .list.tabular input[type=checkbox] {
+	top:6px;
+	top:7px \9; /* IE8 and IE9 */
+	*top:-1px; /* IE7 */
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.customURL .list.tabular input[type=checkbox] {
+		top:7px;
+	}
+}
+
+.customURL .checkBox .wrap {
+	margin-left:19px;
+	margin-left:22px \9; /* IE8 and IE9 */
+}
+
+/*
+
+PANES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*/
+
+
+/* .pane.filter */
+
+.pane.filter.sizeable {
+	min-height: 150px;
+}
+
+.pane.filter .body {
+	overflow: hidden;
+}
+
+.pane.filter.sizeable .values {
+	bottom:0;
+	left:0;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.pane.filter .options,
+.pane.filter .operation {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.pane.filter .options,
+.pane.filter .operation {
+	padding:7px;
+}
+
+.pane.filter .values {
+	padding:0 7px;
+}
+
+.pane.filter .all {
+	padding:0 7px 15px;
+}
+
+.pane.filter .all .wrap {
+	position: relative;
+	left:auto;
+}
+
+.pane.filter label .wrap {
+	position:absolute;
+	left:-5000px;
+	border: none;
+	background: transparent;
+}
+
+.pane.filter.sizeable .all {
+	position: absolute;
+	bottom:5px;
+}
+
+.pane.filter .body .options,
+.pane.filter .body .operation {
+	border:none;
+	display:none;
+}
+
+.pane.filter .body .options .select,
+.pane.filter .body .options select,
+.pane.filter .body .operation .select,
+.pane.filter .body .operation select {
+	margin:0;
+}
+
+.pane.filter.showingOptions .body .options,
+.pane.filter.showingOperation .body .operation {
+	display: block;
+}
+
+.pane.filter.showingOptions .body .values,
+.pane.filter.showingOperation .body .values {
+	border-top:1px solid #e0e0e0;
+}
+
+.pane.filter.sizeable.showingOptions .body .values,
+.pane.filter.sizeable.showingOperation .body .values {
+	margin-top:35px;
+	margin-bottom:20px;
+}
+
+.pane.filter.sizeable .body .values label {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-top:35px;
+}
+
+.pane.filter.sizeable .body .values select {
+	position:absolute;
+	top:0;
+	bottom: 30px;
+}
+
+.pane.filter .message {
+	margin: 10px;
+	white-space: normal;
+}
+
+.pane.filter ul.message {
+	margin-left:20px;
+}
+
+/* .pane.settings */
+
+.pane.settings {
+	border: none;
+}
+
+.pane.settings .header {
+	border: none;
+	background-color: transparent;
+	min-height: 0;
+	height: 25px;
+}
+
+.pane.settings .header.title {
+	line-height: 25px;
+}
+
+.pane.settings .column {
+	position: relative;
+}
+
+.pane.settings .body {
+	overflow:hidden;
+	position:relative;
+	white-space:nowrap;
+	padding: 5px;
+}
+
+.pane.settings .body .column.primary {
+	display:inline-block;
+	float:left;
+	left:auto;
+	white-space:normal;
+	width:475px;
+}
+
+.pane.settings .body .column.secondary {
+	display:inline-block;
+	float:none;
+}
+
+.pane.settings .control input,
+.pane.settings .control select {
+	max-width: 100px;
+	display: inline-block;
+}
+
+.pane.settings .control.text input {
+	width: 50px;
+	float: left;
+	margin-top:0;
+	margin-right: 6px;
+}
+
+.pane.settings .control select {
+	float: left;
+	margin-top: 3px;
+	margin-right: 6px;
+	/* margin-top: 0; */ /* DELETE IF NO PROBLEMS */
+}
+
+.pane.settings .control .wrap {
+	display: inline-block;
+	margin: 0 0 5px 20px;
+	/* max-width: 330px; */ /* DELETE IF NO PROBLEMS */
+	max-width: 450px;
+}
+
+/* #managedPrintLoader */
+
+#managedPrintLoader {
+	border: 1px solid #D3D5D6;
+}
+
+#managedPrintLoader p {
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sand-serif;
+	line-height:1.182em;
+	text-align: left !important;
+}
+
+#animated_loading_bar {
+	background:url(images/wait_animation_large.gif) no-repeat scroll 0 45% transparent;
+	width:45px;
+	height:100%;
+	float:left;
+	margin:0 28px 16px 24px;
+}
+
+/* #nothingToDisplay */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari and Google Chrome only */
+
+	.panel.nothingToDisplay.centered_horz,
+	.panel.nothingToDisplay.centered_vert {
+		position:absolute;
+	}
+
+}
+
+.panel.nothingToDisplay>.content {
+	margin:0 12px;
+}
+
+.panel.nothingToDisplay .message.emphasis {
+	font-weight:bold;
+}
+
+.panel.nothingToDisplay.hidden {
+	display: none !important;
+}
+
+
+
+/* Calculated Fields and Measures */
+
+#calcFieldMeasure.dialog {
+    width: 802px;
+}
+
+#calcFieldMeasure.dialog .measureNameSection {
+    margin-top: -15px;
+}
+
+#calcFieldMeasure.dialog .measureNameSection label {
+	width:400px;
+}
+
+#calcFieldMeasure.dialog .control.textArea {
+	width:100%;
+}
+
+#calcFieldMeasure.dialog .inputRow .description {
+    width: 220px;
+    height: 133px;
+    overflow-y: auto;
+    width: 288px;
+}
+
+#calcFieldMeasure.dialog .inputRow .description p.text{
+    line-height:1.44em;
+}
+
+#calcFieldMeasure.dialog .inputRow .description p.code{
+    font-family: monospace;
+}
+
+
+#calcFieldMeasure.dialog .expressionEditorValidate.group {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#calcFieldMeasure.dialog .inputRow .group {
+	margin-top:20px;
+	margin-right:10px;
+}
+
+.summaryCalcSection {
+    min-height: 100px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.summaryCalcSection .inputRow {
+	width:100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.summaryCalcSection > .inputRow > .node {
+	width:50%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#calcFieldMeasure.dialog .control.pickList .icon {
+    background-image:url("images/lists_sprite.png");
+    background-repeat:no-repeat;
+    float:left;
+    height:16px;
+    width:16px;
+    margin-right:2px;
+    position:relative;
+    top:1px;
+}
+
+#calcFieldMeasure.dialog .control.pickList .icon.field {
+    background-position: 0 -1198px;
+}
+
+#calcFieldMeasure.dialog .control.pickList .icon.measure {
+    background-position: 0 -1231px;
+}
+
+#calcFieldMeasure.dialog .control.pickList .node.calculated {
+    font-weight: bold;
+}
+
+#calcFieldMeasure.dialog .control.pickList .node.calculated .icon.field {
+    background-position: 0 -1298px !important;
+}
+
+#calcFieldMeasure.dialog .control.pickList .node.calculated .icon.measure {
+    background-position: 0 -1331px !important;
+}
+
+#calcFieldMeasure.dialog .control.pickList .icon.function {
+    background-position: 0 -1264px;
+}
+
+#calcFieldMeasure.dialog .weightedOnFieldsList .control.pickList {
+	width:100%;
+}
+
+/* JIVE */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .jive_dialog > .msshadow {
+        display:none !important;
+    }
+}  /* IE10+ */
+
+
+
+.jive_chartTypeSelector .header > .title,
+.jive_dialog .dialogHeader .dialogTitle {
+	color: #333 !important;
+	font-weight: normal !important;
+	font-size: 14px !important;
+}
+
+#jive_dialog .applytoWrapper {
+    margin-top: 8px !important;
+}
+
+#jive_dialog .tabContainer {
+	top: 5px !important;
+}
+
+#jive_dialog .tab.dialog {
+	color: #666 !important;
+	top: 2px !important;
+}
+
+#jive_dialog .tab.dialog.active {
+	top: 1px !important;
+}
+
+#jive_dialog .tab.multisheet.active span,
+#jive_dialog .tab.dialog.active span {
+	height: 23px !important;
+	line-height: 21px !important;
+}
+
+.jive_chartTypeSelector div.body > .row > .cell {
+	height: 36px !important;
+	width: 53px !important;
+}
+
+.jive_chartTypeSelector div.body > .row > .cell.selected {
+    background-color: #1388d8 !important;
+    border: solid 1px #1388d8 !important;
+}
+
+.jive_chartTypeSelector div.body > .row {
+	min-width: 508px !important;
+}
+
+
+
+.confirmationDialog .jr-mDialog-body {
+	min-height: 0 !important;
+	width: 350px;
+}
+
+.schedulerJobRemoveDialog .jr-mDialog-body.subcontainer.jr {
+	padding-top: 0;
+	padding-bottom: 0;
+	min-height: 0;
+}
+
+.schedulerJobRemovedAlertDialog .jr-mDialog-body.jr {
+	min-height: 0;
+}
+
+
+/* To fix problems with old button in new jr-mDialog footer */
+.alertDialog .jr-mDialog-footer.jr {
+    height: 40px;
+}
+
+.alertDialog .jr-mDialog-footer.jr .button.action {
+    height: 28px;
+}

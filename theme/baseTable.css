@@ -1,0 +1,59 @@
+.tableContainer {
+    border: 1px solid #C0C0C0;
+    display: inline-block;
+}
+
+.baseTable {
+    background: #fff;
+}
+
+.baseTable > .thead {
+    background: -webkit-linear-gradient(#e1e9f3, #d4dee9);
+    background: -moz-linear-gradient(#e1e9f3, #d4dee9);
+    background: -ms-linear-gradient(#e1e9f3, #d4dee9);
+    background: -o-linear-gradient(#e1e9f3, #d4dee9);
+    background: linear-gradient(#e1e9f3, #d4dee9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#e1e9f3', EndColorStr='#d4dee9');
+    border-top: 1px solid #fff;
+}
+
+.table-row {
+    height: 100%;
+    width: 100%;
+}
+
+.table-row:after {
+    /* clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.table-row .table-column {
+    float: left;
+    height: 100%;
+}
+
+.baseTable > .thead div.table-column,
+.baseTable > .tbody div.table-column {
+    height: 28px;
+    font-weight: normal;
+    box-sizing: border-box;
+    border-right: 2px solid #F3F4FB;
+    border-bottom: 1px solid #F3F4FB;
+    text-align: left;
+    min-width: 50px;
+}
+
+.baseTable > .thead div.table-column {
+    color: rgb(102, 102, 102);
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.baseTable div.table-column .item {
+    vertical-align: middle;
+    line-height: 28px;
+    margin-left: 5px;
+}
+

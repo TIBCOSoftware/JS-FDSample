@@ -1,0 +1,1095 @@
+/*
+ * From: theme.css
+ */
+
+* {
+	-moz-box-sizing: border-box; 	/* NEW */
+	-webkit-box-sizing: border-box;	/* NEW */
+	box-sizing: border-box;			/* NEW */
+}
+
+html,body {
+	width:100%;
+	height:100%;
+	margin: 0;
+	padding:0;
+}
+html {
+    overflow:auto\9;
+}
+
+body {
+	overflow-x:hidden;
+	position:relative;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation: portrait) {
+	body {
+		min-width:768px;
+	}
+}
+
+body.dashboardViewFrame, body.noDecoration {
+	background:none;
+	min-width:0;
+}
+
+/*
+ * Headings
+ * ------------------------------------------------ */
+/* NOTE: Do NOT use H-tags just for visual reasons!  You will mess things up
+ * for screen readers.  Specifically, do NOT use H tags in every single list
+ * item in a list, etc.  Use H tags only where you have a valid semantic reason
+ * for doing so!
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	clear:both;
+}
+
+h1 {
+	margin-bottom: 1.3em;
+}
+
+h2, h3, h4 {
+	margin-bottom: 0.7em;
+}
+
+h5, h6 {
+	margin-bottom: 0.5em;
+}
+
+
+/*
+ * Text elements
+ * ------------------------------------------------ */
+p {
+	margin-bottom: 1em;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration:underline;
+}
+
+a.disabled,
+a.disabled:hover,
+a.disabled.over,
+a.disabled:active,
+a.disabled.pressed {
+	cursor: default;
+	text-decoration: none;
+}
+
+.selected a:focus,
+.selected a:hover,
+.selected a.over,
+.selected a:active,
+.selected a.pressed {
+	color:inherit;
+}
+
+address	{
+	margin: 0 0 1.5em;
+	font-style: italic;
+}
+
+del {
+	color:#666;
+}
+
+pre {
+	margin: 1.5em 0;
+	white-space: pre;
+}
+
+pre,
+code,
+tt {
+	font: 1em 'andale mono', 'lucida console', monospace;
+	line-height: 1.5;
+}
+
+.dimmer {
+	filter: alpha(opacity=60);
+}
+
+.msshadow {
+	filter:
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=45, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=180, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=225, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=270, Color='#7d7d7d'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=315, Color='#7d7d7d');
+}
+
+/*
+ * From: typography.css
+ */
+body,
+textarea,
+.body,
+.title>.path,
+input,
+select {
+	font-size: 11px;
+	line-height:1.182em; /* 11 x 1.182 = 13 */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+.jumbo,
+h1 {
+	font-size: 18px; /* 11 x 1.636 = 18 */
+	line-height:1.818em; /* 11 x 1.818 = 20 */
+}
+
+.wrapper.table .caption,
+.data.table .caption,
+.larger,
+h2 {
+	font-size:16px; /* 11 x 1.454 = 16 */
+	line-height:1.636em;
+}
+
+.large,
+h3,
+.menu,
+.searchLockup>input,
+.list.settings .node>.wrap .title,
+#calculatedField .operator,.resourceName,
+.fsection,
+ul.decorated {
+	font-size:12px;/* 11 x 1.091 = 12 */
+	line-height:1.272em;/* 11 x 1.272 = 14 */
+}
+
+.default,body,
+.message,
+.message.warning {
+	font-size: 11px;
+	line-height:1.182em; /* 11 x 1.182 = 13 */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+
+.small,
+h5,
+.panel.widget .title,
+.hint,
+.panel.tooltip .message.label,
+.pane.filter .message {
+	font-size:10px; /* 11 x 0.909 = 10 */
+	line-height:1.091em;
+}
+
+.mini,
+h6,
+#about,
+#license,
+#copyright {
+	font-size:9px; /* 11 x 0.818 = 9 */
+}
+
+.micro {
+	font-size:8px;/* 11 x 0.727 = 8 */
+	line-height:0.818em;
+}
+
+.emphasis,
+button,
+.buttons>.tab>.button,
+.title,
+#metaLinks #userID,
+/* .fields .node>.wrap, */ /* DELETE IF NO PROBLEMS */
+.panel.info.system .message,
+.wrapper.table .caption .placeholder,
+.data.table .header,
+.data.table .summary .value,
+.overlay .group .header,
+.control.path .last,
+.list.stepIndicator .selected>.wrap,
+#calculatedField .operator,
+.filters .fieldName,
+.tabSet.horizontal.buttons .selected .button,
+.list.folders .node.activeTheme,
+.tabSet.text .selected.tab > .wrap,
+/* .fileName a, */ /* anna delete */
+/* .resourceBlock a, */ /* anna delete */
+.list.resources p.resourceName,
+.list.resources p.resourceName a,
+.list p.ID,
+#reportContainer a {
+	font-weight: bold;
+}
+
+/* Ensure links in lists receive underlines when the cursor is over them. */
+.list.resources .cursor p.resourceName a {
+    text-decoration:underline;
+}
+
+#reportContainer .inputControls a {
+    font-weight: normal;
+}
+
+/*
+ * From: colors.css
+ */
+/* .white, */
+.palette01,
+.button.action.over,
+.button.up.over,
+.button.up.primary.over,
+.button.up.pressed,
+.button.up.primary.pressed,
+.button.down.over,
+.button.down.pressed,
+.button.capsule.down.over,
+.button.capsule.down.pressed,
+#loginPage #rotating .list.decorated,
+#loginPage .launcher,
+.menu .wrap.over,
+.menu .wrap.pressed,
+.button.up.primary,
+.menu.primaryNav .up,
+.menu.primaryNav .wrap,
+.menu.primaryNav .up.over,
+.menu.primaryNav .up.pressed,
+.menu.primaryNav .wrap.over,
+.menu.primaryNav .wrap.pressed,
+.tabSet.buttons.vertical .button,
+.tabSet.buttons .selected .button,
+.tabSet.buttons .button.over,
+#metaLinks li,
+#metaLinks a,
+#metaLinks a:hover,
+#metaLinks a:active,
+#selectedSubDataSourcesList .leaf.selected .dataSourceName,
+.list.collapsible>li>.selected>.wrap,
+.list.filters>.leaf>.wrap.pressed,
+.list.type_basic .wrap.pressed > .jrbookmark,
+.selected>.wrap .launcher,
+.selected>.wrap .resourceName,
+.selected>.wrap .resourceDescription,
+.selected>.wrap .resourcePath,
+.pressed .resourceName,
+.pressed .resourceDescription,
+.pressed .resourcePath,
+.list.collapsible>li>.wrap.pressed,
+.list.collapsible .selected>.wrap,
+.list.resources .selected p.resourceName,
+#entitiesList .selected>.wrap,
+#entitiesList .wrap.pressed,
+.authorityPicker .selected,
+.authorityPicker .highlighted.selected,
+.workflow-buttonContainer .button,
+#joinsList .leaf.selected > .wrap {
+	color:#fff;
+}
+
+.palette02,
+.node.readonly > .wrap {
+	color:#E0E0E0;
+}
+
+/* .gray20 */
+.palette03,
+.button.action.checking,
+.button.action.checking.over,
+.button.action.checking.pressed,
+.disabled,
+.button.disabled,
+[disabled],
+.button[disabled],
+.button.primary[disabled] {
+	color:#aaa;
+}
+
+/* .gray40 */
+.palette04,
+.horizontal,
+.sub.header,
+.control.path,
+.tabSet.buttons .disabled .button,
+.hint,
+.filters .fieldName,
+.filters .condition {
+	color:#999;
+}
+
+/* .gray60 */
+.palette05,
+.tabSet.text>.tab > .wrap,
+.tabSet.text>.tab > .wrap.over,
+.tabSet.text>.label>.wrap,
+.button,
+.header,
+.foundItem,
+#metaLinks,
+.group legend.label,
+legend,
+label,
+.label,
+.label.wrap,
+legend.label>.wrap,
+.control>.wrap,
+.control.path>.step.last>.wrap,
+.control.path>.step.last>.wrap.over,
+.control.path>.step.last>.wrap.pressed,
+.tabular,
+.list.settings .node>.wrap .title,
+.list.inputSet,
+#serverError h3,
+#addResource_locateDataSource #newDataSourceLink.disabled,
+#addResource_locateQuery #newQueryLink.disabled,
+#addResource_inputControl_information .list.twoColumn > .node > .wrap,
+ul.decorated,
+.resourceBlock .fileType,
+.workflow-description,
+.workflow-description a:link,
+.workflow-description a:visited,
+.workflow-description a:active,
+#resultsContainer p,
+#resultsListHeader h3,
+#resultsListHeader p,
+.list.twoColumn>.node>.wrap,
+.list.collapsible > li > .header.wrap,
+.LogCollectors .collectorsList tr td,
+.attributesTable > .thead .table-column,
+.attributesTable > .tbody .table-row {
+	color:#666;
+}
+
+/* .gray80 */
+.palette06,
+body,
+*[readonly=readonly],
+.title > .path,
+.group > legend,
+.menu li {
+	color: #333;
+}
+
+.list.settings .node > .wrap .title {
+	color: #444;
+}
+
+/* .black */
+.palette07 {
+	color:#000;
+}
+
+/* selection colors */
+.palette08,
+.button.action.primary.disabled,
+.button.action.primary.jumbo.disabled,
+.button.action.primary[disabled],
+.button.action.primary.jumbo[disabled],
+.tabSet.buttons.vertical [disabled] {
+	color:#43B9F9;
+}
+
+/* .sky */
+.palette09,
+.button.action.jumbo {
+	color:#4698be;
+}
+
+.palette10,
+#metaLinks a:active,
+a#about:active {
+	color:#8CD9FE;
+}
+
+
+/* footer color */
+a#about,
+a#about:hover,
+a#about:active,
+#frameFooter{
+	color:#666;
+}
+
+/* .new theme dark blue */
+.palette11,
+.textAccent02,
+.tabSet.text .selected.tab > .wrap,
+.tabSet.text .selected.tab > .wrap.over,
+.tabSet.text .selected.tab > .wrap.pressed,
+.list.filters > li.selected>.wrap,
+.list.filters > li.selected>.wrap.pressed,
+.list.filters > li.selected>.wrap .launcher,
+.list.stepIndicator .selected>.wrap,
+.panel.info.system .message,
+.list.type_basic .wrap a,
+.resourceName,
+.fsection,
+.launcher, /* moved from #fff */
+#reportContainer a,
+#scheduler_editor #stepDisplay > fieldset > legend,
+.homeSidebar-title,
+.workflow-title,
+#resultsContainer .resourceName,
+.resourceBlock a:link,
+.resourceBlock a:visited,
+.resourceBlock a:hover,
+.resourceBlock a:active,
+.workflow-description a:hover,
+.workflow-buttonContainer .button,
+.plusminus .node > .wrap > .jrbookmark,
+.list.settings .panel.pane.settings .header > .title,
+.tabSet.horizontal.buttons .selected > .button > .wrap,
+.tabSet.horizontal.buttons .button.over,
+.tabSet.horizontal.buttons .button.pressed,
+/* START moved from palette 6 */
+.content .header > .title,
+.resourceBlock-title,
+.column.decorated.minimized .vtitle,
+.flow #stepDisplay .column.primary .header .title,
+.flow #stepDisplay .column.secondary .header .title,
+/* END moved from palette 6 */
+#loginPage #metaLinks li,
+#loginPage #metaLinks a,
+#loginPage #metaLinks a:hover,
+#loginPage #metaLinks a:active,
+#needHelp {
+	color: #195b8a;
+}
+
+
+#reportContainer .inputControls a {
+    color: inherit;
+}
+
+
+/* .cerulean */
+.palette12,
+.tabSet.text >.tab > .wrap.pressed,
+.control.path .step .wrap.pressed,
+a:active,
+#reportContainer a:active {
+	color:#0061a2;
+}
+
+/* .orange */
+.palette13,
+.textAccent,
+.button.action.jumbo.over {
+	color:#FC870E;
+}
+
+/* .orange2 */
+.palette14,
+#needHelp:active,
+.button.action.jumbo.pressed {
+	color:#FB5B0D;
+}
+
+/* .orange3 */
+.palette15,
+.button.capsule.down {
+	color:#7A3E10;
+}
+
+/* .orange4 */
+.palette16,
+.button.capsule.down.disabled,
+.button.capsule.down[disabled],
+.resourcePath {
+	color:#dc5717;
+}
+
+/* .red */
+.palette17,
+.warning,
+.errorMessage,
+.invalid>.wrap,
+.error>.message.warning a.details:active {
+	color:#f00;
+}
+
+/* green */
+palette18,
+.notification.success>.message.warning,
+.success {
+    color:#4eae00;
+}
+
+/* green */
+palette18,
+.notification.success>.message.warning {
+    color:#4eae00;
+}
+
+.palette01_bkgd {background-color:#fff;}
+.palette02_bkgd {background-color:#E0E0E0;}
+.palette03_bkgd {background-color:#ccc;}
+.palette04_bkgd {background-color:#999;}
+.palette05_bkgd {background-color:#666;}
+.palette06_bkgd {background-color:#333;}
+.palette07_bkgd {background-color:#000;}
+.palette08_bkgd {background-color:#43B9F9;}
+.palette09_bkgd {background-color:#4698be;}
+.palette10_bkgd {background-color:#8CD9FE;}
+.palette11_bkgd {background-color:#217EB5;}
+.palette12_bkgd {background-color:#0061a2;}
+.palette13_bkgd {background-color:#FC870E;}
+.palette14_bkgd {background-color:#FB5B0D;}
+.palette15_bkgd {background-color:#7A3E10;}
+.palette16_bkgd {background-color:#DC5717;}
+.palette17_bkgd {background-color:#f00;}
+.transparent {background-color: transparent;}
+
+/*
+ * From: jif.css
+ */
+/*____________________________________________________________
+
+ JIF SCRIPTING CLASSES
+______________________________________________________________
+
+Scripting classes represent a kind of API for the JIF interactive and layout logic.
+
+Some of the selectors in this group are used as flags for the framework interactive logic to embue
+objects with specific behavior or layout.
+
+Others are the selectors that are assigned to objects automatically.
+
+*/
+
+.centered_horz {
+	/* note: any object assigned this class will
+	automatically be assigned margin-left: -(this.width/2)
+	*/
+	position: absolute;
+}
+
+.centered_vert {
+	/* note: any object assigned this class will
+	automatically be assigned margin-top: -(this.height/2)
+	*/
+	position: absolute;
+}
+
+.sizer {
+	/* an object with this class can be dragged to size its parent, if,
+	   and only if, the parent has class .sizeable
+	*/
+}
+
+.sizeable {
+	/* an object with this class can be resized, if,
+	   and only if, it contains a child with class .sizer
+	*/
+}
+
+.mover {
+	/* an object with this class can be dragged to move its parent, if,
+	   and only if, the parent has class .moveable
+	*/
+	cursor: move;
+}
+
+.moveable {
+	/* an object with this class can be dragged, if,
+	   and only if, it has a child with class .moveable upon which a mouseMove event occurs
+	*/
+}
+
+.draggable {
+	/* an object with this class can be dragged directly
+	*/
+}
+
+.wrap.dragging,
+.overlay.col.dragging,
+.overlay.group.dragging,
+.overlay.xtab.gr.dragging,
+.overlay.xtab.m.dragging,
+.overlay.legend.dragging,
+.dragMultiple.dragging .wrap {
+	/* an object being dragged gets the .dragging class applied */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color:#217EB5 !important;
+	border:1px solid #CCCCCC !important;
+	color:white !important;
+	float:left;
+	line-height:2em;
+	height: 2em;
+	margin:3px 2% 0 2px;
+	opacity:0.7 !important;
+	padding:0 9px;
+	width:auto !important;
+}
+
+.copy {
+	cursor:url("images/cursor_copy.cur"), default !important;
+}
+
+.copy .dropTarget {
+	cursor:url("images/cursor_copy.cur"), default !important;
+}
+
+.dropTarget {
+	/* an object that is a valid drop target during a drag gets this class applied
+	   when the dragged object is on top of it
+	*/
+	background-color:#A9CADD !important;
+}
+
+.button {
+	/* an object with this class will have get its class attribute modified by mouse events:
+		- onMouseOver, .over added
+		- onMouseDown, .over removed, .pressed added
+		- onMouseOut, .over || .pressed removed
+	   in addition, onMouseUp will trigger a generic event for the object caught by the buttonHandler
+	*/
+}
+
+.over {
+	/* added to the class attribute of element.button onMouseOver
+	*/
+}
+
+.pressed {
+	/* added to the class attribute of element.button onMouseDown
+	*/
+}
+
+.noBubble {
+	/* an object with this class will get mouse events, but will not permit those events
+	   to bubble up the DOM
+	*/
+}
+
+.button.toggle {
+	/* this element will always have either class attribute .up or .down; value switched onMouseUp
+	*/
+}
+
+.up {
+	/* assigned automatically to .button.toggle
+	*/
+}
+
+.down {
+	/* assigned automatically to .button.toggle
+	*/
+}
+
+.button.minimize {
+	/* a special button understood to toggle the visible state of its parent container
+	   from a regular size to a .minimized state
+	*/
+}
+
+.minimized {
+	/* assigned or removed from a container by a mouseUp on the container's .button.minimize child
+	*/
+}
+
+.node {
+	/* a list element understood to be a parent of another list; always has either .open or .closed
+	   as part of its class attribute
+	*/
+}
+
+.open {
+	/* assigned automatically to li.node
+	*/
+}
+
+.closed {
+	/* assigned automatically to li.node
+	*/
+}
+
+.leaf{
+	/* a list element that does not contain another list
+	*/
+}
+
+.selected {
+	/* assigned to the currently selected list element
+	*/
+}
+
+.editMode {
+	/* assigned automatically to forms based on a user event, this flag is then
+	   used to conditionally hide or show form objects as appropriate
+	*/
+}
+
+.hidden {
+	/* rather than set the display value inline, scripts use this
+	   selector to hide or show objects based on user events
+	*/
+	display:none !important;
+}
+
+.resizeOverlay {
+     /* covers resizable panel during resizing to prevent panel's elements events
+     */
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    opacity: 0\9;
+    background-color: red\9;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)\9;
+    *background-color: red;
+    *filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+/*
+ * From: util.css
+ */
+.offLeft, .offLeft span,.wrap.offLeft,.wrap.header.offLeft {
+/* visually hide something but leave it available to screen reader */
+	position: absolute !important;
+	left: -9999px;
+	width:9999px;
+	z-index: -5;
+}
+
+.centering {
+/* only centers if object has explicit width */
+	margin:0 auto;
+	position:relative;
+}
+
+#sortMode {
+	position:absolute;
+	right:1em;
+	top:8px;
+}
+
+/*
+ * From: common.css
+ */
+
+#logo {
+	background: url(images/logo.png) no-repeat 0 0 transparent;
+	border: none;
+	height: 22px;
+	width: 176px;
+	margin: 6px 4px 0 8px;
+}
+
+/* ----------- */
+/*	Meta Links */
+/* ----------- */
+#metaLinks {
+	height: 30px;
+	margin-right: 210px;
+}
+
+#metaLinks li {
+	border-color: #fff;
+	/*border-right: 1px solid #eef8fc;*/
+	float: left;
+	font-size: 12px;
+	margin: 0;
+	padding: 0 8px 2px 7px;
+	line-height: 30px;
+}
+
+#metaLinks > li#help {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+#metaLinks li.last {
+	border-right: none;
+}
+
+#userID {
+    max-width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation:portrait) {
+	#metaLinks #userID,
+	#metaLinks #help {
+		display: none;
+
+	}
+}
+
+/* -------------- */
+/*	Miscellaneous */
+/* -------------- */
+#systemConfirm {
+	position: absolute;
+	top:10px;
+	left: 500px;
+	right:220px;
+	z-index: 5;
+}
+
+.dimmer {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background-color: #000;
+	opacity:.6;
+}
+
+.dimmer.fixed {
+	position: fixed;
+	z-index:4999;
+}
+
+#userCountExceeded {
+	position: absolute;
+	top: 14px;
+	left: 470px;
+}
+
+#license {
+	position:absolute;
+	top:1px;
+	left:260px;
+	background:#fff;
+	color#333;
+}
+
+#copyright,
+#about {
+	font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+	line-height: 17px;
+	position:absolute;
+}
+
+#copyright {
+	right:10px;
+}
+
+#about {
+	left:10px;
+}
+
+#license,
+#selectedSubDataSourcesList .leaf.selected .error > .message.warning {
+	font-weight:bold;
+    color:#FEEF97;
+	padding-left:20px;
+}
+
+#userName {
+	font-weight: bold;
+}
+
+/* removed obsolete search box styles */
+
+.banner .searchContainer .searchComponent,
+.toolbar .searchContainer .searchComponent,
+.repoSearch .searchContainer .searchComponent {
+	margin-top:4px;
+}
+
+.swfExport {
+	bottom:20px;
+	left:0;
+	position:absolute;
+	right:0;
+	top:37px;
+}
+
+.swfWrapper {
+	z-index: 0;
+}
+input[type=text]::-ms-clear {
+    display: none;
+}
+input[type=password]::-ms-reveal {
+    display: none;
+}
+
+.clear {
+    clear: both;
+    height: 1px!important;
+    line-height: 1px!important;
+    overflow: hidden!important;
+}
+
+
+/* Standard Navigation classes and styles
+ *
+ * The Standard Navigation accessibility system (StdNav) provides some special
+ * CSS class to augment the normal ":focus" pseudoclass available to track
+ * browser focus.  By default, only the familiar dashed-line ":focus" indicator
+ * is used.  This focus indication is as per W3C recommendations, and is
+ * generally expected by users.
+ *
+ * However, additional classes are available as well, and are described below.
+ * If you wish to use these, you should start by using and modifying the "Easy
+ * Access" theme, or a copy of it.
+ *
+ * ==========================================================================
+ * superfocus   A class given to exactly one element in the page at all times
+ *              to indicate which major UI region is the user's current "area
+ *              of interest".  This will generally either be, or contain, the
+ *              browser focus, but will generally be broader than browser
+ *              focus.  Jaspersoft extension.
+ *
+ * :focus       The normal browser focus metaclass.  However, for reasons of
+ *              accessibility and navigation, be aware that focus can and will
+ *              be set on items that TEMPORARILY have a valid tabindex, but
+ *              will not necessarily retain it after navigation (such as an
+ *              individual table cell).  Note that when a user is using pure
+ *              keyboard navigation, there will be times when NO element in the
+ *              page has :focus because the user is tabbing through browser
+ *              toolbars, etc.  For screen readers, this is the element whose
+ *              content we want to be read, and whose navigation details we
+ *              expect to be relayed.
+ *
+ * subfocus     Fine navigation focus.  Normally, this is applied to the same
+ *              element as :focus, but if it is necessary to indicate position
+ *              within the child subdom of an element without moving browser
+ *              focus to those elements, subfocus may be changed instead.  In
+ *              any case, subfocus must always be set correctly, even if it
+ *              is simply to the same element that has :focus.  Jaspersoft
+ *              extension.
+ *
+ * ghostfocus - Whenever a major UI region has superfocus, either it or a child
+ *              element must have browser TAB focus and StdNav subfocus.  When
+ *              superfocus moves to another major UI region-- for example, when
+ *              the user presses TAB-- subfocus is replaced by ghostfocus in
+ *              the de-focused region.  Likewise, if an element in the newly
+ *              superfocused region has ghostfocus, that is replaced by
+ *              subfocus.  Finally, the browser is explicitly focused to the
+ *              new subfocus (the old ghostfocus, if there was one, or a
+ *              sensible default for the region).  This functionality allows a
+ *              user to tab back and force between grids, tables, lists, and
+ *              other complex controls without losing their place.  Jaspersoft
+ *              extension, and not in use by all control types.
+ */
+.superfocus {
+}
+
+/* :focus {
+    outline: 1px dotted royalblue;
+} */
+
+/* .folders.node.selected:focus,
+.folders.node.open:focus,
+.list.collapsible.superfocus {
+    outline: none;
+} */
+
+/* input[type="text"]:focus,
+input[type="password"]:focus,
+button.action:focus,
+#loginPage #metaLinks:focus {
+    outline: 2px dotted orange;
+} */
+
+#metaLinks li.subfocus:not(select) {
+    background-color: #195b85;
+}
+
+/* #searchInput:focus {
+    outline: 2px dotted orange;
+    margin-top: 2px;
+    margin-left: 2px;
+    height: 18px;
+    width: 170px;
+} */
+
+.subfocus {
+}
+
+/* BUTTONS */
+.button.action.pressed.subfocus {
+	outline: none;
+}
+
+.sourceDialogNew .header .button.list.down.subfocus > .wrap,
+.sourceDialogNew .header .button.tree.down.subfocus > .wrap{
+	border: 1px solid #954b01;
+}
+
+.sourceDialogNew .header .button.list.down.subfocus > .wrap > .icon {
+	background-position: -37px -26px;
+}
+
+.sourceDialogNew .header .button.tree.down.subfocus > .wrap > .icon {
+	background-position: -34px 3px;
+}
+
+/* HOME PAGE, BUTTONS AND LINKS */
+#loginPage #submitButton.subfocus,
+#helpLoggingIn .button.action.subfocus{
+	background-color: #195b8a;
+}
+
+.buttonIconToggle.isOpen:focus {
+	background-position: -1px -1004px;
+}
+
+.buttonIconToggle.isClosed:focus {
+	background-position: -20px -1004px;
+}
+
+.resourceBlock .fileName.subfocus a {
+	 text-decoration: underline;
+ }
+
+.resourceBlock li.subfocus a {
+	text-decoration: underline;
+}
+
+.workflow-description a.superfocus.subfocus {
+	color: #195b8a;
+}
+
+.workflow-buttonContainer .button.superfocus.subfocus {
+	text-decoration: underline;
+}
+
+#rotating li[role="link"]:focus {
+	text-decoration: underline;
+}
+
+#metaLinks li.subfocus:not(select) {
+	background-color: #195b85;
+}
+
+#loginPage #metaLinks li.subfocus:not(select) {
+	background-color: #fff;
+	text-decoration: underline;
+}
+
+/* CONTROLS */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	select:focus {
+		outline: 2px solid #9dccfd
+	}
+}

@@ -1,0 +1,65 @@
+.dataLifetimeControls {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#saveAsTopicInputs label,
+#saveAsTopicInputs span{
+    margin-bottom: 0;
+}
+
+#saveAsTopicInputs .topicName{
+    height: 55px;
+}
+
+#saveAsTopicInputs .topicDesc{
+    height: 120px;
+}
+
+label.staging{
+    margin-top: 10px;
+    width: 110px;
+}
+
+#saveAsTopicInputs .browser{
+    height: 50px;
+}
+
+.dataLifetimeControls select#dataLifetimeUnits{
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 4px;
+    float: left;
+}
+
+/* Chrome specific css, chrome has a little bit smaller selects than others */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .dataLifetimeControls select#dataLifetimeUnits{
+        margin-top: 5px;
+    }
+}
+
+.dataLifetimeControls .dataLifetimeLabel{
+    margin-bottom: 8px;
+}
+
+.dataLifetimeControls .dataLifetimeInputs input{
+    width: 32px;
+    padding: 4px;
+}
+
+.dataLifetimeControls .dataLifetimeInputs{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.dataLifetimeControls .dataLifetimeInputs .dataLifetimeInputsError{
+    display: inline;
+}
+.dataLifetimeControls .dataLifetimeInputs span{
+    margin-right: 10px;
+}
+
+.dataLifetimeControls .lifeTimeInfo{
+    width: 275px;
+}

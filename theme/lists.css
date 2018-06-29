@@ -1,0 +1,2006 @@
+/*
+ * From: base.css
+ */
+.list .leaf, .list .node {
+    overflow:hidden;
+}
+
+.leaf.visibleOverflow {
+    overflow: visible;
+}
+
+.list li > .wrap {
+    margin-bottom:0;
+}
+
+.list .loading > .wrap > .icon {
+    background-image: url(images/list_node_animation.gif);
+    background-position: 0px 2px;
+    background-repeat: no-repeat;
+}
+
+.list .leaf.loading > .wrap > .icon {
+    background-position: 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+
+.list[disabled] .button {
+    cursor: default;
+}
+
+ul.decorated li {
+    background: url("images/lists_sprite.png") no-repeat scroll -32px -4px transparent;
+    margin: 1em;
+    padding-left: 15px;
+}
+
+.list.buttonSet > li.node,
+.list.buttonSet > li.leaf {
+    overflow: visible;
+}
+
+/* input controls*/
+
+.input-control .message.warning{
+    display: block;
+}
+
+.toolbar > .list.buttonSet .leaf,
+.toolbar > .list.buttonSet .node {
+    height: 100%; /* NEW */
+    padding: 0px !important;
+}
+
+.toolbar .list.buttonSet,
+.toolbar .list.buttonSet .leaf,
+.toolbar .list.buttonSet .node,
+.toolbar .list.buttonSet .button.capsule { /* NEW */
+    height: 100%;
+}
+
+/*
+ * From: buttonSet.css
+ */
+.list.buttonSet,
+.list.buttons {
+    float: left;
+    clear: none;
+}
+
+.list.buttonSet .list.buttonSet {
+    margin-right:12px;
+}
+
+.list.buttonSet .node,
+.list.buttonSet .leaf,
+.list.buttons .leaf,
+.list.buttons .node {
+    float:left;
+    clear:none;
+}
+
+.list.buttonSet .leaf.separator
+.list.buttons .leaf.separator {
+    width: 20px;
+    height: 1px;
+}
+
+.toolbar > .buttonSet {
+    height: 100%; /* NEW */
+    /* margin-top: 4px;
+    margin-left: 10px; */ /* DELETE IF NO PROBLEMS */
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+    .list.buttonSet .leaf.separator {
+        width:0;
+    }
+
+    .list.column.simple {
+        width:542px;
+    }
+}
+
+/*
+ * From: collapsible.css
+ */
+.list.collapsible {
+    margin:0;
+}
+
+.list.tabular.collapsible > li> .wrap > .column> h3,
+.list.tabular.collapsible > li> .wrap > .column> p {
+    line-height: 24px;
+    padding-top: 1px;
+    margin-right:4px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.collapsible .list {
+    margin-left: 2em;
+    padding-bottom: 1px; /* prevents clipping of blue dashed focus border on last item in a list */
+}
+
+.collapsible > li,
+.filters > li,
+.fields > li {
+    line-height: 2.5em;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative;
+}
+
+.collapsible.folders > li .collapsible > li {
+    line-height: 2em;
+    *min-width: 600px; /* IE7 */
+}
+
+.collapsible.type_tables > li .collapsible > li,
+.collapsible.type_sets > li .collapsible > li {
+    line-height: 2em;
+}
+
+.collapsible > li > .wrap,
+.list.tabular > li > .wrap,
+.list.filters > li > .wrap,
+.list.fields > li > .wrap
+{
+    text-decoration: none;
+    padding: 0 5px;
+    white-space: nowrap;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.collapsible > li > .wrap > .icon,
+.filters > li > .wrap > .icon,
+.stepIndicator .icon {
+    float: left;
+    background-image: url(images/lists_sprite.png);
+    background-position: 7px 30px;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin: 0;
+    top: 1px;
+    *top: 2px; /* IE7 */
+    margin-right: 3px;
+}
+
+.collapsible.plusminus > li > .wrap > .icon {
+    background-image: url(images/disclosure_indicators_sprite.png);
+}
+
+.filters > li > .wrap > .icon {
+    top: 3px;
+    *top: 4px; /* IE7 */
+}
+
+.list.collapsible > li > .header.wrap {
+    border: none;
+    background: #e0e0e0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-bottom: 1px solid #CCC;
+    cursor: default;;
+    margin: 0;
+}
+
+.collapsible .selected {
+    font-weight: inherit;
+}
+
+.collapsible input {
+    margin: 1px auto;
+}
+
+/*
+ * From: fields.css
+ */
+.list.fields {
+    padding-bottom: 5px;
+}
+
+.list.fields > li > .wrap,
+.list > li.fields > .wrap,
+.list.fields li > .wrap {
+    margin: 3px 2% 0 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+/* iPads (portrait and landscape) */
+/* SHORT-TERM FIX FOR WIDTH PROBLEM. HOPE THERE IS A BETTER SOLUTION */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+    #selFieldsPanel>#fieldsTreeRoot,
+    #sourceFieldsTree,
+    #destinationFieldsTree {
+        width:100%;
+    }
+
+    #selFieldsPanel #fieldsTreeRoot * li>ul,
+    #sourceFieldsTree * li>ul,
+    #destinationFieldsTree * li>ul{
+        width:88%;
+    }
+}
+
+.list.fields > .leaf > .wrap,
+.fields.leaf > .wrap,
+.list.fields .leaf > .wrap {
+    padding-left:9px;
+}
+
+.fields > .node > .wrap > .icon,
+.fields.node > .wrap > .icon,
+.fields .node > .wrap > .icon {
+    background-image: url(images/disclosure_indicators_sprite.png);
+    height: 16px;
+    width:15px;
+    margin-right:5px;
+    top:3px;
+}
+
+.fields.tabular > .node > .wrap > .icon,
+.fields.tabular.node > .wrap > .icon,
+.fields.tabular .node > .wrap > .icon {
+    top:5px;
+}
+
+.fields > .leaf > .wrap > .icon,
+.fields.leaf > .wrap > .icon,
+.fields .leaf > .wrap > .icon {
+    display: none;
+}
+
+
+.list.fields .node.closed > .wrap > .icon {
+    background-position: 0px -205px;
+}
+
+.list.fields .node.closed > .wrap > .icon.over {
+    background-position: 0px -229px;
+}
+
+.list.fields .node.closed > .wrap > .icon.pressed {
+    background-position: 0px -257px;
+}
+
+.list.fields .node.open > .wrap > .icon {
+    background-position: 0px -286px;
+}
+
+.list.fields .node.open > .wrap > .icon.over {
+    background-position: 0px -310px;
+}
+
+.list.fields .node.open > .wrap > .icon.pressed {
+    background-position: 0px -336px;
+}
+
+.dimension .collapsible > li > .wrap > .icon,
+.measure .collapsible > li > .wrap > .icon {
+    background-image: url("images/adhoc_datatree_icons_sprite.png");
+}
+
+.dimension .list.folders .leaf > .wrap > .icon {
+    background-position: 0px -329px;
+}
+
+.dimension .list.folders .node.closed > .wrap > .icon {
+    background-position: 0px -255px;
+}
+
+.dimension .list.folders .node.open > .wrap > .icon {
+    background-position: 0px -293px;
+}
+
+.attribute .list.folders .leaf > .wrap > .icon {
+    background-position: 0px -70px;
+}
+
+.attribute .list.folders .node.closed > .wrap > .icon {
+    background-position: 0px 2px;
+}
+
+.attribute .list.folders .node.open > .wrap > .icon {
+    background-position: 0px -34px;
+}
+
+.attribute .list.folders .leaf.calculatedField > .wrap > .icon {
+    background-position: 0px -216px;
+}
+
+.measure .list.folders .node.closed > .wrap > .icon {
+    background-position: 0px -107px;
+}
+
+.measure .list.folders .node.open > .wrap > .icon {
+    background-position: 0px -143px;
+}
+
+.measure .list.folders .leaf > .wrap > .icon {
+    background-position: 0px -178px;
+}
+
+.measure .list.folders .leaf.calculatedField > .wrap > .icon {
+    background-position: 0px -580px;
+}
+
+.list.folders .leaf.calculatedField > .wrap > .icon.error {
+    background-image: url("images/message_icons_sprite.png");
+    background-position: 0px 4px;
+    float: right;
+}
+
+.list.twoColumn.fields .leaf .column.two input {
+    width:100%;
+    margin-top:5px;
+}
+
+.list.fields > .leaf.ascending > .wrap > .icon,
+.list.fields > .leaf.descending > .wrap > .icon {
+    background-image: url(images/sort_indicators_sprite.png);
+    background-repeat: no-repeat;
+    height:17px;
+    width: 13px;
+    margin-right:5px;
+    display: inline-block;
+    top:2px;
+}
+
+.list.fields > .leaf.ascending > .wrap > .icon {
+    background-position: 0px 6px;
+}
+
+.list.fields > .leaf.ascending > .wrap > .icon.over,
+.list.fields > .leaf.ascending.selected > .wrap > .icon {
+    background-position: 0px -18px;
+}
+
+.list.fields > .leaf.ascending > .wrap > .icon.pressed {
+    background-position: 0px -46px;
+}
+
+.list.fields > .leaf.descending > .wrap > .icon {
+    background-position: 0px -74px;
+}
+
+.list.fields > .leaf.descending > .wrap > .icon.over,
+.list.fields > .leaf.descending.selected > .wrap > .icon {
+    background-position: 0px -98px;
+}
+
+.list.fields > .leaf.descending > .wrap > .icon.pressed {
+    background-position: 0px -124px;
+}
+
+/* .list.measures */
+
+.list.measures .leaf {
+    line-height: 1.5em;
+}
+
+.list.measures .icon {
+    display: inline-block;
+    background-image: url(images/lists_sprite.png);
+    background-repeat: no-repeat;
+    height:12px;
+    width: 11px;
+    position: relative;
+    top:2px;
+}
+
+.list.measures .icon.natural {
+    background-position: left -942px;
+}
+
+.list.measures .icon.numeric.ascending {
+    background-position: left -989px;
+}
+
+.list.measures .icon.numeric.descending{
+    background-position: left -965px;
+}
+
+/*
+ * From: filters.css
+ */
+.list.filters {
+    *margin-bottom:-2px; /* IE7 */
+}
+
+.list.filters .leaf > .wrap,
+.list.filters .node > .wrap {
+    overflow: hidden;
+    line-height: 2.5em;
+    min-height: 2.5em;
+}
+
+.list.filters > .leaf {}
+
+.list.filters > .leaf.editMode {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.list.filters .wrap.header {
+    min-height: 0;
+    font-weight: bold;
+}
+
+.list.filters > li > .wrap,
+.list.filters > li.selected > .wrap,
+.list.filters > li.selected > .wrap.over,
+.list.filters > li.selected > .wrap.pressed,
+.list.filters > li.selected:focus > .wrap,
+.list.filters > li.selected:focus > .wrap.over,
+.list.filters > li.selected:focus > .wrap.pressed,
+.list.filters > li > .wrap.header,
+.list.filters > li > .wrap.over.header,
+.list.filters > li > .wrap.pressed.header,
+.list.filters > li > .wrap.separator,
+.list.filters > li > .wrap.over.separator,
+.list.filters > li > .wrap.pressed.separator {
+    background-color: #f0f0f0;
+    border-bottom: #e3e3e3;
+    border-top: 1px solid #fff;
+    /* border-bottom: 1px solid #E0E0E0;
+    background-color: #F0F0F0; */ /* DELETE */
+}
+
+.list.filters > li:not(.selected) > .wrap.over,
+.list.filters > li:not(.selected) > .wrap.pressed {
+    background-color: #1388d8;
+    color: #fff;
+}
+
+.list.filters > li.selected.cursor > .wrap.over {
+    color: #666;
+}
+
+.list.filters > li > .wrap.pressed {
+/*    border-top-color: #BDBDBD;
+    border-bottom-color: #BDBDBD;
+    background-image: url(images/list_pressed_bkgd.png);
+    background-repeat: repeat-x;
+    background-position: top left;
+*/
+}
+
+.list.filters .selected .icon,
+.list.stepIndicator .selected .icon {
+    background-position:7px -301px;
+}
+
+.list.stepIndicator > li > .wrap,
+.list.stepIndicator > .selected > .wrap {
+    background-color: transparent;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.list.filters .wrap.separator {
+    cursor:default;
+}
+
+.list.filters .node.open > .wrap .more {
+    display: none;
+}
+
+.list.filters .node.closed > .wrap .fewer {
+    display: none;
+}
+
+/*
+ * From: flat.css
+ */
+/* .flat */
+
+.list.flat .node > .wrap.header {
+    display:block;
+}
+
+
+.list.flat .node > .wrap {
+    display: none;
+}
+
+.list.flat .list {
+    margin-left: 0;
+}
+
+.plusminus .node > .wrap {
+    height: 20px;
+}
+
+.plusminus .node.open > .wrap > .icon {
+    background-position: 2px -697px;
+}
+
+.plusminus .node.closed > .wrap > .icon {
+    background-position: 2px -673px;
+}
+
+.plusminus .node > .wrap > .jrbookmark {
+    color: #217EB5;
+}
+
+/*
+ * From: folders.css
+ */
+.folders .node > .wrap {
+    margin-left: 0;
+}
+
+.folders .node > .icon {
+    margin-right:5px;
+}
+
+.folders .node.open > .wrap > .icon {
+    background-position: 0px -148px;
+}
+
+.folders .node.closed > .wrap > .icon {
+    background-position: 0px -122px;
+}
+
+.folders .node.closed.specialContent > .wrap > .icon {
+    background-position: 0px -433px;
+}
+
+.folders .node.open.specialContent > .wrap > .icon {
+    background-position: 0px -468px;
+}
+
+.folders .node.readonly > .wrap > .icon {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.folders .leaf.domain > .wrap > .icon {
+    background-position: 0px -832px;
+}
+
+.folders .leaf.domain.topic > .wrap > .icon {
+    background-position: 0px -908px;
+}
+
+.folders .leaf.topic > .wrap > .icon {
+    background-position: 0px -866px;
+}
+
+.folders .leaf.adhocDataView > .wrap > .icon {
+    background-position: 0px -866px;
+}
+
+.folders .leaf.olap > .wrap > .icon {
+    background-position: 0px -1065px;
+}
+
+.folders .leaf.report > .wrap > .icon {
+    background-position: 0px -1460px;
+}
+
+#node1.folders.node {
+    line-height:2em;
+}
+
+#foldersTree {
+    margin-top:2px;
+    -webkit-user-select: none; /* disable cut copy paste */
+    -webkit-touch-callout: none; /* disable callout, image save panel */
+}
+
+/*
+ * From: horizontal.css
+ */
+.horizontal li {
+    float:left;
+    margin: 0 .4em 0 0;
+    padding-right:.4em;
+}
+
+.horizontal .last {
+    border-right: none;
+}
+
+.horizontal.responsive .wrap.over,
+.horizontal.responsive .wrap.pressed {
+    text-decoration: underline;
+}
+
+.horizontal.path li {
+    border: none;
+    background: url(images/lists_sprite.png) right -345px no-repeat;
+    padding-left:0;
+}
+
+.horizontal.path .last {
+    background: none;
+}
+
+/*
+ * From: inputControls.css
+ */
+.list.inputControls {
+    margin: 8px 0 0 0;
+    min-width: 200px;
+}
+
+.list.inputControls .leaf {
+    margin: 2px 0 0 0;
+    /* margin: 2px 0px 0px 10px; */
+}
+
+
+.row > .content > .body > .list.inputControls .leaf {
+    clear:none;
+    float:left;
+}
+
+.list.inputControls .inputSet {
+    overflow-y:auto;
+    height:auto;
+    *position:relative;   /* IE 7 */
+}
+
+.list.inputControls .control.radio .inputSet,
+.list.inputControls .control.checkbox .inputSet {
+    /* overflow-y: visible; */
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.list.inputControls .sizable {
+    height: 68px;
+    min-height:68px;
+}
+
+.list.inputControls .control.checkbox .inputSet.sizable,
+.list.inputControls .control.radio .inputSet.sizable {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:4px;
+    border:1px solid #D4D5D5;
+    margin-bottom:2px;
+    overflow-x:hidden;
+    width:97%;
+}
+
+/* START CHROME ONLY */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .list.inputControls .control.checkbox .inputSet,
+    .list.inputControls .control.multiple.radio .inputSet {
+        border:none ;
+    }
+
+} /* END CHROME ONLY */
+
+.list.inputControls .control.checkbox .inputSet.sizable {
+    *padding:2px;
+    padding-left:4px \9; /* IE8 and IE9 */
+}
+
+.list.inputControls .control.radio .inputSet.sizable li {
+    width:200px;
+    overflow:visible;
+}
+
+.control.select.multiple.radio li {
+    width:auto !important;
+} /* width rule so background highlight extends full width */
+
+.dialog .list.inputControls {
+    width:auto;
+}
+
+.list.inputControls label .wrap,
+.list.inputControls div .wrap {
+    font-weight: bold;
+    white-space: normal;
+}
+
+.list.inputControls fieldset .wrap {
+    font-weight:normal;
+}
+
+.list.inputControls fieldset legend {
+    font-weight:bold;
+    margin-bottom:4px;
+    margin-left:-5px;
+}
+
+.list.inputControls div.select.multiple .wrap,
+.list.inputControls label.select > .wrap {
+    /* margin-left:-5px; */
+    white-space: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .list.inputControls fieldset legend + * {
+        -webkit-margin-top-collapse : separate;
+        margin-top:6px; /* chrome and safari do not render legend margins correctly */
+    }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+    .list.inputControls fieldset legend {
+        padding-bottom:6px; /* opera does not render legend margins correctly */
+    }
+ }
+
+
+.list.inputControls fieldset label {
+    margin-bottom:3px;
+}
+
+.list.inputControls fieldset
+/* .list.inputControls div.select.multiple */
+/*.list.inputControls label.select,*/ {
+    padding-left:5px;
+}
+
+.list.inputControls input {
+    width: 100%;
+}
+
+/*
+ * From: linkedResources.css
+ */
+.list.linkedResources .icon {
+    display: none;
+}
+
+.list.linkedResources .wrap > .column.one,
+.list.linkedResources .wrap > .column.two,
+.list.linkedResources .wrap > .column.three {
+    overflow:hidden;
+    padding-right:5px;
+}
+
+.list.linkedResources.twoColumn .wrap > .column.one {
+    width:65%;
+}
+
+.list.linkedResources.twoColumn .wrap > .column.two {
+    width:30%;
+}
+
+.list.linkedResources.threeColumn .wrap > .column.one {
+    width:50%;
+}
+
+.list.linkedResources.threeColumn .wrap > .column.two {
+    width:20%
+}
+
+.list.linkedResources.threeColumn .wrap > .column.three {
+    width: 15%;
+    text-align: right;
+}
+
+.list.linkedResources .wrap,
+.list.linkedResources .header.wrap {
+    padding-left:20px;
+    line-height: 2.5em;
+    border-top:none;
+    position: relative;
+}
+
+.list.linkedResources .header.wrap {
+    border-bottom: none;
+    color: #666
+}
+
+.list.linkedResources .node:first-of-type {
+    margin-bottom: 22px;
+}
+
+.list.linkedResources #bundlesList > .leaf {
+    height: 22px;
+}
+
+.list.linkedResources .wrap .wrap {
+    padding-left:0;
+}
+
+/*
+ * From: location.css
+ */
+.locationSelector {
+    height: 100%;
+}
+
+.list.locations {
+    height: 100%;
+    position: relative;
+}
+
+.list.locations > .leaf {
+    padding-bottom:10px;
+}
+
+/*
+ * From: nameValue.css
+ */
+.list.name-value .icon {
+    display: none;
+}
+
+.list.name-value .column .warning {
+    display:none;
+}
+
+.list.name-value .column.error {
+    height:auto;
+}
+
+.list.name-value .column.error .warning {
+    display:block;
+    line-height: normal;
+}
+
+.list.name-value .column.one,
+.list.name-value .column.two {
+    width: 35%;
+}
+
+.list.name-value .column.three {
+    width: auto;
+}
+
+.list.name-value #name,
+.list.name-value #value {
+    width: 95%;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    .list.name-value #name,
+    .list.name-value #value {
+        width: 80%;
+    }
+}
+
+
+.list.name-value .column.two,
+.list.name-value .column.three {
+    overflow:hidden;
+    margin-right:5px;
+}
+
+.list.name-value .column.three {
+    text-align:right;
+}
+
+.list.name-value .wrap,
+.list.name-value .header.wrap {
+    padding-left:20px;
+}
+
+.list.name-value .wrap .wrap {
+    padding-left:0;
+}
+
+/*
+ * From: node.css
+ */
+.list.stepIndicator .node {
+    margin-left: 20px;
+    margin-top:5px;
+}
+
+.hideRoot > .node > .collapsible,
+.twoColumn > .node > .collapsible {
+    margin-left: 0;
+}
+
+.hideRoot > .node > .wrap {
+    display: none !important;
+}
+
+.node.closed .list,
+.node.loading .list {
+    display: none;
+}
+
+/*
+ * From: palette.css
+ */
+.list.palette > .leaf.button {
+    float: left;
+    clear: none;
+    border: 1px solid #ccc;
+    margin:3px;
+    padding:5px;
+    line-height: normal;
+    border-radius:8px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+}
+
+.list.palette > .leaf.button.over {
+    border-width: 2px;
+    margin: 2px;
+}
+
+.list.palette > .leaf.button.pressed {
+    border-width: 2px;
+    border-color: #0061A2;
+    margin: 2px;
+}
+
+.list.palette > .leaf.button.selected,
+.list.palette > .leaf.button.selected.over,
+.list.palette > .leaf.button.selected.pressed {
+    border-width: 2px;
+    border-color: #217EB5;
+    margin: 2px;
+    cursor: default;
+}
+
+.list.palette > .leaf.button.selected > .wrap {
+    background-color: transparent;
+    color: #666;
+}
+
+.list.palette .leaf > .wrap {
+    padding:0;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.list.palette .leaf.chip {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    float: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+
+/* TABLE STRUCTURE */
+
+.tabular {
+    margin: 0;
+    list-style: none;
+}
+
+.list.tabular > li > .wrap,
+.list.tabular > li > .wrap > .column {
+    /* position:relative; */ /* DELETE IF NO PROBLEMS, redundant rule to .list.tabular .column */
+}
+
+.list.tabular .column {
+    line-height: 2.5em;
+    overflow: hidden;
+    float:left;
+    position: relative;
+    margin:0;
+    padding:0;
+    word-wrap:normal;
+}
+
+.list.tabular > li > .wrap > .column>h3 {
+    line-height: 24px;
+}
+
+.list.tabular > li > .wrap > .column>input {
+    /* width: 95%; */ /* DELETE IF NO PROBLEMS */
+    width: 100%;
+}
+
+.list.tabular .icon {
+    float: left;
+}
+
+.list.tabular > li > .wrap {
+    border-top:1px solid #e8e8e8;
+    clear:both;
+    padding-left:20px;
+    overflow:hidden;
+}
+
+.list.tabular input[type="text"] {
+    height: 22px;
+}
+
+.list.tabular > li.first > .wrap {
+    border-top: none;
+}
+
+.list.tabular > .leaf > .header.wrap,
+.list.tabular > .node > .header.wrap {
+    /* background: #e0e0e0; */
+    background-color: #edf2f8;
+    height: 2.5em;
+    margin: 0;
+}
+
+.list.tabular .header.wrap > .icon {
+    display: none;
+}
+
+.list.column.simple {
+    border-right:1px solid #E0E0E0;
+    margin-right:45px;
+    overflow:auto;
+}
+
+.list.tabular > li > .wrap > .column>* {
+    margin-bottom: 0;
+}
+
+.list.tabular > li > .wrap > .column > .separator {
+    height:24px;
+}
+
+
+/* .tabular.twoColumn */
+
+.list.twoColumn .wrap .column.one {
+    width:48%;
+}
+
+.list.twoColumn .wrap .column.one {
+    overflow:hidden;
+    float:left;
+    margin-left:7px;
+}
+
+.list.twoColumn .wrap .column.two {
+    width:auto;
+}
+
+/* .tabular.threeColumn */
+
+.list.threeColumn .wrap .column {
+    width:32%;
+}
+
+.list.threeColumn .wrap .column.one,
+.list.threeColumn .wrap .column.two {
+    /* overflow: hidden; */ /* DELETE IF NO PROBLEMS, redundant rule to .list.tabular .column */
+    /* float: left; */ /* DELETE IF NO PROBLEMS, redundant to .list.tabular .column */
+}
+
+/* .tabular.fourColumn */
+
+.list.tabular.fourColumn,
+.list.tabular.sevenColumn {
+    min-width:700px;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    .list.tabular.fourColumn {
+        min-width:600px;
+    }
+}
+
+.list.tabular.fourColumn .column {
+    width:25%;
+}
+
+.list.tabular.fourColumn .column.one,
+.list.tabular.fourColumn .column.two,
+.list.tabular.fourColumn .column.three {}
+
+.list.tabular.fourColumn .column.one {
+    margin-right:10px;
+}
+
+.list.tabular.fourColumn .column.four {
+    position:absolute;
+    right:15px;
+    left:auto;
+    top:2px;
+}
+
+
+/* .tabular.fiveColumn */
+
+.list.tabular.fiveColumn .leaf,
+.list.tabular.fiveColumn .node {
+    overflow: visible;
+}
+
+.list.tabular.fiveColumn .column {
+    display:inline-block;
+    height:auto;
+    line-height:normal;
+    vertical-align:top;
+    overflow: visible;
+}
+
+.list.tabular.fiveColumn .column .wrap {
+    border:none;
+}
+
+.list.fiveColumn.tabular .header > .wrap {
+    font-size:11px;
+    font-weight:normal;
+    background-color:#e0e0e0;
+    border:none;
+    margin:0;
+}
+
+.list.fiveColumn.tabular > .header {
+    border-bottom:none;
+    min-height:0;
+}
+
+.list.fiveColumn.tabular .header .wrap .column {
+    white-space:normal;
+}
+
+.list.fiveColumn .leaf > .wrap {
+    padding:5px 5px 5px 20px;
+    white-space:nowrap;
+}
+
+.list.fiveColumn .wrap > .column.one {
+    width:20%;
+}
+
+.list.fiveColumn .wrap > .column.two {
+    width:20%;
+}
+
+.list.fiveColumn .wrap > .column.three {
+    width:20%;
+}
+
+.list.fiveColumn .wrap > .column.four {
+    width:20%;
+}
+
+.list.fiveColumn .wrap > .column.five {
+    width:18%;
+}
+
+.list.fiveColumn .query {
+    max-height:5em;
+    overflow:hidden;
+    white-space:pre;
+}
+
+
+/* .tabular.sixColumn */
+
+.list.tabular.sixColumn .column.one {
+    width:6%;
+    border:none;
+}
+
+.list.tabular.sixColumn .column.two {
+    width:42%;
+}
+
+.list.tabular.sixColumn .column.three {
+    width:10%;
+}
+
+.list.tabular.sixColumn .column.four {
+    width:30%;
+}
+
+.list.tabular.sixColumn .column.five {
+    width:6%;
+}
+
+.list.tabular.sixColumn .column.six {
+    width:5%;
+}
+
+
+.list.tabular.sixColumn .leaf,
+.list.tabular.sixColumn .node {
+    overflow: visible;
+}
+
+
+
+
+/* .list.tabular.filters */
+
+.list.tabular.filters.twoColumn > .leaf > .dialog.inlay.filter,
+.list.tabular.filters.twoColumn > .leaf.editMode > .wrap {
+    display: none;
+}
+
+.list.tabular.filters.twoColumn > .leaf.editMode > .panel.inlay,
+.list.tabular.filters.twoColumn > .leaf > .wrap {
+    display: block;
+}
+
+.list.tabular.filters.twoColumn .wrap {
+    background-color: transparent;
+}
+
+.list.tabular.filters.twoColumn .wrap > .column{
+    margin-right:2%;
+    min-width: 55px;
+    height: auto;
+}
+
+.list.tabular.filters.twoColumn .wrap > .column.one {
+    width:60%;
+}
+
+.list.tabular.filters.twoColumn .wrap > .column.two {
+    width:30%;
+    float: right;
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+    .list.tabular.filters.twoColumn .wrap > .column.one {
+        width:50%;
+    }
+
+    .list.tabular.filters.twoColumn .wrap > .column.two {
+        width:40%;
+    }
+}
+
+.list.tabular.filters.twoColumn .wrap > .column.two > .lock {
+    margin-right: 3%;
+}
+
+.list.tabular.filters.twoColumn .wrap > .column.two > .actions {
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+.list.tabular.filters > .leaf > .wrap > .condition > .operation {
+    font-style: italic;
+}
+
+.list.tabular.filters > .leaf > .wrap > .condition > .value {
+    font-weight: bold;
+    white-space: normal;
+}
+
+.list.tabular.filters > .leaf > .condition > .wrap > .value.concatenator {
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+/* .resources and jobs, shared styles */
+
+.list.tabular.resources,
+.list.tabular.jobs {
+    height: auto;
+    max-width: none;
+    border-right: none;
+    margin-top: 26px;
+}
+
+.list.tabular.resources.header,
+.list.tabular.jobs.header {
+    background-color: #edf2f8;
+    /* border-top: 1px solid #fff; */
+    cursor: default;
+    position: absolute;
+        left: 0;
+        right: 0;
+    overflow:hidden;
+    white-space:nowrap;
+    z-index: 8; /* must be lower than #systemMessageConsole */
+}
+
+#resultsListHeader h3,
+#resultsListHeader p {
+    font-weight: normal;
+}
+
+#resultsContainer {
+    background-color: transparent;
+}
+
+#resultsContainer .resources.selected p {
+    color: #ffffff;
+}
+
+/* If the theme in use indicates focus with a background color change, then
+ * when a user clicks on a scroll tab and drags it (NOT when they use the
+ * scroll wheel), then in some browsers (Firefox, likely a few others), the
+ * container will be focused for this purpose even if it has tabindex="-1".
+ * The result is distracting (half the screen turns orange), misleading (it
+ * looks like state indication for the list contents, which it isn't), and
+ * in any case pointless (since the scrolling action will result in an
+ * obvious indication of focus for sighted users, and focus returns to a
+ * list element as soon as the scroll bar is released).
+ */
+#resultsContainer:focus{
+    background-color: transparent;
+}
+
+.list.tabular.resources .first,
+.list.tabular.jobs .first{
+    border-top: none;
+}
+
+.list.tabular.resources .resources,
+.list.tabular.jobs .jobs {
+    border-right:none;
+    *margin-top:-3px; /* IE7 */
+}
+
+.list.resources .wrap,
+.list.jobs .wrap {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 0 !important;
+    /* height: 24px; */
+    height: 26px; /* NEW */
+    border-bottom: 1px solid #E3E9EF;
+    border-right: none !important;
+    border-top: none !important;
+}
+
+.responsive .stripe.wrap {
+    background-color: #F2F8FE;
+}
+
+.list.tabular.resources .column,
+.list.tabular.jobs .column {
+    display: inline-block;
+    vertical-align: top;
+    float:left;
+    height: inherit;
+    /* border-left: 2px solid #F0F1FA; */ /* REMOVE */
+    line-height: 24px;
+    height:24px;
+}
+
+.list.resources .column.one {
+    width: 44px;
+    margin: 0 !important;
+    border: none;
+}
+
+.list.resources .separator,
+.list.jobs .separator {
+    width: 0;
+    height: inherit;
+    position: absolute;
+    /* border-left: 2px solid #F0F1FA; */ /* REMOVE */
+    top: 0;
+    left: 23px;
+}
+
+/* resources-only styles */
+.list.resources.twoColumn .column.one {
+    width:20px;
+}
+
+.list.resources .icon.disclosure {
+    left: 26px;
+}
+
+.list.resources .column.two {
+    white-space: normal;
+    width: 64%;
+}
+
+.list.resources .column.two * {
+    margin-bottom: .2em;
+}
+
+
+.list.resources .column.three {
+    left:auto;
+    position:absolute !important;
+    right:19%;
+    width:11%;
+    padding-left: 4px;
+}
+
+.list.resources .column.four {
+    left:auto;
+    position:absolute;
+    right:0 !important;
+    top:0 !important;
+    width:19%;
+    white-space: normal;
+}
+
+.list.resources .column.four * {
+    text-align: right;
+}
+
+.list.resources .list {
+    margin-left: 4em;
+}
+
+.list.resources.twoColumn .column.two {
+    width:80%;
+}
+
+.resourceName {
+    cursor: default;
+}
+
+
+.wrap.dragging.resources > .column {
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+#repoBrowse .wrap.dragging.resources > .column.two {
+    width:auto;
+}
+
+
+.wrap.dragging.resources > .column.one,
+.wrap.dragging.resources > .column.three,
+.wrap.dragging.resources > .column.four,
+.wrap.dragging.resources > .column > .resourceDescription {
+    display:none;
+}
+
+#repoSearch .list.resources .column.two,
+#repoBrowse .list.resources .column.two {
+    width: 63%;
+}
+
+#repoSearch .list.resources .resourceDescription,
+#repoBrowse .list.resources .resourceDescription {
+    *width:56%; /* IE7 */
+    width:56%\9; /* IE8 and IE9 */
+    max-width:55%;
+    min-width:20%;
+    width: auto;
+}
+
+.list.resources.sublist {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.list.resources .createdDate,
+.list.resources .modifiedDate {
+    display: inline-block;
+    width: 43%;
+    height: inherit;
+    text-align: left !important;
+    padding: 0 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.list.resources .createdDate {
+}
+
+.list.resources .modifiedDate {
+    /* border-left: 2px solid #F0F1FA; */ /* REMOVE */
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    #manage_roles .list.twoColumn .wrap .column.one {
+        width: 88%;
+    }
+}
+
+.list.resources .resourceName {
+    display: inline-block;
+    *display: inline; /* IE7 */
+    zoom:1; /* IE */
+    margin: 0;
+    width: 40%;
+    font-size: 1em;
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 4px;
+}
+
+
+.list.resources .selected.leaf .resourceName > a {
+    color: #fff;
+}
+
+.list.resources.sublist .resourceName > a{
+    padding-left: 24px;
+    color: #195b8a;
+}
+
+.list.resources.sublist .selected .resourceName > a{
+    padding-left: 24px;
+    color: #fff;
+}
+
+.list.resources .resourceDescription {
+    /* border-left: 2px solid #F0F1FA; */ /* REMOVE */
+    display: inline-block;
+    *display: inline; /* IE7 */
+    height: 24px;
+    overflow: hidden;
+    margin: 0;
+    min-height: 1em;
+    padding-left: 4px;
+    position: absolute;
+    white-space: nowrap;
+    width: 57%;
+    zoom:1; /* IE */
+}
+
+@-moz-document url-prefix() {
+    .list.resources .resourceDescription {
+        position: relative;
+    }
+}
+
+.list.resources .icon {
+    background-image: url("images/disclosure_indicators_sprite.png");
+    position: absolute;
+    top: 4px;
+}
+
+.list.resources .node.closed > .wrap .disclosure.icon {
+    background-position: 0px -207px;
+}
+
+.list.resources .node.closed > .wrap.pressed .disclosure.icon,
+.list.resources .node.closed.selected > .wrap .disclosure.icon {
+    background-position: 0px -360px;
+}
+
+.list.resources .node.closed > .wrap .disclosure.icon.over {
+    background-position: 0px -231px;
+}
+
+.list.resources .node.closed > .wrap .disclosure.icon.pressed {
+    background-position: 0px -259px;
+}
+
+.list.resources .node.open > .wrap .disclosure.icon {
+    background-position: 0px -287px;
+}
+
+.list.resources .node.open > .wrap.pressed .disclosure.icon,
+.list.resources .node.open.selected > .wrap .disclosure.icon {
+    background-position: 0px -379px;
+}
+
+.list.resources .node.open > .wrap .disclosure.icon.over {
+    background-position: 0px -311px;
+}
+
+.list.resources .node.open > .wrap .disclosure.icon.pressed {
+    background-position: 0px -337px;
+}
+
+/* .disclosure.button */
+
+.list.resources > .node > .wrap > .column > .disclosure.icon {
+    visibility: visible;
+}
+
+.list.resources > .leaf > .wrap > .column > .disclosure.icon {
+    background-image: none;
+    cursor: default;
+}
+/*
+
+/* .scheduled.button */
+
+.list.resources > .scheduled > .wrap > .column > .scheduled.icon {
+    visibility: visible;
+}
+
+.list.resources .wrap > .column > .scheduled.icon {
+    visibility: hidden;
+    left: 4px;
+}
+
+.list.resources .scheduled > .wrap .scheduled.icon {
+    background-position: 0px -405px;
+}
+
+.list.resources .scheduled > .wrap .scheduled.icon.over {
+    background-position: 0px -431px;
+}
+
+.list.resources .scheduled > .wrap .scheduled.icon.pressed {
+    background-position: 0px -457px;
+}
+
+#resultsListHeader.list.resources .scheduled > .wrap .scheduled.icon.over,
+#resultsListHeader.list.resources .scheduled > .wrap .scheduled.icon.pressed {
+    cursor:default;
+    background-position: 0px -405px;
+}
+
+/* .jobs-only styles */
+.list.jobs .jobResource,
+.list.jobs .jobResourcePath,
+.list.jobs .jobID,
+.list.jobs .jobDescription,
+.list.jobs .jobState {
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:4px;
+}
+
+.list.jobs .jobName {
+    display:inline-block;
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:4px;
+    width:60%;
+}
+
+.list.jobs .jobOwner {
+    display:inline-block;
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:4px;
+    width:36%;
+}
+
+.list.jobs .lastRanDate {
+    display:inline-block;
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:4px;
+    width:48%;
+}
+
+.list.jobs .nextRunDate {
+    display:inline-block;
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:4px;
+    width:48%;
+}
+
+.list.jobs .jobEnabled {
+    height:24px;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-left:2px;
+    padding-right:2px;
+    text-align:center;
+}
+
+/* table body only */
+#resultsList .jobEnabled {
+    text-align:center;
+    padding-top:2px \9; /* IE8-9 */
+}
+
+.list.jobs .jobEdit,
+.list.jobs .jobDelete {
+    display:inline-block;
+    text-align:center;
+    height:24px;
+    line-height:16px;
+    overflow:hidden;
+    white-space:nowrap;
+    width:48%;
+    vertical-align:top;
+}
+
+
+/*
+ * From: setLeft.css
+ */
+.responsive.setLeft .responsive {
+    margin-left: 0;
+}
+
+.responsive.setLeft .responsive .node .wrap {
+    padding-left: 20px;
+}
+.responsive.setLeft .responsive .node .leaf .wrap {
+    padding-left: 30px;
+}
+
+.responsive.setLeft .responsive .node .node .wrap {
+    padding-left: 40px;
+}
+
+.responsive.setLeft .responsive .node .node .leaf .wrap {
+    padding-left: 50px;
+}
+
+.responsive.setLeft .responsive .node .node .node .wrap {
+    padding-left: 60px;
+}
+
+.responsive.setLeft .responsive .node .node .node .leaf .wrap {
+    padding-left: 70px;
+}
+
+/*
+ * From: settings.css
+ */
+.list.settings {
+    min-width: 675px;
+}
+
+.list.settings .node > .wrap {
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #F0F0F0;
+    height: 28px;
+    padding-left: 12px;
+    /* padding-left: 20px; */ /* DELETE IF NO PROBLEMS */
+}
+
+.list.settings .node.closed .description {
+    margin-bottom: 0
+}
+
+.list.settings .node > .wrap .title {
+    line-height: 28px;
+    /* font-weight: normal; */ /* DELETE IF NO PROBLEMS, headers didn't stand out enough */
+}
+
+.list.settings .node > .description {
+    background-color: #fff;
+    border: none;
+    color: #999999;
+    margin: 0;
+    padding: 5px 0 10px 12px;
+    /* border-bottom: 1px solid #E0E0E0;
+    margin-top: 0; */ /* DELETE IF NO PROBLEMS */
+}
+
+.list.settings .header > .title {
+    height:auto;
+}
+
+
+
+/*
+ * From: type.css
+ */
+/* .type_tables */
+
+.type_tables .node > .wrap > .icon {
+    width: 21px;
+}
+
+.type_tables .leaf > .wrap > .icon {
+    width: 8px;
+}
+
+.type_tables .wrap {}
+
+.type_tables .node > .wrap {
+    margin-left: 0;
+}
+
+.type_tables .node > .icon {
+    margin-right:5px;
+}
+
+.type_tables .node.open > .wrap > .icon,
+.type_tables .node.open > .wrap.pressed > .icon,
+.type_tables .node.open.selected > .wrap > .icon {
+    background-position: 0px -272px;
+}
+
+.type_tables .node.closed > .wrap > .icon,
+.type_tables .node.closed > .wrap.pressed > .icon,
+.type_tables .node.closed.selected > .wrap > .icon {
+    background-position: 0px -240px;
+}
+
+.type_tables .node.dataIsland.open > .wrap > .icon,
+.type_tables .node.dataIsland.open > .wrap.pressed > .icon,
+.type_tables .node.dataIsland.open.selected > .wrap > .icon {
+    background-position: 0px -503px;
+}
+
+.type_tables .node.dataIsland.closed > .wrap > .icon,
+.type_tables .node.dataIsland.closed > .wrap.pressed > .icon,
+.type_tables .node.dataIsland.closed.selected > .wrap > .icon {
+    background-position: 0px -537px;
+}
+
+.type_tables .node.constant.open > .wrap > .icon,
+.type_tables .node.constant.open > .wrap.pressed > .icon,
+.type_tables .node.constant.open.selected > .wrap > .icon {
+    background-position: 0px -621px;
+}
+
+.type_tables .node.constant.closed > .wrap > .icon,
+.type_tables .node.constant.closed > .wrap.pressed > .icon,
+.type_tables .node.constant.closed.selected > .wrap > .icon {
+    background-position: 0px -577px;
+}
+
+.type_tables .node.derived.open > .wrap > .icon,
+.type_tables .node.derived.open > .wrap.pressed > .icon,
+.type_tables .node.derived.open.selected > .wrap > .icon {
+    background-position: 0px -704px;
+}
+
+.type_tables .node.derived.closed > .wrap > .icon,
+.type_tables .node.derived.closed > .wrap.pressed > .icon,
+.type_tables .node.derived.closed.selected > .wrap > .icon {
+    background-position: 0px -663px;
+}
+
+.type_tables .leaf > .wrap > .icon {
+    background-position: 0px -370px;
+}
+
+.type_tables .leaf.calculated > .wrap > .icon {
+    background-position: 0px -745px;
+    width:17px;
+}
+
+/* type_basic */
+
+.type_basic .node.open > .wrap > .icon,
+.type_basic .node.open > .wrap.pressed > .icon,
+.type_basic .node.open.selected > .wrap > .icon {
+    background-position: 8px -87px;
+}
+
+.type_basic .node.closed > .wrap > .icon,
+.type_basic .node.closed > .wrap.pressed > .icon,
+.type_basic .node.closed.selected > .wrap > .icon {
+    background-position: 8px -52px;
+}
+
+.collapsible.type_basic li {
+    line-height:2.2em;
+}
+
+.collapsible.type_basic .collapsible {
+    margin-left:1.5em;
+    margin-top:-2px;
+}
+
+/* type_messages */
+
+.list.type_messages .subject {
+    font-weight: normal;
+}
+
+.list.type_messages .unread .subject {
+    font-weight: bold;
+}
+
+.list.type_messages.tabular.fourColumn .column.four {
+    top:0;
+}
+
+
+/* .type_sets */
+
+.type_sets .node > .wrap > .icon {
+    width: 19px;
+}
+
+.type_sets .leaf > .wrap > .icon {
+    width: 12px;
+}
+
+.type_sets .node > .wrap {
+    margin-left: 0;
+}
+
+.type_sets .node > .icon {
+    margin-right:5px;
+}
+
+.type_sets .node.open > .wrap > .icon,
+.type_sets .node.open > .wrap.pressed > .icon {
+    background-position: 0px -176px;
+    *background-position: 0px -177px; /* IE7 */
+}
+
+.type_sets .node.closed > .wrap > .icon,
+.type_sets .node.closed > .wrap.pressed > .icon {
+    background-position: 0px -207px;
+    *background-position: 0px -208px; /* IE7 */
+}
+
+.type_sets .leaf > .wrap > .icon {
+    background-position: 0px -398px; /* IE7 */
+}
+
+/* .list.type_attributes */
+
+.list.type_attributes {
+    margin: 5px auto;
+}
+
+.list.type_attributes .node {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.list.type_attributes .leaf{
+    display: inline;
+}
+
+/*
+ * From: bg.css
+ */
+.list > li > .wrap.over {
+    background-color:#EfEfEf;
+}
+
+.list.tabular > .leaf > .header > .wrap,
+.list.tabular > .node > .header > .wrap {
+    background-color:#E0E0E0;
+}
+
+.list.doesNotHaveFocus .selected > .wrap {
+    background-color:#999;
+}
+
+.list > li > .wrap.pressed,
+.list > li.selected > .wrap,
+.list > li.selected > .wrap.over {
+    background-color: #1388d8;
+    color: #fff;
+}
+
+.list > li.selected > a.wrap,
+.list > li > div.pressed > div > p > a {
+  color: white;
+}
+
+.list.responsive > li > .wrap.pressed {
+    background-color:#0061a2;
+}
+
+
+/* no result message */
+.list div.noSearchResults {
+    text-align: center;
+}
+
+.panel.dialog.overlay.ui-resizable.selectFolder .hideRoot > .node > .subcontainer > .j-view-port-chunk > .collapsible {
+	margin-left: 0;
+}

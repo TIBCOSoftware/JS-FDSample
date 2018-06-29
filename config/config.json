@@ -1,36 +1,38 @@
 {
-    "visualizeJS": "https://mobiledemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
-    "jrsHostname": "https//mobiledemo.jaspersoft.com/jasperserver-pro/flow.html",
+	"visualizeJS": "jrs-optimized-scripts/client/visualize.js",
+	"cacheVisualizeJS": true,
+    "visualizeJSFromServer": "https://mobiledemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
+    "jrsHostname": "https://mobiledemo.jaspersoft.com/jasperserver-pro",
+    "jrsAuth": {
+            "name": "joeuser",
+            "password": "joeuser",
+            "organization": "organization_1"
+    },
+	"theme": "theme",
     "users": {
         "CaliforniaAdmin": {
             "password": "CaliforniaAdmin", 
             "role": "admin",
-            "jrsConfig": {
-		        "auth": {
-		            "name": "joeuser",
-		            "password": "joeuser",
-		            "organization": "organization_1"
-		        }
-		    }
+	        "auth": {
+				"name": "CaliforniaUser",
+				"password": "CaliforniaUser",
+				"organization": "organization_1"
+	        }
         },
         "USAdmin": {
             "password": "USAdmin",
             "role": "admin", 
-            "jrsConfig": {
-		        "auth": {
-		            "name": "joeadmin",
-		            "password": "joeadmin",
-		            "organization": "organization_1"
-		        }
-		    }
+			"auth": {
+				"name": "joeadmin",
+				"password": "joeadmin",
+				"organization": "organization_1"
+			}
 		}
         
     },
-    "jrsConfig": {
-        "auth": {
+    "jrsAuth": {
             "name": "joeuser",
             "password": "joeuser",
             "organization": "organization_1"
-        }
     }
 }

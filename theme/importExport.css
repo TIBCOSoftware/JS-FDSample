@@ -1,0 +1,323 @@
+.export-view {
+    padding: 22px;
+    width: 49%;
+}
+
+.export-view .section {
+    margin: 0 0 26px 0;
+}
+
+.export-view .section.resources,
+.export-view .section.roles-users {
+    margin-left: 20px;
+}
+
+.export-view p.title,
+.export-view p.jr-mDialog-header-title {
+    margin: 0 0 14px;
+    color: #666;
+}
+
+.export-view .section > .group {
+    margin: 0 0 0 20px;
+    padding-left: 0;
+}
+
+.export-view,
+.export-view .section,
+.export-view .section > .group {
+    overflow: hidden;
+}
+
+.export-view .control.checkBox {
+    float: left;
+    min-width: 169px;
+}
+
+.export-view .section.everything {
+    margin: 14px 20px;
+}
+
+.export-view .section.events {
+    width: 30%;
+    float: left;
+    margin-bottom: 0;
+}
+
+.export-view .section.file-name .control.input {
+    margin: 0 40px 0 0;
+    width: 400px;
+    float: left;
+}
+
+.export-view .section.file-name .control.checkBox {
+    margin-top: 22px;
+}
+
+.export-view .section.file-name .encryptFileWrapper {
+    margin-right: 55px;
+}
+
+.export-view .section.resources,
+.export-view .section.assets {
+    float: left;
+    width: 33%;
+    margin-bottom: 0;
+}
+
+.repository-export-dialog .export-view .section.resources {
+    width: auto;
+}
+
+.export-view .control.checkBox {
+    min-width: 180px;
+}
+
+.export-view .selectRolesUsers.pickWells {
+    margin: 4px;
+    width: auto;
+    height: 220px;
+    -webkit-user-select: none;
+}
+
+.export-view .selectRolesUsers.pickWells .control.searchLockup input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 24px 8px 2px;
+}
+
+.export-view .group.rolesAndUsers .control.radio {
+    float: left;
+    margin-right: 16px;
+    min-width: 200px;
+}
+
+.export-view .button-select-all {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #C1C1C1;
+    cursor: pointer;
+}
+
+.export-view .button-select-all .label {
+    display: inline;
+    vertical-align: top;
+    line-height: 21px;
+}
+
+.export-view .button-select-all .label .text {
+    vertical-align: top;
+}
+
+.export-view .button-select-all .disabled {
+    cursor: default;
+}
+
+.export-view .authorityPicker {
+    margin-bottom: 25px;
+}
+
+.export-view .authorityPicker .selectBorder.lower {
+    display: none;
+}
+
+.export-view .button-select-all .icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    zoom: 1;
+    height: 22px;
+    vertical-align: top;
+    background: transparent url("./images/icontrol_icons_sprite.png") 0 5px;
+    width: 11px;
+    pointer-events: auto;
+}
+
+.export-view .button-select-all.disabled {
+    pointer-events: none;
+}
+
+.import-view {
+    padding: 0 20px;
+}
+
+.import-view input.hidden {
+    display: none;
+}
+
+#importDataFile.import-view #uploadFile {
+    width: 358px;
+}
+
+.jr-mDialog.jr.tenant-export-dialog {
+    height: 740px;
+    min-width: 630px;
+    width: 745px;
+    min-height: 350px !important;
+}
+
+.tenant-export-dialog .export-view,
+.repository-export-dialog .export-view {
+    width: 100%;
+}
+
+.repository-export-dialog .section.resources p {
+    margin-bottom: 8px;
+}
+
+.tenant-export-dialog .export-view {
+    padding: 12px 23px 0 15px;
+}
+
+.jr-mDialog.tenant-export-dialog .jr-mDialog-footer,
+.jr-mDialog.tenant-import-dialog .jr-mDialog-footer,
+.jr-mDialog.repository-export-dialog .jr-mDialog-footer {
+    width: 100%;
+    position: absolute;
+    clear: both;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.jr-mDialog.tenant-export-dialog .jr-mDialog-body {
+    padding: 12px;
+}
+
+.jr-mDialog.tenant-export-dialog > .jr-mDialog-body {
+    padding: 0;
+    margin-bottom: 40px;
+    position: absolute;
+        top: 2.909em;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    max-height: 100%;
+}
+
+.jr-mDialog.tenant-import-dialog .jr-mDialog-body {
+    overflow-x: hidden;
+}
+
+.tenant-import-dialog {
+    height: 290px;
+    /*min-width: 440px;*/
+    /*width: 440px;*/
+}
+
+.tenant-import-dialog .import-view {
+    width: 100%;
+}
+
+.jr-mDialog.tenant-import-dialog .jr-mDialog-body {
+    padding: 8px 0 40px 0;
+}
+
+.jr-mDialog.tenant-import-dialog.jr .jr-mDialog-body-wrapper.jr {
+    padding-top: 0;
+}
+
+.tenant-import-dialog .jr-mDialog-body fieldset.group {
+    margin-bottom: 6px;
+}
+
+.dependent-resources-dialog,
+.warnings-dialog {
+    min-width: 550px;
+    width: 550px;
+    min-height: 328px;
+}
+
+.dependent-resources-dialog .jr-mDialog-body,
+.warnings-dialog .jr-mDialog-body {
+    /*min-height: 255px;*/
+    /*height: 255px;*/
+    overflow: auto;
+    padding: 23px;
+}
+
+.dependent-resources-dialog .jr-mDialog-body > .message {
+    height: 26px;
+}
+
+.dependent-resources-dialog .jr-mDialog-body.jr .control.groupBox,
+.warnings-dialog .jr-mDialog-body.jr .control.groupBox {
+    margin: 0;
+    min-width: 100%;
+    min-height: 170px;
+    display: inline-block;
+}
+
+.dependent-resources-dialog .jr-mDialog-body .list.tabular > li > .wrap,
+.warnings-dialog .jr-mDialog-body .list.tabular > li > .wrap {
+    border-top: none;
+}
+
+.dependent-resources-dialog .jr-mDialog-footer.jr {
+    height: 3.636em;
+}
+
+.warnings-dialog .jr-mDialog-body {
+    padding: 10px;
+}
+
+.warnings-dialog .jr-mDialog-body > .control.groupBox {
+    min-height: 208px;
+    border: none;
+}
+
+.repository-export-dialog {
+    height: 250px;
+    min-width: 245px;
+    width: 350px !important;
+}
+
+.repository-export-dialog .jr-mDialog-body .export-view {
+    padding: 0;
+}
+
+.repository-export-dialog .export-view .section.file-name {
+    margin: 0 0 18px 0;
+}
+
+.repository-export-dialog .export-view .section.resources,
+.repository-export-dialog .export-view .section.assets,
+.repository-export-dialog .export-view .section.file-name > .group {
+    margin: 0;
+}
+
+.repository-export-dialog .export-view .section.resources > .group,
+.repository-export-dialog .export-view .section.assets > .group {
+    margin-left: 10px;
+}
+
+.repository-export-dialog .export-view .section.file-name .control.input {
+    margin: 0;
+    width: 100%;
+}
+
+.repository-export-dialog .export-view .control.checkBox {
+    min-width: 200px;
+}
+
+.merge-tenant-dialog {
+    width: 450px;
+    min-height: 249px;
+    min-width: 450px;
+}
+
+.merge-tenant-dialog .jr-mDialog-body > .message {
+    height: 26px;
+}
+
+.jr-mDialog.merge-tenant-dialog .jr-mDialog-body {
+    padding: 16px 16px 5px;
+}
+
+.merge-tenant-dialog p.imported-tenant,
+.merge-tenant-dialog p.selected-tenant {
+    margin: 15px 0 15px 20px;
+}

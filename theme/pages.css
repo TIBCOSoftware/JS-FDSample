@@ -1,0 +1,532 @@
+/*
+ * From: one_column.css
+ */
+.oneColumn>.primary.column,
+.body.oneColumn>.primary.column,
+.row.oneColumn>.primary.column {
+	right:0;
+	left:0;
+	display:block;
+}
+
+.oneColumn>.secondary.column,
+.oneColumn>.tertiary.column {
+	display: none;
+}
+
+/*
+ * From: two_columns.css
+ */
+/* twoColumn.primaryRight */
+
+.twoColumn>.primary.column,
+.body.twoColumn>.primary.column,
+.row.twoColumn>.primary.column {
+	right: 0;
+	left: 200px;
+	display: block;
+	margin-left: 1px;
+}
+
+.twoColumn>.secondary.column,
+.body.twoColumn>.secondary.column,
+.row.twoColumn>.secondary.column {
+	border-right: 1px solid #e3e3e3;
+	/* border-right: 1px solid #999; */ /* dark alternative */
+	left: 0;
+	display: block;
+	min-width: 199px; /* !important; CHANGED FROM 200px FOR AMBER 2 THEME, JRS-5195 will fix this */
+	width: 200px;
+}
+
+.twoColumn>.tertiary.column {
+	display: none;
+}
+
+/* twoColumn.primaryLeft */
+
+.twoColumn.primaryLeft>.primary.column,
+.body.twoColumn.primaryLeft>.primary.column,
+.row.twoColumn.primaryLeft>.primary.column {
+	right:200px;
+	left:0;
+	display:block;
+	margin-right: 18px; /* bigger margin fixes issue in domain designer */
+}
+
+.twoColumn.primaryLeft>.secondary.column,
+.body.twoColumn.primaryLeft>.secondary.column,
+.row.twoColumn.primaryLeft>.secondary.column,
+.twoColumn.primaryLeft>.tertiary.column,
+.body.twoColumn.primaryLeft>.tertiary.column,
+.row.twoColumn.primaryLeft>.tertiary.column {
+	min-width:200px;
+	width:200px;
+	right:0;
+	left:auto; /* fixes problems in domain designer */
+	display:block;
+}
+
+/* twocolumn_equal */
+
+.twoColumn_equal> .primary.column,
+.body.twoColumn_equal> .primary.column,
+.row.twoColumn_equal> .primary.column {
+	right:0;
+	left:50%;
+	display:block;
+	width:auto;
+}
+
+.twoColumn_equal> .secondary.column,
+.body.twoColumn_equal> .secondary.column ,
+.row.twoColumn_equal> .secondary.column {
+	right:50%;
+	left:0;
+	display:block;
+}
+
+.twoColumn_equal> .tertiary.column {
+	display: none;
+}
+
+.relative.twoColumn_equal> .primary.column {
+	width:50%;
+	display:block;
+	position: relative;
+	float: left;
+	right:auto;
+	margin: auto 0;
+	left:0;
+}
+
+.relative.twoColumn_equal> .secondary.column {
+	width:49%;
+	display:block;
+	position: relative;
+	float: right;
+	right:auto;
+}
+
+.relative.twoColumn_equal> .column {
+	overflow:hidden;
+	min-width:100px;
+}
+
+/* .twoColumn.manager */
+
+.twoColumn.manager>.primary.column {
+	right:50%;
+	left:0;
+	display:block;
+	margin-left: 24px;
+	margin-right: 45px;
+}
+
+.twoColumn.manager>.secondary.column {
+	display:none;
+}
+
+.twoColumn.manager>.tertiary.column {
+	right:0;
+	left: auto;
+	display:block;
+	width: 50%;
+}
+
+/*
+ * From: three_columns.css
+ */
+/* .threeColumn */
+.threeColumn>.primary.column,
+.body.threeColumn>.primary.column,
+.row.threeColumn>.primary.column {
+	display: block;
+	left: 200px;
+	margin-left: 1px;
+	margin-right: 1px;
+	right: 200px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome only */
+	.threeColumn>.primary.column,
+	.body.threeColumn>.primary.column,
+	row.threeColumn>.primary.column {
+		margin-left: 2px;
+	}
+}
+
+.threeColumn>.secondary.column,
+.body.threeColumn>.secondary.column,
+.row.threeColumn>.secondary.column {
+	border-right: 1px solid #e3e3e3;
+	display: block;
+	left: 0;
+	min-width: 199px;
+	right: auto;
+	width: 200px;
+}
+
+.threeColumn>.tertiary.column,
+.body.threeColumn>.tertiary.column,
+.row.threeColumn>.tertiary.column {
+	border-left: 1px solid #e3e3e3;
+	display: block;
+	left: auto;
+	min-width: 200px;
+	right: 0;
+	width: 200px;
+}
+
+/* .threeColumn_equal> */
+
+.threeColumn_equal> .primary.column,
+.body.threeColumn_equal> .primary.column,
+.row.threeColumn_equal> .primary.column {
+	display: block;
+	right: 33%;
+	left: 33%;
+}
+
+.threeColumn_equal> .secondary.column,
+.body.threeColumn_equal> .secondary.column,
+.row.threeColumn_equal> .secondary.column {
+	width:32%;
+	left:0;
+	right:auto;
+	display:block;
+}
+
+.threeColumn_equal> .tertiary.column,
+.body.threeColumn_equal> .tertiary.column,
+.row.threeColumn_equal> .tertiary.column {
+	display: block;
+	left: auto;
+	right: 0;
+	width: 32%;
+}
+
+/* .threeColumn.manager */
+
+.threeColumn.manager>.primary.column {
+	display: block;
+	right: 40%;
+	left: 15%;
+}
+
+.threeColumn.manager>.secondary.column {
+	display: block;
+	left: 0;
+	width: 15%;
+}
+
+.threeColumn.manager>.tertiary.column {
+	display: block;
+	right: 0;
+	width: 40%;
+}
+
+/*
+ * From: row.css
+ */
+/*
+ROW LAYOUTS Row elements can be used to create parent context's for columns for complex and nested layouts
+*/
+.row>.sizer.vertical {
+	bottom: 0;
+	height: 10px;
+	width: 100%;
+}
+
+/* two panes, fill column */
+
+.column .body.twoPanes {
+	overflow: hidden;
+}
+
+.twoPanes .panel.pane {
+	margin-bottom: 0;
+	min-height: 30px;
+	position: absolute;
+}
+
+.twoPanes .pane>.content>.body {
+	bottom: 0;
+}
+
+.twoPanes .pane.secondary {
+	bottom: 0px;
+	height: 200px;
+}
+
+.twoPanes .pane.primary {
+	bottom: 200px;
+	height: auto;
+	top:0;
+}
+
+.twoPanes .pane.secondary>.content {
+	border-top: 1px solid #D4D5D5;
+}
+
+.twoPanes .pane .footer {
+	display: none;
+}
+
+.twoPanes .pane.secondary .sizer {
+	position:absolute;
+	width:9px;
+	height:9px;
+	background-image: url(images/panel_sizer_sprite.png);
+	background-repeat: none;
+	cursor: pointer;
+	z-index: 3;
+	background-position: left 0;
+	right:4px;
+	top:12px;
+	/*workaround for IE and Ch; see Bug 24068*/
+	bottom:13px!important;
+}
+
+
+/* three panes, fill column */
+
+.column .body.threeRow {
+	overflow: hidden;
+}
+
+.threeRow .pane {
+	position: absolute;
+}
+
+.threeRow .pane.primary {
+	top:100px;
+	bottom:100px;
+	height: auto;
+}
+
+.threeRow .pane.upper {
+	top:0;
+	height:100px;
+}
+
+.threeRow .pane.lower {
+	bottom:0;
+	height:100px;
+}
+
+/*
+ * From: flow.css
+ */
+
+/* .flow
+NOTE: .flow layout classes are used by .wizards as well
+*/
+
+.body.flow {
+	white-space: nowrap;
+}
+
+.flow .row {
+	white-space: normal;
+}
+
+.flow #flowControls {
+	color: #333;
+	float: left;
+	margin-top: 85px;
+	min-width: 125px;
+	padding: 0 20px 0 10px;
+	position: relative;
+}
+
+.flow #stepDisplay .column.primary .header,
+.flow #stepDisplay .column.secondary .header {
+	border-bottom: 1px solid #e3e9ef; /* NEW */
+	/* border-bottom: 1px solid #d5d5d5; */ /* DELETE IF NO PROBLEMS */
+}
+
+.flow #stepDisplay .column.primary .header .title,
+.flow #stepDisplay .column.secondary .header .title {
+	display: inline-block;
+	*display: inline; /* IE7 */
+	float: none;
+	*margin-right: 4px; /* IE7 */
+	zoom:1; /* IE */
+
+    /* font-weight: bold; */  /* DELETE IF NO PROBLEMS */
+}
+
+.flow #stepDisplay {
+	display: inline-block;
+	height: 99%;
+	position: relative;
+	width: 80%
+}
+
+.flow #stepDisplay.error .instructions > .warning {
+	display: block;
+}
+
+.flow #stepDisplay .instructions > .warning {
+	display: none;
+}
+
+.flow #stepDisplay .instructions.error . warning {
+	display:block;
+}
+
+.flow .row.instructions {
+	margin: 10px;
+	margin-bottom: 15px;
+}
+
+.flow .row.inputs {
+	min-height: 350px;
+	min-width: 600px;
+	height: 80%;
+}
+
+.flow .row.inputs.twoColumn,
+.flow .row.inputs.twoColumn_equal {
+	min-width:820px;
+}
+
+.flow .row.actions {
+	margin-bottom:10px;
+}
+
+.flow .error .inputs {
+	top:100px;
+}
+
+flow #flowControls .tabSet {
+	float: none;
+	margin-bottom: 25px;
+	overflow: auto;
+}
+
+.flow .inputs.oneColumn > .primary.decorated > .content > .body {
+	padding: 15px 5px 5px 20px;
+}
+
+.flow .inputs.oneColumn > .primary > .content > .header {
+	overflow:visible;
+}
+
+.flow .inputs .twoColumn_equal > .column {
+	padding:0 5px;
+}
+
+.flow .inputs.twoColumn > .column.primary {
+	margin-left:35px;
+}
+
+
+.flow .inputs > .column {
+	margin-left: 10px;
+}
+
+.flow .inputs > .column.decorated {
+	margin-top: 5px;
+}
+
+.flow .twoColumn_equal > .column > .sizer,
+.flow .twoColumn_equal .minimize {
+	display: none;
+}
+
+.flow #moveButtons .button,
+.flow .moveButtons .button {
+	margin-bottom: 10px;
+}
+
+.flow #moveButtons .toRight,
+.flow #moveButtons .toTop,
+.flow .moveButtons .toRight,
+.flow .moveButtons .toTop {
+	margin-top: 30px;
+}
+
+.flow .panel.info {
+	height: 100%;
+	width: 100%;
+}
+
+.nameAndDescription {
+	margin:5px 20px;
+}
+
+/* .flow.wizard */
+
+.flow.wizard #wizardNav #done,
+.flow.wizard #wizardNav #submit {
+	display:none;
+}
+
+.flow #next,
+.flow #previous,
+.flow.wizard.oneStep #wizardNav #next,
+.flow.wizard.oneStep #wizardNav #previous,
+.flow.wizard.lastStep #wizardNav #next {
+	display:none;
+}
+
+.flow.wizard #wizardNav #previous,
+.flow.wizard #wizardNav #next,
+.flow.wizard #wizardNav #previous,
+.flow.wizard.firstStep #wizardNav #next,
+.flow.wizard.oneStep #wizardNav #done,
+.flow.wizard.lastStep #wizardNav #done,
+.flow.wizard.oneStep #wizardNav #submit,
+.flow.wizard.lastStep #wizardNav #submit {
+	display:inline;
+}
+
+/*
+ * From: pickwells.css
+ */
+/* .pickWells */
+
+.twoColumn_equal.pickWells > .primary.column,
+.moveButtons > .primary.column {
+	margin: 16px 16px 16px 30px;
+}
+
+.twoColumn_equal.pickWells  >.secondary.column,
+.moveButtons > .secondary.column {
+	margin: 16px 30px 16px 16px;
+}
+
+.twoColumn_equal.pickWells> .primary > .content > .body {
+	padding: 0;
+}
+
+.flow .inputs .primary .twoColumn.pickWells>#moveButtons,
+.twoColumn_equal.pickWells>#moveButtons,
+.twoColumn_equal.pickWells>.moveButtons {
+	left: 50%;
+	margin-left: -17px;
+}
+
+.pickWells .sizer,
+.pickWells .button.minimize {
+	display: none;
+}
+
+.flow #moveButtons,
+.row #moveButtons,
+.moveButtons {
+	position: absolute;
+	width: 34px;
+	padding-top: 35px;
+	right: 0;
+	margin-left: 38px;
+	margin-right: 5px;
+}
+
+.moveButtons .button,
+#moveButtons .button {
+	margin-bottom: 8px;
+}

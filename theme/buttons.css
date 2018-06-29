@@ -1,0 +1,1056 @@
+/*
+ * From: button.css
+ */
+.button {
+	position: relative;
+	border: 0;
+    border-radius: 0;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	overflow: visible; /* removes extra side padding in IE */
+}
+
+.button.disabled,
+.button[disabled] {
+	cursor:default;
+}
+
+.button .wrap {
+	position: relative;
+	display: block !important;
+	white-space: nowrap;
+	font-family: inherit; /* fixes the problem that some browsers are rendering in lucida grande */
+	font-size:11px;
+}
+
+.button .icon,
+.button .indicator {
+	display: inline-block;
+	*display:inline; /* IE7 */
+	zoom:1; /* IE */
+	background-repeat: no-repeat;
+}
+
+.button .indicator {
+	background-image: url(images/disclosure_indicators_sprite.png);
+	width:11px;
+	height:24px;
+	right:0;
+	top:0;
+	position: absolute;
+}
+
+.button .icon {
+	width:24px;
+	height:24px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.button.disabled .icon,
+.button[disabled] .icon {
+	opacity:.4;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/*
+		Safari and Google Chrome only
+
+		To address discrepancy in rendering between PC and Mac WebKit
+	*/
+	.button {
+		margin-top: -1px;
+		margin-bottom: -1px;
+	}
+
+	.tabSet.horizontal .button>.wrap {
+		margin-top:0;
+	}
+
+	#resultsList .button {
+		margin-top:0px;
+	}
+}
+
+.button::-moz-focus-inner {
+	border: none; /* overrides extra padding in Firefox */
+	padding: 0;
+}
+/*
+ * From: action.css
+ */
+.action {
+	display: inline-block;
+	*height: 28px; /* IE7 */
+	margin-right: 5px;
+	min-height: 28px;
+	padding :0 15px 0 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+.action>.wrap {
+	background-position: left 0;
+	font: bold 11px lucida grande,Verdana,Arial,Helvetica,sans-serif;
+	line-height: 28px;
+	*margin-top: 0; /* IE7 */
+	*margin-bottom: 0; /* IE7 */
+	padding-left: 15px;
+}
+
+.action.square >.wrap {
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.footer .action {
+	/* margin-top: 2px; */ /* DELETE IF NO PROBLEMS */
+	margin-top: 4px;
+}
+
+/* action square small, new buttons introduced October 2014 */
+/* occurs in redesigned Select Data dialog box (formerly Data Chooser) */
+.action.square.small {
+	margin: 0;
+	min-height: 24px;
+	padding: 0;
+	width: auto;
+}
+
+.action.square.small > .wrap {
+    height: 24px;
+    width: 24px;
+}
+
+.action.square.small.tree > .wrap,
+.action.square.small.list > .wrap {
+	width:30px;
+}
+
+.action.square.small > .wrap > .icon {
+    background-image: url("images/select_data_icons_sprite.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 24px;
+    width: 30px;
+}
+
+/* button background color, states */
+.action.small.up {
+    background-color: #e4e4e4;
+}
+
+.action.small.up.over,
+.action.small.up.pressed {
+    background-color: #9b9a9a;
+}
+
+.action.small.down,
+.action.small.down.over,
+.action.small.down.pressed {
+    background-color: #fc870e;
+}
+
+
+/* button icon positions, states */
+.action.small.tree.up .icon {
+    background-position: 7px 4px;
+}
+
+.action.small.tree.up.over .icon,
+.action.small.tree.up.pressed .icon,
+.action.small.tree.down .icon,
+.action.small.tree.down.over .icon {
+    background-position: -33px 4px;
+}
+
+.action.small.list.up .icon {
+    background-position: 4px -25px;
+}
+
+.action.small.list.up.over .icon,
+.action.small.list.up.pressed .icon,
+.action.small.list.down .icon,
+.action.small.list.down.over .icon {
+    background-position: -36px -25px;
+}
+
+/* action simple, new icon-only buttons introduced July 2013 */
+/* occurs in schedule jobs list page */
+.action.simple {
+	background:url("images/button_action_simple_sprite.png") repeat-x scroll 0 0 transparent;
+	display:inline-block;
+	margin:0;
+	padding:0;
+	height:18px;
+	min-height:18px;
+	width:18px;
+}
+
+.action.simple.button.edit {
+	background-position: 1px 0px;
+}
+
+.action.simple.button.delete {
+	background-position: 1px -40px;
+}
+
+.action.simple.button.cancel {
+    background-position: 1px -200px;
+}
+
+.action.simple.button.add {
+    background-position:4px -74px;
+    height:100%;
+}
+
+/* CHROME ONLY */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.button.edit {
+		background-position:4px 6px;
+	}
+
+	.button.delete {
+		background-position:4px -32px;
+	}
+}
+
+
+/*
+ * From: action.join.css
+ */
+
+.action.join.inner .icon {
+	background-position: 5px -751px;
+	*background-position: 5px -753px; /* IE7 */
+}
+
+.action.join.left .icon {
+	background-position: 5px -692px;
+	*background-position: 5px -692px; /* IE7 */
+}
+
+.action.join.right .icon {
+	background-position: 5px -722px;
+	*background-position: 5px -724px; /* IE7 */
+}
+
+.action.join.full .icon {
+	background-position: 5px -779px;
+	*background-position: 5px -781px; /* IE7 */
+}
+
+.action.join.inner.over .icon,
+.action.join.inner.pressed .icon {
+	background-position: -31px -751px;
+	*background-position: -31px -753px; /* IE7 */
+}
+
+.action.join.left.over .icon,
+.action.join.left.pressed .icon {
+	background-position: -31px -692px;
+	*background-position: -31px -694px; /* IE7 */
+}
+
+.action.join.right.over .icon,
+.action.join.right.pressed .icon {
+	background-position: -31px -722px;
+	*background-position: -31px -724px; /* IE7 */
+}
+
+.action.join.full.over .icon,
+.action.join.full.pressed .icon {
+	background-position: -31px -779px;
+	*background-position: -31px -781px; /* IE7 */
+}
+
+.action.join.inner[disabled] .icon {
+	background-position: -90px -751px;
+	*background-position: -90px -753px; /* IE7 */
+}
+
+.action.join.left[disabled] .icon {
+	background-position: -90px -692px;
+	*background-position: -90px -694px; /* IE7 */
+}
+
+.action.join.right[disabled] .icon {
+	background-position: -90px -722px;
+	*background-position: -90px -724px; /* IE7 */
+}
+
+.action.join.full[disabled] .icon {
+	background-position: -90px -779px;
+	*background-position: -90px -781px; /* IE7 */
+}
+
+
+/* action jumbo */
+.action.jumbo {
+	background-color: #FFFFFF;
+	border:1px solid #d7d7d7;
+	background-image: none;
+	margin:0 5px 16px 5px;
+	*margin:0 10px 16px 0; /* IE7 */
+	padding: 0 34px 0 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+.action.jumbo>.icon {
+	background-image: url("images/home_icons_sprite.png");
+	height: 130px;
+	left: 50%;
+	margin-left: -111px;
+	margin-top: -44px;
+	position: absolute;
+	top: 50%;
+	width: 222px;
+}
+
+.action.jumbo>.wrap {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	height: 180px;
+	left: 2px;
+	line-height: 40px;
+	margin-top: 0;
+	min-width: 222px;
+	padding: 0 0 0 25px;
+}
+
+.action.jumbo.up.over {
+	background: #ffffff;
+	border:1px solid #FC870E;
+}
+
+.action.jumbo.up.pressed {
+	background: #ffffff;
+	border:1px solid #FB5B0D;
+}
+
+.action.jumbo.over .icon,
+.action.jumbo.pressed .icon {
+	background-color:none;
+}
+
+.action.jumbo.pressed>.wrap {}
+
+.action.jumbo.disabled,
+.action.jumbo[disabled] {
+	background-color: #ffffff;
+}
+
+.action.jumbo.disabled>.wrap,
+.action.jumbo[disabled]>.wrap {}
+
+
+@-moz-document url-prefix() {
+	.action.jumbo {
+		background-image: none;
+	}
+
+	.action.jumbo>.wrap {
+		background:none;
+	}
+}
+
+/* action square */
+.action.square {
+	text-align: center;
+	width:34px;
+	*height:32px; /* IE7 */
+}
+
+.action.square>.wrap {
+	height: 32px;
+	width: 20px;
+	background-position: left top;
+	padding:0;
+	text-indent:-5000px;
+}
+
+.action.square>.wrap>.icon {
+	display: block;
+	height: 32px;
+	width: 34px;
+	background-image: url(images/button_action_square_icons_sprite.png);
+	background-repeat: no-repeat;
+}
+
+
+/* operator buttons */
+.button.math {
+    -moz-user-select: none;
+    background: url("images/dialog_button_capsule_sprite.png") repeat-x scroll 0 -200px transparent;
+    cursor: pointer;
+    border:1px solid #AAAAAA;
+    height: 18px;
+    margin-right: 3px;
+    margin-bottom:6px;
+    padding-left: 4px;
+    padding-right: 4px;
+	display:inline-block;
+    position: relative;
+}
+
+.button.math > .icon {
+	position:relative;
+    height: 18px;
+    width: auto;
+}
+
+
+/* icon fonts for formula buttons */
+@font-face {
+	font-family: 'operators';
+	src:url('fonts/operators.eot');
+	src:url('fonts/operators.eot?#iefix') format('embedded-opentype'),
+		url('fonts/operators.woff') format('woff'),
+		url('fonts/operators.ttf') format('truetype'),
+		url('fonts/operators.svg#operators') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'operators';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.button.math [class^="icon-"], [class*=" icon-"] {
+	font-size:13px;
+	line-height: 18px;
+}
+
+.icon-add:before {
+	content: "\61";
+}
+.icon-subtract:before {
+	content: "\62";
+}
+.icon-multiply:before {
+	content: "\63";
+}
+.icon-divide:before {
+	content: "\64";
+}
+.icon-percent:before {
+	content: "\65";
+}
+.icon-parenLeft:before {
+	content: "\66";
+}
+.icon-parenRight:before {
+	content: "\67";
+}
+.icon-colon:before {
+	content: "\68";
+}
+.icon-equal:before {
+	content: "\69";
+}
+.icon-notEqual:before {
+	content: "\6a";
+}
+.icon-greaterThan:before {
+	content: "\6b";
+}
+.icon-lessThan:before {
+	content: "\6c";
+}
+.icon-greaterEqual:before {
+	content: "\6d";
+}
+.icon-lessEqual:before {
+	content: "\6e";
+}
+.icon-and:before {
+	content: "\6f";
+}
+.icon-or:before {
+	content: "\70";
+}
+.icon-not:before {
+	content: "\71";
+}
+.icon-in:before {
+	content: "\72";
+}
+.icon-startsWith:before {
+	content: "\73";
+}
+.icon-endsWith:before {
+	content: "\74";
+}
+.icon-contains:before {
+	content: "\75";
+}
+
+
+/* domain designer buttons */
+
+#add.square > .wrap > .icon {
+	background-position: 7px -652px;
+	*background-position: 7px -654px; /* IE7 */
+}
+
+#add.square.over > .wrap > .icon,
+#add.square.pressed > .wrap > .icon {
+	background-position: -33px -652px;
+	*background-position: -33px -654px; /* IE7 */
+}
+
+#addToSet.square > .wrap > .icon {
+	background-position: 6px -613px;
+	*background-position: 6px -615px; /* IE7 */
+}
+
+#addToSet.square.over > .wrap > .icon,
+#addToSet.square.pressed > .wrap > .icon {
+	background-position: -33px -613px;
+	*background-position: -33px -615px; /* IE7 */
+}
+
+#add.square.disabled .wrap > .icon,
+#add.square[disabled] .wrap > .icon {
+	background-position: -88px -652px;
+	*background-position: -88px -654px; /* IE7 */
+}
+
+#addToSet.square.disabled .wrap > .icon,
+#addToSet.square[disabled] .wrap > .icon {
+	background-position: -88px -613px;
+	*background-position: -88px -615px; /* IE7 */
+}
+
+/* button capsule general */
+button.capsule {
+	/* background-color: #f9f9f9; */
+	/* background-color: #f5f5f5; */
+	/* border: 1px solid #dedede; */
+	/* border-top: none;
+	border-bottom: none;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #dedede; */ /* REMOVE ALL BORDERS IF NO PROBLEMS */
+	display: inline-block;
+	height: 24px;
+	margin-right: -1px;
+	text-decoration: none;
+	width: 32px;
+}
+
+.button.capsule.mutton {
+	width:36px;
+}
+
+.button.capsule .wrap {
+	/* min-width: 20px; */
+	height:22px;
+	line-height:14px;
+}
+
+.button.capsule .wrap>.icon {
+	height:22px;
+	width:30px;
+	*margin-top:-1px; /* IE7 */
+	*margin-left:-1px; /* IE7 */
+}
+
+.button.capsule.mutton .wrap {
+	padding:0 6px;
+}
+
+/* disclosure indicator sprite positions for capsule buttons */
+.button.capsule .indicator {
+	background-position: -2px -46px;
+	*margin-right:-1px; /* IE7 */
+}
+
+.button.capsule.over .indicator,
+.button.capsule.pressed .indicator {
+	background-position: -1px -80px;
+}
+
+.button.capsule.disabled .indicator,
+.button.capsule[disabled] .indicator {
+	background-position: -2px -113px;
+}
+
+/* mini capsule */
+button.capsule.mini {
+	height: 20px;
+	width: 24px;
+	*width: 25px; /* IE7 */
+}
+
+button.capsule.mini .wrap {
+	height: 20px;
+	line-height: 18px;
+}
+
+/* capsule text */
+.button.capsule.text {
+	border-left: 1px solid #cecece;
+	border-right: 1px solid #fff;
+	font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	width: auto;
+
+	/* background-color: #f5f5f5; */
+	/* text-align: center; */
+}
+
+.button.capsule.text.first {
+	border-left: none;
+}
+
+.button.capsule.text .wrap {
+	height: 100%;
+	line-height: 28px;
+	padding: 0 12px;
+}
+
+.button.capsule.text .indicator {
+	background-position: 0px -47px;
+	margin-right: 5px;
+}
+
+.button.capsule.text.mutton .wrap {
+	padding-right: 16px;
+}
+
+.button.capsule.text.over .indicator,
+.button.capsule.text.pressed .indicator {
+	background-position: 0px -81px;
+}
+
+.button.capsule.text.disabled .indicator,
+.button.capsule.text[disabled] .indicator {
+	background-position: 0px -114px;
+}
+
+.header #flushOLAPCache.button.capsule.text,
+.header #clearAllCache.button.capsule.text {
+	height: 27px;
+	position: absolute;
+	right: 1px;
+}
+
+
+/* START capsule button state positions */
+
+.button.capsule.disabled {}
+
+.button.capsule.up {}
+
+.button.capsule.up.over,
+.button.capsule.up.pressed,
+.button.capsule.down,
+.button.capsule.down.over,
+.button.capsule.down.pressed {
+	/* TIBCO orange
+	background-color: #f58426;*/
+	background-color: #195b8a;
+}
+
+.button.capsule.down,
+.button.capsule.down.over {}
+
+.button.capsule.down.pressed {}
+
+/* targets Chrome and Safari only */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+	.button.capsule.text.first,
+	.button.capsule.text.middle {
+		margin-right: -3px;
+	}
+
+	.toolbar > .buttonSet {
+		margin-top:3px !important;
+	}
+} REMOVE AS PART OF AMBER 2 THEME PROJECT IF NO PROBLEMS
+*/ /* end Chrome and Safari styles */
+
+/* END capsule button state positions */
+
+
+/* disclosure buttons */
+.button.disclosure {
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	background-color: transparent;
+	background-image: url(images/disclosure_indicators_sprite.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	z-index: 10;
+}
+
+.closed .button.disclosure,
+.minimized .button.disclosure {
+	background-position: 0px -205px;
+}
+
+.closed .button.disclosure.over,
+.minimized .button.disclosure.over {
+	background-position: 0px -229px;
+}
+
+.closed .button.disclosure.pressed,
+.minimized .button.disclosure.pressed {
+	background-position: 0px -257px;
+}
+
+.button.disclosure,
+.button.disclosure.down {
+	background-position: 0px -286px;
+}
+
+.button.disclosure.over,
+.button.disclosure.down.over {
+	background-position: 0px -310px;
+}
+
+.button.disclosure.pressed,
+.button.disclosure.down.pressed {
+	background-position: 0px -336px;
+}
+
+/*
+ * From: button.minimize.css
+ */
+.button.minimize {
+	height: 28px;
+	width: 16px;
+	display: inline-block;
+	*display: inline; /* IE7 */
+	zoom:1; /* IE */
+	background-image: url(images/disclosure_indicators_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 -480px;
+	left: 0;
+	z-index: 10;
+	/*text-indent: -9999px;*/
+}
+
+.column.decorated.minimized.secondary > .button.minimize,
+.column.decorated.minimized.tertiary > .button.minimize {
+	background-position: 4px -480px;
+	width: 24px;
+}
+
+.button.minimize.over {
+	background-position: 0 -513px;
+}
+
+.button.minimize.pressed {
+	background-position: 0 -546px;
+}
+
+/*
+ * From: button.options.css
+ */
+.button.options {
+	padding: 0 15px 0 0;
+	margin-right:5px;
+	text-align: center;
+	*height:21px; /* IE7 */
+}
+
+.button.options>.wrap {
+	padding: 0 0 0 15px;
+	height:21px;
+	line-height:22px;
+}
+
+.filter .button.options {
+	margin-left:20px;
+	margin-right: 10px;
+	border-width: 0;
+}
+
+.filter .button.options>.wrap {
+	border-width: 0;
+}
+
+/*
+ * From: button.picker.css
+ */
+
+.button.picker {
+	background-image: url(images/control_icons_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 6px;
+	display: inline;
+	height: 27px;
+	margin-left:2px;
+    top: 0px \9; /* IE8 and IE9 */
+    vertical-align: top;
+	width: 17px;
+	z-index: 10;
+}
+
+.button.picker.over {}
+
+.button.picker.pressed {
+	background-position: -40px 6px;
+	background-position: -39px 7px \9; /* IE8 and IE9 */
+}
+
+/*
+ * From: button.scheduled.css
+ */
+.button.scheduled {
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	background-image: url(images/disclosure_indicators_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 -406px;
+	z-index: 10;
+	position: relative;
+}
+
+.button.scheduled.over {
+	background-position: 0 -432px;
+}
+
+.button.scheduled.pressed {
+	background-position: 0 -458px;
+}
+
+/*
+ * From: button.search.css
+ */
+.button.search {
+	height: 24px;
+	width: 24px;
+	border-left: none;
+	background-image: url(images/search_sprite.png);
+	background-repeat: no-repeat;
+}
+
+.button.search.up,
+.button.search.over,
+.button.search.pressed,
+.button.search.disabled {
+	background-position: 0px -58px;
+}
+
+#secondarySearchBox .button.search.up,
+#secondarySearchBox .button.search.over,
+#secondarySearchBox .button.search.pressed,
+#secondarySearchBox .button.search.disabled {
+	background-position: 0px -28px;
+}
+
+#globalSearch .button.search {
+	border-left:none;
+}
+
+#globalSearch .button.search.up,
+#globalSearch .button.search.over,
+#globalSearch .button.search.pressed,
+#globalSearch .button.search.disabled {
+	background-position: 1px 2px;
+}
+
+
+/*
+ * From: move.css
+ */
+.move.right .icon {
+	background-position: 7px 10px;
+	*background-position: 7px 8px; /* IE7 */
+}
+
+.move.left .icon {
+	background-position: 8px -43px;
+	*background-position: 8px -45px; /* IE7 */
+}
+
+.move.toRight .icon {
+	background-position: 9px -149px;
+	*background-position: 9px -151px; /* IE7 */
+}
+
+.move.toLeft .icon {
+	background-position: 8px -96px;
+	*background-position: 8px -98px; /* IE7 */
+}
+
+.move.upward .icon {
+	background-position: 8px -215px;
+	*background-position: 8px -217px; /* IE7 */
+}
+
+.move.downward .icon {
+	background-position: 8px -269px;
+	*background-position: 8px -271px; /* IE7 */
+}
+
+.move.toTop .icon {
+	background-position: 8px -335px;
+	*background-position: 8px -337px; /* IE7 */
+}
+
+.move.toBottom .icon {
+	background-position: 8px -387px;
+	*background-position: 8px -389px; /* IE7 */
+}
+.move.right.over .icon,
+.move.right.pressed .icon {
+	background-position: -46px 10px;
+	*background-position: -46px 8px; /* IE7 */
+}
+
+.move.left.over .icon,
+.move.left.pressed .icon {
+	background-position: -46px -43px;
+	*background-position: -46px -45px; /* IE7 */
+}
+
+.move.toRight.over .icon,
+.move.toRight.pressed .icon {
+	background-position: -45px -149px;
+	*background-position: -45px -151px; /* IE7 */
+}
+
+.move.toLeft.over .icon,
+.move.toLeft.pressed .icon {
+	background-position: -46px -96px;
+	*background-position: -46px -98px /* IE7 */
+}
+
+.move.upward.over .icon,
+.move.upward.pressed .icon {
+	background-position: -46px -215px;
+	*background-position: -46px -217px; /* IE7 */
+}
+
+.move.downward.over .icon,
+.move.downward.pressed .icon {
+	background-position: -46px -269px;
+	*background-position: -46px -271px; /* IE7 */
+}
+
+.move.toTop.over .icon,
+.move.toTop.pressed .icon {
+	background-position: -46px -335px;
+	*background-position: -46px -337px; /* IE7 */
+}
+
+.move.toBottom.over .icon,
+.move.toBottom.pressed .icon {
+	background-position: -46px -387px;
+	*background-position: -46px -389px; /* IE7 */
+}
+
+.move.right[disabled] .wrap>.icon {
+	background-position: -87px 10px;
+	*background-position: -87px 8px; /* IE7 */
+}
+
+.move.left[disabled] .wrap>.icon {
+	background-position: -87px -43px;
+	*background-position: -87px -45px; /* IE7 */
+}
+
+.move.toRight[disabled] .wrap>.icon {
+	background-position: -87px -149px;
+	*background-position: -87px -151px; /* IE7 */
+}
+
+.move.toLeft[disabled] .wrap>.icon {
+	background-position: -87px -96px;
+	*background-position: -87px -98px; /* IE7 */
+}
+
+.move.toTop[disabled] .wrap>.icon {
+	background-position: -87px -335px;
+	*background-position: -87px -337px; /* IE7 */
+}
+
+.move.upward[disabled] .wrap>.icon {
+	background-position: -87px -215px;
+	*background-position: -87px -217px; /* IE7 */
+}
+
+.move.downward[disabled] .wrap>.icon {
+	background-position: -87px -269px;
+	*background-position: -87px -271px; /* IE7 */
+}
+
+.move.toBottom[disabled] .wrap>.icon {
+	background-position: -87px -387px;
+	*background-position: -87px -389px; /* IE7 */
+}
+
+#moveButtons button.square[disabled] .icon,
+.moveButtons button.square[disabled] .icon {
+	opacity:0.8;
+}
+
+/*
+ * From: bg.css
+ */
+.action {
+	/* gradient end values are #eaeaea to #d8dad7 */
+	/* background: url("images/button_action_sprite.png") repeat-x scroll 0 0 #d8dad7; */
+	background-color: #e4e4e4; /* or #d8dad7 - old solid value */
+}
+
+.action.over,
+.action.square.over {
+	/* gradient end values are #c1c1c1 to #9b9a9a */
+	/* background-position: 0 -50px; */
+	background-color: #9b9a9a;
+}
+
+.action.pressed,
+.action.square.pressed {
+	/* gradient end values are #c1c1c1 to #9b9a9a with a top inner shadow */
+	/* background-position: 0 -100px */;
+	background-color: #9b9a9a;
+}
+
+.action.primary {
+	background-color: #1388d8;
+	background-image: none;
+}
+
+.action.primary.over,
+.action.primary.pressed {
+	background-color: #195b8a;
+	/* background-color: #f9771d; */
+}
+
+.action.checking {
+	cursor:default;
+}
+
+.button.options {
+	background-color:#e4e4e4;
+}
+
+.button.options.over {
+	background-color:#adadad;
+}
+
+.button.options.pressed {
+	background: url("images/button_options_sprite.png") repeat-x scroll 0 -222px #adadad;
+}

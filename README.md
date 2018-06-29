@@ -1,5 +1,5 @@
 FreshDeliveryDemo
-================
+=================
 
 This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com) using the [Visualize.js](http://community.jaspersoft.com/project/visualizejs) framework
 
@@ -7,9 +7,9 @@ Code: https://github.com/TIBCOSoftware/JS-FDSample
 
 Live Demo: <a href="http://www.jaspersoft.com/embedded-bi-in-action">http://www.jaspersoft.com/embedded-bi-in-action</a>
 
-Author(s): Daniel Petzold, Mariano Luna, Peter Mcrae
+Author(s): Daniel Petzold, Sherman Wood, Mariano Luna, Peter Mcrae
 
-Version: 3.0
+Version: 4.0
 
 ##Fresh Delivery Demo Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=GOlhTmxZE9s
@@ -55,7 +55,7 @@ $ sed -i 's~localhost~my.jasperserver.com~' /var/www/html/freshdelivery/healthy-
 LICENSE AND COPYRIGHT NOTIFICATION
 ==================================
 
- Copyright (C) 2005 - 2016 Jaspersoft Corporation - All rights reserved.
+ Copyright (C) 2005 - 2018 Jaspersoft Corporation - All rights reserved.
 
  Unless you have purchased a commercial license agreement from Jaspersoft,
  the following license terms apply:

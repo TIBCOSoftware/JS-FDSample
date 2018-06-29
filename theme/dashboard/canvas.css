@@ -1,0 +1,439 @@
+.dashboardCanvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboardCanvas > .content {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboardCanvas > .content > .body {
+    overflow: hidden !important;
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboardCanvas > .content > .body div[data-componentId] {
+    position: absolute;
+    overflow: hidden;
+}
+
+.dashboardCanvas.maximizedDashlet > .content > .body div[data-componentId] {
+    display: none;
+}
+
+.dashboardCanvas > .content > .body div[data-componentId].inputControlWrapper {
+    overflow: visible;
+    position: relative;
+}
+
+.dashboardCanvas > .content > .body div[data-componentId].ui-draggable-disabled.ui-state-disabled {
+    opacity: 1;
+}
+
+.dashboardCanvas > .content > .body div.canvasOverlay {
+    height: 100% !important;
+    width: 100% !important;
+    display: block !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: absolute;
+    z-index: 498;
+}
+
+.dashboardCanvas .dashlet {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dashboardCanvas .dashlet > .dashletContent {
+    position: relative;
+    border: 1px solid #D0D0D0;
+    border-bottom: 1px solid #A4A4A4;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dashboardCanvas .filterRow {
+    clear: both;
+}
+
+.dashboardCanvas .filterRow.fluid{
+    margin: 0 186px 0 0;
+}
+
+.dashboardCanvas .filterRow.fluid.oneButton {
+    margin: 0 115px 0 0;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar {
+    overflow: hidden;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar {
+    height: 25px;
+    line-height: 25px;
+    background-color: #ffffff;
+    border: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .labelWrapper{
+    float: left;
+    height: 25px;
+    width: 100%;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .innerLabel{
+    margin: 0 50px 0 0;
+    height: 100%;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .innerLabel > p{
+    overflow: hidden;
+    color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Verdana;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    height: 100%;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .header {
+    border-bottom: none;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons {
+    float: left;
+	margin-left: -220px;
+    width: 220px;
+    height: 25px;
+}
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons button {
+    float: right;
+    height: 25px;
+    background-image: none;
+    border: none;
+    width: 24px;
+    position: relative;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: visible;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .button[disabled] .icon {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+}
+
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .cancelDashletButton {
+    background-color: #fff;
+    display: block;
+    width: auto;
+    margin-right: 4px;
+    padding-left: 4px;
+    max-width: 185px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .cancelDashletButton.text .wrap {
+    padding: 0 0 0 28px;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .cancelDashletButton .icon {
+    background-image: url("../images/report_load_animation.gif");
+    background-repeat: no-repeat;
+    background-position: 6px 4px;
+}
+
+.button.over.cancelDashletButton {
+    color: #666;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .removeDashletButton {
+    height: 21px;
+    background-image: none;
+    border: none;
+    margin-top: 4px;
+    width: 26px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .refreshDashletButton .icon {
+    background: url("../images/dashlet_icons_sprite.png") no-repeat 4px 5px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .wrap {
+    position: relative;
+    display: block !important;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 14px;
+    height: 22px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .refreshDashletButton .wrap,
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .maximizeDashletButton .wrap {
+    height: 25px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .wrap .icon {
+    display: inline-block;
+    zoom: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 24px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .maximizeDashletButton .icon {
+    background: url("../images/dashlet_icons_sprite.png") no-repeat 5px -24px;
+    height: 25px;
+    width: 25px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .exportDashletButton .icon {
+    background: url("../images/dashboard_toolbar_buttons_sprite.png") no-repeat 3px -302px;
+    height: 25px;
+    width: 25px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .dashletToolbar.toolbar .buttons .maximizeDashletButton.minimizeDashlet .icon{
+    background-position: 4px -55px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .content {
+    clear: both;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background:#FFFFFF;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch; /* show scroll bars */
+}
+
+.dashboardCanvas .dashlet .inputControlWrapper {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    margin-top: 4px; /* added to fix bug 43513 */
+    margin-bottom: 16px; /* added to fix bug 43513 */
+}
+
+.dashboardCanvas .dashlet .inputControlWrapper .inputControls  label > .wrap,
+.dashboardCanvas .dashlet .inputControlWrapper .inputControls fieldset > legend,
+.dashboardCanvas .dashlet .inputControlWrapper .inputControls .select > .wrap
+{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .filterGroupButtons {
+    height: 34px;
+    position: relative;
+    padding: 2px 5px 0 5px;
+    min-width: 170px;
+    background-color: #ffffff;
+    border-top: 1px solid #D4D5D5;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .filterGroupButtons.fixed {
+    display: block;
+    margin-left: -186px;
+    overflow: hidden;
+    height: 100%;
+    padding-left: 25px;
+    float: left;
+    border-left: 1px solid #D4D5D5;
+    border-top: 0;
+    box-sizing: border-box;
+    width: 170px;
+    z-index: 1;
+}
+
+
+.dashboardCanvas .dashlet > .dashletContent > .filterGroupButtons.fixed.oneButton {
+    margin-left: -115px;
+    min-width: 95px;
+    width: 95px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .filterGroupButtons.fixed button{
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .filterGroupButtons.fixed button[data-target='applyButton']{
+    margin-left: 0;
+}
+
+.dashboardCanvas .list.inputControls {
+    min-width: 50px;
+}
+
+.dashboardCanvas .list.inputControls .control.input.text input,
+.dashboardCanvas .list.inputControls .control.picker input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* .dashboardCanvas .control.select.single {
+    margin-bottom: 29px;
+} */
+/* eliminates single select control jumping */
+/* This contributes to bug 43513 */
+
+.dashboardCanvas .mSelect {
+    min-width: 50px;
+}
+
+.dashboardCanvas .sSelect .searchLockup {
+    min-width: 50px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .paginationControl {
+    height: 30px;
+    overflow: hidden;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .paginationControl > .pagination {
+    min-width: 285px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .nothingToDisplay {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    right: 20%;
+    width: 60%;
+    background: transparent;
+    z-index: 1;
+    border: medium none;
+    margin: 2px 5px 20px 2px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .nothingToDisplay.hidden {
+    display: none;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .nothingToDisplay > .content {
+    position: relative;
+    top: -3px;
+    left: -1px;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .nothingToDisplay > .content > .body {
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    font-size: 11px;
+    line-height: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.dashboardCanvas .dashlet > .dashletContent > .nothingToDisplay > .content > .body > .message {
+    border: 1px solid #D3D2D2;
+    margin: 10px 0;
+    text-align: center;
+    background: #ffffff;
+    font-size: 11px;
+    line-height: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+
+.jrPage tr[valign="top"] > td {
+    vertical-align: top;
+}
+
+.dashboardCanvas ._jrHyperLink,
+.dashboardCanvas .hyperlink {
+    cursor: pointer;
+}
+
+.dashlet .inputControlWrapper > .overlay {
+    left: auto;
+}
+
+.dashlet > .dashletContent > .overlay,
+.dashlet .inputControlWrapper > .overlay
+{
+    background-color: #000000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    z-index: 100;
+    width: 100%;
+    height:100%;
+    top: 0;
+    position: absolute;
+}
+
+.filterGroup.dialog .inputControlWrapper {
+    position: relative;
+    border: 1px transparent solid;
+}
+
+.filterGroup.dialog {
+    height: 600px;
+    width: 450px;
+}
+
+.filterGroup.dialog .dashlet > .dashletContent {
+    border: 1px transparent solid;
+}
+
+.filterGroup.dialog  .dashletContent .content {
+    min-height: 500px;
+    max-height: 525px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.filterGroup.dialog .header .button .icon {
+    background-image: url(../images/dashboard_toolbar_buttons_sprite.png);
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    clear: both;
+}
+
+.filterGroup.dialog .footer { /* added to correctly position new jr-mButton within old dialog */
+    padding-top: 4px;
+}
+
+/* new styles below fix bug 43513 */
+.dashletContent .control,
+.dashletContent .picker input {
+    margin-bottom: 0;
+}
+
+.dashletContent .list.inputControls {
+    margin-top: 0;
+}

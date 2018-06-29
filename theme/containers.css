@@ -1,0 +1,1742 @@
+#frame {
+	position: absolute;
+	top: 32px;
+	bottom: 17px;
+	width: 100%;
+}
+
+.noDecoration>#frame {
+    top:0;
+    bottom:0;
+}
+
+.banner {
+	position:relative;
+	height:32px;
+}
+
+.sectionLeft {
+	margin-left:8px;
+	margin-right:8px;
+	float:left;
+}
+
+.sectionRight {
+	margin-right: 4px;
+	position: absolute;
+    right: 0;
+}
+
+.searchContainer {
+    position: absolute;
+    right: 0;
+}
+
+#frameFooter {
+	position:absolute;
+	bottom: 0;
+	height: 17px;
+	width: 100%;
+}
+
+/* CHROME AND SAFARI ONLY */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #frameFooter  { position: fixed;  }
+}
+
+
+#display {
+	position: absolute;
+	overflow: hidden;
+}
+
+
+.body {
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+}
+
+.header {
+	/* border-bottom:1px solid #D4D5D5; */ /* REMOVE */
+}
+
+.header > .title {
+	float: left;
+	font-size: 12px;
+	/* font-weight: normal; */
+	font-weight: bold;
+	margin: 0 0 0 4px;	z-index: 2;
+	max-width: 82%;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+	white-space: nowrap;
+}
+
+.widget .header {
+	overflow: hidden;
+	height: 27px;
+}
+
+.header > .title h1,
+.header > .title h2,
+.header > .title h3,
+.header > .title h4,
+.header > .title h5 {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.header > .title > .tabSet.text {
+	display:inline-block;
+	line-height:13px;
+	top:2px;
+	margin-bottom: 0;
+}
+
+.header .icon {
+	width:25px;
+	position:absolute;
+}
+
+.header .label {
+	top:-4px;
+	display: inline;
+}
+
+.header > .button.mutton,
+.subheader > .button.mutton {
+	background-image: url(images/disclosure_indicators_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 -150px;
+	height:16px;
+	width:16px;
+	position:absolute;
+	top:2px;
+	right: 0;
+	margin:4px 4px 4px 0;
+	display: inline-block;
+}
+
+.columnheader > .button.mutton {
+	background-image: url(images/disclosure_indicators_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 -150px;
+	height:16px;
+	width:16px;
+	border:solid 1px #ccc;
+	z-index: 3;
+	display:inline-block;
+	margin:4px 4px 4px 0;
+}
+
+.header > .button.mutton.over {
+	background-position: 0 -180px;
+}
+
+.header > .launcher {
+	display: inline;
+	line-height:28px;
+}
+
+.header > .tabs {clear:both;}
+
+.header .button.options {
+	position:absolute;
+	right:40px;
+	top:8px;
+}
+
+.sub.header {
+	height:28px;
+	margin-top:1px;
+	position: relative;
+	z-index: 10;
+	border-top:1px solid #ffffff;
+	min-height: 0;
+	clear:both;
+	cursor:default; /* prevents the move cursor from .mover */
+}
+
+.sub.header .title {
+	font-weight: normal;
+	margin:0 20px;
+	line-height: 28px;
+}
+
+.sub.header .button.options {
+	top:4px;
+}
+
+.sub.header > .control {
+	margin:6px 1em 0;
+}
+
+.subheader {
+    position: relative;
+    height: 24px;
+/*
+    background-color:#eeeeee;
+    border-top:1px solid #ffffff;
+    border-bottom:1px solid #d6d5d5;
+*/ /* REMOVE */
+}
+
+.subheader > .title {
+    float: left;
+    font-weight: normal;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 4px;
+    padding-left: 16px;
+}
+
+.subheader > .button.disclosure {
+    position: absolute;
+	left: 0;
+    margin: 4px 4px 4px 0;
+}
+
+.subheader > .button.disclosure.open,
+.pane.filter .content > .header > .button.disclosure.open,
+.pane.expression .content > .header > .button.disclosure.open {
+    background-position: 2px -701px;
+}
+
+.subheader > .button.disclosure.closed,
+.pane.filter .content > .header > .button.disclosure.closed,
+.pane.expression .content > .header > .button.disclosure.closed {
+    background-position: 2px -677px;
+}
+
+
+.toolbar {
+	clear: both;
+	height: 28px;
+
+	/* border-top: 1px solid #fff; */
+	/* height: 34px; */
+	/* border-bottom: 1px solid #fff; */}
+
+.toolbar .divider {
+	background-color: #C5C5C5;
+	border-right: 1px solid #FFF;
+	border-left: #cdcdcd;
+	position: absolute;
+		top: 0;
+		bottom: 0;
+	width: 2px;
+	height: 27px;
+}
+
+.toolbar .divider.first {
+	left:0;
+}
+
+.toolbar .divider.last {
+	right:0;
+}
+
+.toolbar > input {
+	top: 10px;
+}
+
+.footer {
+	background-repeat: no-repeat;
+	overflow: hidden;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:37px;
+	padding:0px 20px;
+}
+
+/* .footer #wizardNav {
+	margin-top:2px;
+} */ /* DELETE IF NO PROBLEMS */
+
+.sizer {
+	position: absolute;
+}
+
+.sizer.horizontal {
+	cursor:col-resize;
+}
+
+.sizer.vertical {
+	cursor:row-resize;
+}
+
+.sizer.diagonal {
+	cursor:se-resize;
+}
+
+.row {
+	position: relative;
+	clear:both;
+}
+
+.row.actionButtons {
+	margin-top:20px;
+}
+
+
+/*
+ * From: columns.css
+ */
+/*____________________________________________________________
+
+ COLUMN
+______________________________________________________________
+
+*/
+.column {
+	position:absolute;
+	margin:0;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	overflow: visible;
+}
+
+.column > .content {
+	position: relative;
+	height: 100%;
+}
+
+.column > .content > .body {
+	top: 36px;
+}
+
+.column.simple {
+	overflow: visible;
+}
+
+.column.simple > .content,
+.column.decorated > .content {
+	position: absolute;
+	height: auto;
+}
+
+.column.simple > .content > .body,
+.column.decorated > .content > .body {
+	overflow: auto;
+}
+
+.column.accordian > .content > .body,
+.column.split > .content > .body {
+	overflow: hidden;
+}
+
+/*
+	Sizers: default positioning assumes left to right reading UI
+	------------------------------------------------------------
+*/
+.column > .sizer {
+	background: none;
+	cursor: col-resize;
+	margin-left:-7px;
+	position:absolute;
+		top:0;
+		bottom:0;
+	width:8px;
+}
+
+.column.minimized > .sizer {
+	cursor: default;
+}
+
+.secondary.column > .sizer {
+	right: -8px;
+}
+
+.tertiary.column > .sizer {
+	left:0;
+}
+
+.twoColumn.primaryLeft > .secondary.column > .sizer,
+.body.twoColumn.primaryLeft > .secondary.column > .sizer,
+.row.twoColumn.primaryLeft > .secondary.column > .sizer,
+.twoColumn.primaryLeft > .tertiary.column > .sizer,
+.body.twoColumn.primaryLeft > .tertiary.column > .sizer,
+.row.twoColumn.primaryLeft > .tertiary.column > .sizer {
+	left:0;
+}
+/*
+	Headers, subheaders
+	------------------------------------------------------------
+*/
+.column .header > .title {
+	height: 28px;
+	line-height: 26px;
+	padding-left: 12px;
+}
+
+.column.primary .header > .title {
+	/* font-size: 14px;		NEW */
+	/* font-weight: normal;	NEW */
+	padding-left: 8px;
+}
+
+#display > .column.decorated > .content > .header > .title,
+#display > div > .column.decorated > .content > .header > .title, /* targets extra div in add data sources page */
+#display > form > .column.decorated > .content > .header > .title {
+	font-weight: bold;
+} /* TARGETS MAIN PAGE HEADINGS ONLY */
+
+.column.noHeader > .content > .header,
+.column.noHeader > .minimize {
+	display: none;
+}
+
+.column.noHeader > .content > .body {
+	top: 0;
+}
+
+.column.decorated.noHeader > .content > .body {
+	margin-top: 10px;
+}
+
+.column > .content > .body.showingSubHeader,
+.column.showingSubHeader > .content > .body {
+	margin-top:29px;
+}
+
+.column.showingToolBar > .content > .body {
+	margin-top: 30px;
+}
+
+.column.showingToolBar.showingSubHeader > .content > .body {
+	margin-top:63px;
+}
+
+.column.showingToolBar.showingDisplayManager > .content > .body {
+	margin-top:105px;
+}
+
+.sub.header .horizontal {
+	margin: 6px 1em 0 1em;
+}
+
+/*
+ * From: decorated_column.css
+ */
+/* DECORATED COLUMN
+--------------------------------------------------------------
+   a decorated column has a visual presence in the UI with borders, headers, shadows, etc.
+*/
+
+.column.decorated {
+	border: none; /* NEW */
+	bottom: 0;
+	top: 0;
+	overflow: visible;
+	margin: 0; /* default margin setting overridden as req'd in layout.css */ /* NEW */
+	min-width: 150px;
+
+	/* margin:4px; */
+	/* border:1px solid #666666; */
+}
+
+#frame.column.decorated {
+	border: none;
+	min-width: 1024px;
+}
+
+#display > .primary.column.decorated {
+	min-width: 312px;
+	overflow: hidden;
+}
+
+.column.decorated > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+   as this object used as reference for positioning
+   child objects */
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.column.decorated .column.decorated {
+	border: 1px solid #c5c5c5;
+}
+
+.column.decorated > .content > .header {
+	height: 28px;
+	position: relative;
+	white-space: nowrap;
+	z-index: 1;
+
+	/* border-bottom:1px solid #c5c5c5; */ /* REMOVE */
+}
+
+.column.decorated > .content.hasFooter > .footer {
+	background: #fff;
+	border-top: 1px solid #D4D5D5;
+	white-space:nowrap;
+	z-index: 100;
+
+/* these may be redundant, delete if needed
+	padding:0px 20px;
+	height:37px;
+*/
+}
+
+.column.decorated > .content > .body {
+	position: absolute;
+		/* top: 28px; */
+		top: 27px;
+		left: 0;
+}
+
+.column.decorated > .content>#filter-container {
+	/* fixes ie7 issue of too much dead space between title and filter container */
+	*top: 0px; /* IE7 */
+}
+
+.column.decorated > .content.hasFooter > .body {
+	bottom: 37px;
+}
+
+.column.decorated.minimized {
+	min-width: 24px !important;
+	width: 24px !important;
+	/* min-width: 0; */ /* not sure why this is here */
+}
+
+.column.decorated.minimized .vtitle {
+	background: #fff;
+	cursor: pointer;
+	font-size: 12px;
+	line-height: 20px;
+	position: absolute;
+
+	-webkit-transform: rotate(270deg);
+	-webkit-transform-origin:left top;
+	-moz-transform: rotate(270deg);
+	-moz-transform-origin:left top;
+	ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    transform-origin: left top;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	zoom: 1; /* IE */
+}
+
+.column.decorated.tertiary.minimized .vtitle {
+	margin-top: -7px;
+}
+
+.column.decorated.minimized .footer {
+	padding: 0;
+}
+
+.column.decorated.minimized.secondary {
+	border-right :1px solid #e3e3e3;
+
+	/* margin-left: 0; */ /* DELETE */
+}
+
+.column.decorated.minimized.tertiary {
+	border-left :1px solid #e3e3e3;
+
+	/* right: 1px !important; */
+	/* margin-right: 0; */ /* DELETE */
+}
+
+/* .tabbed */
+
+.column.decorated.tabbed.showingToolBar > .content > .body {
+	margin-top: 32px;
+}
+
+.column.decorated.tabbed > .content > .body {
+	top: 63px;
+	/* top:60px; */ /* DELETE IF NO PROBLEMS */
+}
+
+.column.decorated.tabbed .content > .header > .tabs {
+	background-color: #fff;
+	display: block;
+	height: 28px;
+	/* height: 27px; */ /* DELETE IF NO PROBLEMS, 2nd version */
+
+	/* height: 32px; */ /* DELETE IF NO PROBLEMS, 1st version */
+
+	/* background-color: #EEEEEE;
+	background-image: url("images/tabs_horizontal_buttons_bkgd.png");
+	background-repeat: repeat-x; */ /* DELETE */
+}
+
+.column.decorated > .content > .header > .tabs {
+	display: none;
+}
+
+.column.decorated.tabbed > .content > .body > .row.canvas {
+	height: 86%;
+	margin: 1% 20px;
+}
+
+.column.decorated.tabbed > .content > .body > .row.actions {
+	height: 9%;
+	padding: 0 35px;
+}
+
+/* tabbed container */
+
+.content.tabbed {}
+
+.content.tabbed > .header {
+	border-bottom: none;
+}
+
+.content.tabbed > .body {
+	position: relative;
+}
+
+.content.tabbed > .body.section {
+	border: 1px solid #B5B5B5;
+	margin-top: 0;
+	padding-top: 2px; /* prevents issues with first item in container */
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/*
+.content.tabbed > .body.section > .group {
+	margin-left:12px;
+	margin-right:12px;
+}
+*/
+
+
+/*
+______________________________________________________________
+
+ PANELS
+______________________________________________________________
+
+*/
+
+/* Panel Layouts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*/
+
+.panel {
+	position: absolute;
+}
+
+.panel.sizeable {
+	min-height: 150px;
+	min-width: 150px;
+}
+
+.panel > .sizer {
+	background-image: url(images/panel_sizer_sprite.png);
+	background-repeat: none;
+	cursor: pointer;
+	height: 9px;
+	position: absolute;
+	width: 9px;
+	z-index: 3;
+}
+
+.panel > .sizer.vertical {
+	background-position: left 0;
+}
+
+
+.panel > .sizer.diagonal {
+	background-position: left -48px;
+}
+
+.panel.inlay .column.primary,
+.panel.inlay .column.secondary,
+.panel.inlay .column.tertiary {
+	margin: 0;
+	position: relative;
+		top: auto;
+		left: auto;
+		bottom: auto;
+		right: auto;
+}
+
+.panel .row.actions {
+	position: absolute;
+		bottom: 5px;
+}
+
+.panel .row.inputs {
+	margin: 15px 20px 50px;
+	position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+}
+
+.panel .footer {
+	border-top: 1px solid #e3e3e3;
+	/* border-top: 1px solid #D4D5D5; */ /* DELETE */
+}
+
+.panel.noHeader > .content > .header {
+	display: none;
+}
+
+.panel.showingSubHeader > .content > .body {
+	margin-top:29px;
+}
+
+.panel.filter.inlay > .content {
+	min-height: 0;
+}
+
+.panel.filter .select {
+	margin: auto 10px;
+}
+
+/* Display Panels
+--------------------------------------------------------------
+Display panels are used to communicate information only; they do not
+contain forms or elements intended to collect user input
+
+There are 3 types:
+- .panel.tooltip
+- .panel.info
+- .panel.info.system
+
+*/
+
+/* .panel.tooltip */
+
+.panel.tooltip {
+	border: 1px solid #c0c0c0;
+	margin: 0;
+	float: left;
+	z-index: 1000;
+	background-color: #f9f9f9;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#f1f0f2));
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #f1f0f2);
+	background-image:	-moz-linear-gradient(top, #f9f9f9, #f1f0f2);
+	background-image: 	-ms-linear-gradient(top, #f9f9f9, #f1f0f2);
+	background-image:  	-o-linear-gradient(top, #f9f9f9, #f1f0f2);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f1f0f2'); /* IE */
+}
+
+.panel.tooltip > .content {
+	position: relative;
+}
+
+.panel.tooltip > .content > .body {
+	line-height: 2em;
+	padding: 10px 10px 0;
+}
+
+.panel.tooltip .message {
+    line-height: 1.455;
+    overflow: visible;
+    white-space: normal;
+}
+
+.panel.tooltip .message.label {
+	color: #0480BA;
+	margin-bottom: 0;
+}
+
+.panel.tooltip .corner,
+.panel.tooltip .edge {
+	display: none;
+}
+
+
+/* .panel.info */
+
+.info {
+    clear: both;
+    border: 1px solid #d3d2d2;
+    float: left;
+    margin: 2px 5px 20px 2px; /* moves visual top and left to actual */
+    position: relative;
+}
+
+.info.centered_vert.centered_horz {
+    clear: none;
+    float: none;
+    position: absolute;
+}
+
+.info > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+   as this object used as reference for positioning
+   child objects */
+	left:-1px;
+	margin-bottom:-5px;
+	margin-right:-4px;
+	position:relative;
+	top:-3px;
+}
+
+.info > .content > .header,
+.info > .content > .footer {
+	display: none;
+}
+
+.info .body {
+	position: relative;
+	padding:10px;
+	overflow: hidden;
+}
+
+.info .column {
+	position: relative;
+	height:100%;
+}
+
+.info .body.twoColumn_equal .column {
+	width: 48%;
+	float:left;
+	left:0;
+}
+
+.info.fillParent {
+	float:none;
+}
+
+.info.fillParent .footer {
+	bottom:-10px;
+}
+
+/* .panel.info.nothingToDisplay */
+
+.panel.info.nothingToDisplay {
+	border:none;
+	background-color:transparent;
+	position: absolute !important;
+}
+
+/* .panel.info.noDataModeDisplay */
+
+.panel.info.noDataModeDisplay {
+
+}
+
+
+/* .panel.info.system */
+
+.info.system {
+	height:25px;
+	min-height: 0;
+	min-width: 0;
+	margin: 3px;
+	background-color: #FEEF97;
+}
+
+.info.system > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+   as this object used as reference for positioning
+   child objects */
+	left:-3px;
+	margin-bottom:-1px;
+	margin-right:-5px;
+	position:relative;
+	top:-3px;
+	text-align: center;
+}
+
+.info.system .body {
+	padding:0;
+}
+
+.info.system .message {
+	line-height: 32px;
+	margin:auto 10px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+panel.info .message {
+	font-size:11px !important;
+}
+
+#systemMessageConsole {
+	background-color: #feef97;
+	height: 31px;
+	position: absolute;
+		top:  -1px;
+		right:0;
+		left: 0;
+	z-index: 9;
+}
+
+#systemMessage {
+	color: #195b8a;
+	font-weight: bold;
+	line-height: 32px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#systemMessage span {
+	color:#000;
+	font-weight:normal;
+}
+
+#systemMessage .warning {
+    color:#ff0000;
+    font-weight:bold;
+}
+
+/*
+ * From: panes.css
+ */
+/* Panes
+--------------------------------------------------------------
+Panes are dialogs that visually share their left and right
+borders with their enclosing column
+
+.Pane also has the special case of .pane.sizeable, that requires that .pane > .content be position:absolute.
+
+*/
+
+.pane {
+	position:relative;
+	margin:0;
+	left:0;
+	right:0;
+	min-height:0;
+	background-image: none;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.pane > .content {
+	position:relative;
+	width:100%;
+}
+
+.pane.minimized,
+.pane.sizeable.minimized {
+	height:auto !important;
+	border-bottom: none;
+}
+
+.pane.minimized > .content,
+.pane.sizeable.minimized > .content {
+	position:relative;
+}
+
+
+.pane.sizeable.minimized .sizer,
+.pane.minimized .body,
+.pane.minimized .footer {
+	display:none;
+}
+
+.pane .body {
+	position:relative;
+}
+
+.pane .footer {
+	border-top:none;
+}
+
+.pane .sizer {
+	bottom:0;
+	width:100%;
+}
+
+.pane .sizer.vertical {
+	background-position:53% -10px;
+	background-repeat:no-repeat;
+}
+
+.pane.upper .sizer {
+	bottom:-20px;
+	right:3px;
+	top:auto;
+	background-color: none;
+}
+
+.pane.lower .sizer {
+	top:10px;
+	right:3px;
+	background-color: none;
+}
+
+.pane.closed .body,
+.pane.closed .footer,
+.pane.closed .sizer {
+	display: none;
+}
+
+.pane .header {
+	/* border-top: 1px solid #fff; */ /* REMOVE IF NO PROBLEMS */
+	border-bottom:1px solid #E0E0E0;
+	min-height:28px;;
+}
+
+.pane .header .title {
+	font-size: 12px; /* NEW - for all headers below the main panel level */
+	line-height: 28px;
+	margin-right: 22px;
+}
+
+.pane .header .disclosure {
+	position:absolute;
+	z-index:10;
+	top:6px;
+	left:2px;
+}
+
+.pane .header .icon {
+	height:28px;
+}
+
+/* .pane.sizeable */
+
+.pane.sizeable > .content {
+	height:100%;
+	position: absolute;
+	float: none;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	margin: 0
+}
+
+.pane.sizeable .body {
+	overflow: auto;
+	position: absolute;
+		/* top: 30px; */ /* DELETE IF NO PROBLEMS */
+		top: 29px;
+		bottom: 5px;
+}
+
+.pane.sizeable .footer {
+	height:5px;
+	border-top:1px solid #E0E0E0;
+}
+
+.pane .control.searchLockup {
+	margin-top: 8px;
+}
+
+.pane .control.searchLockup input {
+	width: 70%;
+}
+
+/*
+ * From: menus.css
+ */
+/*
+______________________________________________________________
+
+ MENUS
+______________________________________________________________
+
+Display panels are used to communicate information only; they do not
+contain forms or elements intended to collect user input
+
+There are 2 types:
+- .menu.vertical
+- .menu.horizontal
+
+.Menu.vertical has two cases:
+- .context
+- .dropDown
+
+*/
+
+/* Menu Layout
+-------------------------------------------------------------- */
+
+.menu {
+	position:absolute;
+	float:left;
+	cursor: pointer;
+	list-style: none;
+	margin:0;
+}
+
+.menu > .content {
+	position:relative;
+	padding:7px 0;
+}
+
+.menu .node {
+	position: relative;
+}
+
+.menu .leaf {
+	margin:0;
+}
+
+.menu .wrap {
+	margin-bottom:0;
+}
+
+.menu .node > .wrap > .icon {
+	background-image:url("images/disclosure_indicators_sprite.png");
+	background-repeat:no-repeat;
+	left:auto;
+	position:absolute;
+}
+
+.menu.vertical .node .sub.menu {
+	left:100%;
+	top:-5px;
+	margin: 0;
+}
+
+/* Vertical Menus
+-------------------------------------------------------------- */
+
+.menu.vertical {
+	min-width: 150px;
+	background-color:#ffffff;
+	border:1px solid #d3d5d6;
+	-moz-box-shadow: 2px 2px 1px #eee;
+	-webkit-box-shadow: 2px 2px 1px #eee;
+	box-shadow: 2px 2px 1px #eee;
+}
+
+.menu.vertical .wrap {
+	line-height: 2em;
+	height:24px;
+	padding:0 2em;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+	margin-bottom:0;
+}
+
+.menu.vertical .leaf.separator,
+.menu.vertical .leaf.buttonItem {
+	border-top: 1px solid #bdbdbd;
+}
+
+.menu.vertical .leaf.separator {
+	background: none;
+	height:1px;
+	margin:2px 0;
+	*margin-top:-12px; /* IE7 */
+}
+
+.menu.vertical .leaf > .wrap.toggle.down {
+	background-image: url(images/lists_sprite.png);
+	background-position:7px -299px;
+}
+
+.menu.vertical .leaf > .wrap.toggle.down.over,
+.menu.vertical .leaf > .wrap.toggle.down.pressed {
+	background-position:7px -324px;
+}
+
+.menu.vertical .node > .wrap > .icon {
+	background-position:left top;
+	height:13px;
+	right:5px;
+	top:6px;
+	width:11px;
+}
+
+.menu.vertical .node > .wrap.over > .icon,
+.menu.vertical .node > .wrap.pressed > .icon {
+	background-position: left -19px;
+}
+
+.menu.vertical .node.closed > .menu {
+	display: none;
+}
+
+.menu.vertical .node.open > .menu {
+	display: block;
+}
+
+.menu.context > .content {
+/* set coordinates to visual (0,0,0,0) of .menu.context.context background,
+   as this object used as reference for positioning
+   child objects */
+	left:0;
+	margin-bottom:-6px;
+	margin-right:0;
+	position:relative;
+	top:-2px;
+}
+
+.menu.dropDown > .msshadow {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background:#fff;
+	filter:
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='#eeeeee'),
+		progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#eeeeee'); /* IE */
+}
+
+.menu.dropDown > .content {
+/* set coordinates to visual (0,0,0,0) of .menu.dropDown.context background,
+   as this object used as reference for positioning
+   child objects */
+	left:0px;
+	margin-bottom:-6px;
+	margin-right:0px;
+	position:relative;
+	top:-2px;
+}
+
+/* Horizontal Menus
+-------------------------------------------------------------- */
+.menu.primaryNav {
+	position:relative;
+	margin-left:10px;
+}
+
+.menu.primaryNav li {
+	border:none;
+	padding-right:0;
+}
+
+.menu.primaryNav .wrap {
+	border: none;
+	background-repeat: repeat-x;
+	font-size: 12px;
+	height: 31px;
+	line-height: 31px;
+	padding: 0 0.9em;
+}
+
+.menu.primaryNav #main_home .wrap {
+	padding:0 1.4em;
+}
+
+.menu.primaryNav #main_view .wrap,
+.menu.primaryNav #main_manage .wrap,
+.menu.primaryNav #main_create .wrap {
+	padding-left:1em;
+	padding-right:1.6em;
+}
+
+.menu.primaryNav .node > .wrap > .icon {
+	background-position: 0px -78px ;
+	background-position: 0px -79px \9; /* IE8 and IE9 */
+	height: 32px;
+	right: 7px;
+	width: 11px;
+}
+
+.menu.primaryNav #main_home .wrap {
+	text-indent: -5000px;
+    width: 34px;
+}
+
+.menu.primaryNav #main_home .wrap > .icon {
+	height: 32px;
+	margin: 0 9px;
+	width: 14px;
+}
+
+.menu.primaryNav #main_home .wrap > .icon {
+	background-image: url(images/menu_primaryNav_sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 -164px;
+	background-position: 0 -163px\9; /* IE8 and IE9 */
+}
+
+/* Chrome + Safari hacks */
+
+/* main menu text, vertical positioning */
+body:nth-of-type(1) .menu.primaryNav .wrap {
+	margin-top:0;
+}
+
+/* home icon position */
+body:nth-of-type(1) .menu.primaryNav #main_home .wrap > .icon {
+	background-position: left -164px;
+}
+
+/* disclosure indicator icon position */
+body:nth-of-type(1) .menu.primaryNav .node > .wrap > .icon {
+	background-position: 0 -79px;
+}
+
+/*
+ * From: dialog_panels.css
+ */
+/* Dialog Panels
+--------------------------------------------------------------
+
+Dialog panels contain forms or elements intended to collect user input.
+
+There are 3 main types:
+
+- .dialog.inlay
+- .dialog.overlay
+- .dialog.overlay.widget (a more petite version of .dialog.overlay)
+
+For the .dialog.overlay types, there are 2 special cases:
+
+- .sizeable
+- .tabbed
+
+These special cases may require particular overrides to the size or
+positioning metrics for the container components.
+
+In particular, .sizeable requires that .dialog > .content be position:absolute.
+*/
+
+.dialog .group {
+	 /* padding: 0;NEW, can be deleted if there are problems. CAUSED PROBLEM IN REPO EXPORT RESOURCE DIALOG  */
+	margin: 0;
+}
+
+.dialog fieldset.group {
+	margin-top: 16px;
+	/* WAS UP FOR DELETION - THERE WERE PROBLEMS IN REPO EXPORT RESOURCE DIALOG */
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari and Google Chrome only */
+	#loading.dialog > .content > .body {
+		padding-bottom:0;
+		overflow: hidden;
+	}
+}
+
+.panel.dialog > .content > .header > .closeIcon {
+    float:right;
+    width:19px;
+    height:19px;
+    margin:5px;
+    background:url(images/dialogClose.png);
+    cursor:pointer;
+}
+
+/*
+	Panel Dialog Inlay
+ */
+.dialog.inlay {
+	margin:4px 6px 9px 2px; /* moves visual top and left to actual */
+	float:left;
+	border:1px solid #d3d5d6;
+}
+
+.dialog.inlay > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+   as this object used as reference for positioning
+   child objects */
+	left:0px;
+	margin-bottom:0px;
+	margin-right:0px;
+	position:relative;
+	top:0px;
+}
+
+.dialog.inlay .header {
+	height:28px;
+	border-bottom:1px solid #E0E0E0;
+	padding-right:15px;
+	position: relative;
+}
+
+.dialog.inlay .header span {
+	display: none;
+}
+
+.dialog.inlay .header * {
+	line-height: 28px;
+}
+
+.dialog.inlay .header .icon {
+	height:28px;
+}
+
+.dialog.inlay > .content > .body {
+	z-index: 2;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+
+.dialog.inlay .sizer {
+	display: none;
+}
+
+.dialog.inlay .footer {
+	background-repeat: no-repeat;
+	border-width: 0;
+	height: 42px; /* NEW */
+	overflow: visible;
+	padding: 5px 20px;
+	position: relative;
+	/* height: 34px; */ /* DELETE IF NO PROBLEMS */
+}
+
+.dialog.inlay .footer > .cosmetic {
+	position:absolute;
+	bottom:0;
+	height:76px;
+}
+
+.dialog.inlay .footer > .cosmetic.left {
+	left:0;
+	right:15px;
+}
+
+.dialog.inlay .footer > .cosmetic.right {
+	right:0;
+	width:15px;
+}
+
+.dialog.inlay.fillParent {
+	float:none;
+	position: relative;
+}
+
+.dialog.inlay.fillParent .footer {
+	bottom:-5px;
+}
+
+/*
+	Dialog Inlay
+ */
+.dialog.inlay.filter {
+	margin: 10px;
+	position: relative;
+	line-height: normal;
+}
+
+.dialog.inlay.filter > .content > .body {
+	white-space: nowrap;
+	padding: 10px 20px;
+}
+
+.dialog.inlay.filter > .content > .body > .column {
+	height: auto;
+	margin: 0;
+	line-height: normal;
+	position: relative;
+	float: left;
+	min-width: 185px;
+	overflow:visible;
+}
+
+.dialog.inlay.filter > .content > .body > .column.two.pickWells {
+	height:150px;
+}
+
+.dialog.inlay.filter .select {
+	margin-left: 0;
+}
+
+.dialog.inlay.filter > .content > .body > .column.two > .control > .wrap {
+	position: absolute;
+	left: -5000px;
+}
+
+.dialog.inlay.filter > .content > .body > .column.two.pickWells .wrap {
+	position: relative;
+	left: auto;
+}
+
+.dialog.inlay.filter > .content > .body > .column.two input {
+	margin-top:0;
+}
+
+.dialog.inlay.filter .footer > .lock {
+	position:absolute;
+	right:20px;
+	top:5px;
+	z-index: 1;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari and Google Chrome only */
+	.dialog.inlay.filter .footer > .lock > .wrap {
+		float:right;
+	}
+
+	/* .dialog.inlay.filter > .content > .body > .column.two .searchLockup input {
+		margin-top:2px;
+	} REMOVE IF NO PROBLEMS */
+}
+/*
+	Dialog Overlay
+*/
+
+.dialog.overlay .header > .cosmetic {
+	display:none;
+}
+
+.dialog.overlay .header.mover > .cosmetic {
+	height: 35px;
+	left: 0;
+	right: 0;
+}
+
+.dialog.overlay.showingSubHeader > .content > .header {
+	border-bottom: 1px solid #c5c5c5;
+	height: 28px;
+}
+
+/*
+	Dialog Overlay Sizeable
+ */
+.dialog.overlay.sizeable {
+	float: none;
+}
+
+.dialog.overlay.sizeable > .content {
+/* set coordinates to visual (0,0,0,0) of .column.decorated background,
+   as this object used as reference for positioning
+   child objects */
+	bottom:0;
+	left:0;
+	right:0;
+	top:0;
+	float: none;
+	margin-left: 0;
+	position:absolute;
+	margin:0;
+}
+
+.dialog.overlay.sizeable > .content > .body {
+	top:35px;
+	bottom:44px;
+	margin-bottom: 0;
+	position: absolute;
+}
+
+.dialog.overlay.sizeable > .content > .footer {
+	position: absolute;
+	/* height:34px;
+	padding:5px 5px 5px 20px;
+	border-width: 1px; */ /* DELETE IF NO PROBLEMS. PARENT STYLE IS OK */
+}
+
+.dialog.overlay.sizeable > .content > .footer,
+.dialog.overlay.sizeable > .sizer {
+	display: block;
+}
+
+.dialog.overlay.sizeable > .sizer {
+	display: block;
+	bottom:5px;
+	right:5px;
+}
+
+/*.dialog.overlay.sizeable > .content > .footer {
+	height:34px;
+	padding:5px 5px 5px 20px;
+} */ /* DELETE IF NO PROBLEMS. PARENT STYLE IS OK */
+
+.dialog .groupBox {
+	float:none;
+}
+
+.dialog.sizeable .groupBox {
+	bottom:25px;
+	left:20px;
+	position:absolute;
+	right:20px;
+	top:18px;
+}
+
+.dialog.sizeable .groupBox > .content {
+	bottom:0;
+	left:0;
+	position:absolute;
+	right:0;
+}
+
+.dialog.sizeable .groupBox > .content > .body {
+	padding:6px;
+	position:absolute;
+}
+
+/*
+	Tabbed Dialog
+ */
+.dialog.tabbed .tabSet {
+	margin-bottom: 0;
+}
+
+.dialog.tabbed .groupBox {
+	margin-top:14px;
+	padding-top: 20px;
+}
+
+/*
+	Tabbed Dialog Sizeable
+ */
+.dialog.tabbed.sizeable > .content > .body > .groupBox > .content > .body {
+	top:20px;
+}
+/*
+	Dialog Overlay Widget
+ */
+.dialog.overlay.widget > .content {
+	position:relative;
+}
+
+.dialog.overlay.widget .header span {
+	height:28px;
+	left:-1px;
+	right:18px;
+}
+
+.dialog.overlay.widget .header * {
+	line-height: 27px;
+}
+
+.dialog.overlay.widget .header .icon {
+	height:27px;
+}
+
+/*
+	Dialog Overlay Widget Sizeable
+ */
+
+.dialog.overlay.widget.sizeable > .content {
+/* set coordinates to visual (0,0,0,0) of .panel.widget background,
+   as this object used as reference for positioning
+   child objects */
+	bottom:-1px;
+	left:-1px;
+	right:-1px;
+	top:-1px;
+	float: none;
+	margin-left: 0;
+	position:absolute;
+	margin:0;
+}
+
+.dialog.overlay.widget.sizeable > .content > .body {
+	top:28px;
+	bottom: 30px;
+}
+
+.dialog.overlay.widget.sizeable > .content > .footer {
+	height:20px;
+}
+
+.dialog.dialogV2 {
+    overflow: hidden;
+}
+
+
+/* background colors */
+ body,
+.pane .body,
+.panel,
+.column.decorated {
+	background-color: #fff;
+}
+
+body#loginPage {background: rgba(0, 0, 0, 0) url("images/bg_signin.jpg") no-repeat fixed center center / cover;}
+
+.banner {
+	/* TIBCO blue */
+	background-color: #1388d8;
+	border-bottom: 1px solid #fff;
+}
+
+#frameFooter {
+	background-color:#022c52;
+	color:#fff;
+}
+
+
+
+
+/* column decorated */
+.column.decorated > .content > .header,
+.column.decorated > .content > .header > .subheader {
+	background-color: #e3e3e3; /* OLD THEME - background color needs to be white so there are no problems with subheaders */
+	border-bottom: 1px solid #fff;
+}
+
+.dialog.overlay.showingSubHeader > .content > .header {
+	background: url(images/column_header_bkgd.png) repeat-x;
+	background-color: #d3d3d3;
+}
+
+.toolbar {
+	/* background-color: #f4f4f4; */ /* AMBER 2 THEME ORIGINAL HANS COLOR, TOO LIGHT */
+	/* background-color: #f1f1f1; */
+	background-color: #ebebeb;
+}
+
+.sub.header {background:#fff;}
+
+.column.decorated.secondary > .content > .body,
+.column.decorated.tertiary > .content > .body {
+	background-color: #fafafa; /* NEW */
+	/* background-color: #f8f8f8; */
+}
+
+.column.decorated.minimized {
+	background:#fff;
+	border: 0;
+}
+
+.inputs .column.decorated.secondary > .content > .body,
+.inputs .column.decorated.tertiary > .content > .body {
+	background-color: transparent;
+}
+
+.pane {background-color: #fff;}
+
+.menu.primaryNav .wrap.over,
+.menu.primaryNav .wrap.pressed {
+	background-color: #195b8a;
+}
+
+.menu.primaryNav #main_home .wrap.pressed,
+.menu.primaryNav #main_library .wrap.pressed {
+	/* these ids have their own styles because they are the only main menu items with a pressed effect */
+	/* gradient end values are #FFAC0B and #FF790B with a top inner shadow */
+	background-position: 0 -50px;
+}
+
+.menu.vertical {
+	background-color:#ffffff;
+}
+
+/*
+.menu.vertical li > .wrap.pressed {
+	background-color:#0061a2;
+}
+
+.menu.vertical li > .wrap.pressed {
+	background-color:#0083b6;
+}
+*/ /* DELETE */
+
+.menu.vertical li > .wrap.over,
+.menu.vertical li > .wrap.pressed {
+	background-color:#195b8a;
+}
+
+.pane .header {
+	background-color: #F0F0F0;
+}
+
+#dashboard #banner,
+#dashboard #frame{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

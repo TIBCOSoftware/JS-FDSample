@@ -1,17 +1,12 @@
-//the internal one is a report not dashboard. probably break into own file
-// for the internal report, use different JRS credentials based on who is logged in.
-
-
-
 /*
  * ========================================================================
- * admin.js : v0.8.0
+ * viewDashboard.js : v0.8.0
  *
  * ========================================================================
  * Copyright 2014
- * Authors: Daniel Petzold
+ * Authors: Sherman Wood
  *
- * Unless you have purchased a commercial license agreement from Jaspersoft Inc., the following license terms apply:
+ * Unless you have purchased a commercial license agreement from TIBCO Jaspersoft Inc., the following license terms apply:
  *
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU Affero General Public License as published by the Free Software Foundation, either version 3
@@ -33,15 +28,14 @@ pageConfig.inventory = {
 	type: 'dashboard',
 	dashboard: "/public/Samples/FreshDelivery_Demo/Admin_Inventory_Dashboard",
 	dashboardParams: {
-		Country: ["USA", "Canada", "Mexico"]
+		inv_store__store_contact__store_country_1: ["Canada", "Mexico", "USA"]
 	},
 	filters: [{
-		paramId: "Country",
+		paramId: "inv_store__store_contact__store_country_1",
 		allName: "All Countries"
-			//options: (function(){return pageConfig.dashboardParams.Country})()
 	}],
-	viewName: 'Inventory View',
-	viewDescription: 'View up to date internal metrics',
+	viewName: 'Inventory Metrics by Country',
+	viewDescription: 'Orders, Tonnage, Shipping Time. Select brand in Tonnage to see Units by district.',
 	chartTitle: ''
 
 };
@@ -61,6 +55,7 @@ pageConfig.payroll = {
 	chartTitle: ''
 };
 
+/*
 pageConfig.blank = {
 	type: 'dashboard',
 	dashboard: "/public/Samples/FreshDelivery_Demo/22.0_Blank_Starting_Dashboard",
@@ -76,61 +71,31 @@ pageConfig.blank = {
 	viewDescription: 'Begin on "Blank Starting Dashboard in repository',
 	chartTitle: ''
 };
-
+*/
 
 var hash = location.search.split('?')[1];
 pageConfig = pageConfig[hash] || pageConfig.inventory;
 
+var dashboard;
+var visualize;
 
 
-//load the config and get the script for the configured server instance
-$.getJSON('./config/config.json', function(data) {
-	$.getScript(data.visualizeJS, function() {
-		initPage(data.jrsConfig);
-	});
-});
 
-//connect to Jaspersoft BI server and load the dashboard
-function initPage(jrsConfig) {
-	visualize({
-		auth: jrsConfig.auth
-	}, function(v) {
-		pageConfig.type === 'report' ? loadReport(v) : loadDashboard(v);
-	});
+app.initializeVisualize(initPage);
+
+function initPage(jrsConfig, v) {
+	visualize = v;
+	loadDashboard(v);
 }
 
-//load the dashboard 
+//load the dashboard with default parameters
 function loadDashboard(v) {
 
-	var dashboard = v.dashboard({
+	dashboard = v.dashboard({
 		resource: pageConfig.dashboard,
 		container: "#container",
-		error: handleError,
-		params: pageConfig.dashboardParams,
-		success: function() {
-			$("button").prop("disabled", false);
-		}
+		error: handleError
 	});
-
-	//attach to the global scope
-	window.dashboard = dashboard;
-}
-
-//load the dashboard 
-function loadReport(v) {
-
-	var dashboard = v.report({
-		resource: pageConfig.dashboard,
-		container: "#container",
-		error: handleError,
-		params: pageConfig.dashboardParams,
-		success: function() {
-			$("button").prop("disabled", false);
-		}
-	});
-
-	//attach to the global scope
-	window.dashboard = dashboard;
 }
 
 
@@ -152,29 +117,26 @@ function buildParams() {
 			}
 		});
 
-		//add the parameter to the params object
-		params[paramName] = selectedVal === 'all' ? allVals : [selectedVal];
+		//add the parameter to the params array
+		params[paramName] = selectedVal === 'all' ? ["~NOTHING~"] : [selectedVal];
 
 	});
 
 	return params;
 }
 
-//re-load the dashboard apply the selected filters
-function updateFilters(dashboard) {
+// apply the selected filters to the dashboard 
+function updateFilters() {
 
 	//build the parameters object
 	var params = buildParams();
 
-	//reload the dashboard and re-enable the button
+	/* reload the dashboard with params */
 	dashboard.params(params).run()
-		.fail(handleError)
-		.always(function() {
-			$("button").prop("disabled", false);
-		});
+		.fail(handleError);
 }
 
-//render all the filtering options specified in the page configuration
+//render all the filters specified in the page configuration
 function renderFilters() {
 	$.get('./partials/dropdown.html', function(tmpl) {
 		var template = Handlebars.compile(tmpl);
@@ -182,6 +144,10 @@ function renderFilters() {
 			var templateData = pageConfig.filters[i];
 			templateData.options = pageConfig.dashboardParams[pageConfig.filters[i].paramId];
 			$('#filters').append(template(templateData));
+			// Add the change handler
+			$("#" + pageConfig.filters[i].paramId ).change(function() {
+				updateFilters();
+			});
 		}
 	});
 }
@@ -194,7 +160,7 @@ function handleError(e) {
 $(function() {
 
 	//render the left side bar 
-	$.get('./partials/admin-left-panel.html', function(tmpl) {
+	$.get('./partials/dashboard-left-panel.html', function(tmpl) {
 		var templateData = {
 			viewName: pageConfig.viewName,
 			viewDescription: pageConfig.viewDescription
@@ -202,15 +168,8 @@ $(function() {
 		var template = Handlebars.compile(tmpl);
 		$('#leftPanel').html(template(templateData));
 
-		//render the filtering options
+		//render the filters
 		renderFilters();
 
-        //attach a listener for updating the filters
-        $("button").on('click', function() {
-            console.log('eter');
-            $("button").prop("disabled", true);
-            updateFilters(window.dashboard);
-        });
 	});
-
 });
