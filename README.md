@@ -5,22 +5,17 @@ This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
 
-Live Demo: <a href="http://www.jaspersoft.com/embedded-bi-in-action">http://www.jaspersoft.com/embedded-bi-in-action</a>
+Live Demo: <a https://www.jaspersoft.com/fresh-delivery">https://www.jaspersoft.com/fresh-delivery</a>
 
 Author(s): Daniel Petzold, Sherman Wood, Mariano Luna, Peter Mcrae
 
 Version: 4.0
 
-##Fresh Delivery Demo Video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=GOlhTmxZE9s
-" target="_blank"><img src="http://img.youtube.com/vi/GOlhTmxZE9s/0.jpg" 
-alt="Fresh Delivery Demo" width="240" height="180" border="10" /></a>
-
 ##Description
 The sample is designed to showcase the features of TIBCO Jaspersoft's embedded analytics framework and highlights Visualize.js.
-I've used a set of reports that are included in this sample that depend on the Foodmart Sample dataset that is provided in the standard trial installation of JasperServer Professional 6.0.
+I've used a set of reports that are included in this sample that depend on the Foodmart Sample dataset that is provided in the standard trial installation of JasperServer Professional.
 
-Essentially this is a demo app (Fresh Delivery) with a set of reports integrated within. It runs form a WebServer since it only uses HTML and Javascript so there is no specific requirements for the webserver. If you would like to use a hosted version of this application, please visit: <a href="http://www.jaspersoft.com/embedded-bi-in-action">http://www.jaspersoft.com/embedded-bi-in-action</a>
+Essentially this is a demo app (Fresh Delivery) with a set of reports integrated within. It runs form a WebServer since it only uses HTML and Javascript so there is no specific requirements for the webserver. If you would like to use a hosted version of this application, please visit: <a href="https://www.jaspersoft.com/fresh-delivery">https://www.jaspersoft.com/fresh-delivery</a>
 
 ##Install the Sample
 ###Requirements / Dependencies
