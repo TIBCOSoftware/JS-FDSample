@@ -5,7 +5,7 @@ This is a demo site that embeds [JasperReports Server](http://www.jaspersoft.com
 
 Code: https://github.com/TIBCOSoftware/JS-FDSample
 
-Live Demo: <a "https://www.jaspersoft.com/fresh-delivery">https://www.jaspersoft.com/fresh-delivery</a>
+Live Demo: <a>https://www.jaspersoft.com/fresh-delivery</a>
 
 Author(s): Daniel Petzold, Sherman Wood, Mariano Luna, Peter Mcrae
 
