@@ -34,7 +34,7 @@ app.login = function(user, pass) {
 		}
 		//store the user info for the session 
 		sessionStorage.userRole = data.role;
-		sessionStorage.jrsConfig = JSON.stringify(data.jrsConfig.auth);
+		sessionStorage.jrsConfig = JSON.stringify(data.auth);
 		sessionStorage.userName = user;
 		sessionStorage.loggedIn = true;
 

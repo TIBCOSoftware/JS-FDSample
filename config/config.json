@@ -1,6 +1,6 @@
 {
-	"visualizeJS": "jrs-optimized-scripts/client/visualize.js",
-	"cacheVisualizeJS": true,
+    "visualizeJS": "https://mobiledemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
+    "cacheVisualizeJS": true,
     "visualizeJSFromServer": "https://mobiledemo.jaspersoft.com/jasperserver-pro/client/visualize.js",
     "jrsHostname": "https://mobiledemo.jaspersoft.com/jasperserver-pro",
     "jrsAuth": {
